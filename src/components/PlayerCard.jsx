@@ -45,10 +45,12 @@ const PlayerCard = ({ player }) => {
           <h2 className="text-3xl sm:text-4xl md:text-3xl font-extrabold text-[#2ea9cb] mb-4 text-center uppercase tracking-widest">
             {player.name}
           </h2>
+
           <p className="text-[#000000] mb-6 text-2xl font-bold text-center">
             {player.position}
           </p>
-          <p className="text-[#2ea9cb] mb-6 text-2xl font-bold text-center uppercase">
+          <img src={player.country} alt="" className="w-10 h-8 mx-auto mb-5" />
+          <p className="text-[#245664] mb-6 text-2xl font-bold text-center uppercase">
             {player.age}
           </p>
 
@@ -145,6 +147,7 @@ const PlayerCard = ({ player }) => {
 // Define PropTypes for validation
 PlayerCard.propTypes = {
   player: PropTypes.shape({
+    country: PropTypes.string.isRequired,
     age: PropTypes.number.isRequired,
     name: PropTypes.string.isRequired,
     position: PropTypes.string.isRequired,

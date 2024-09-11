@@ -13,13 +13,21 @@ import KyleWalker from "../assets/images/walker.jpg";
 import MateoKovacic from "../assets/images/kovacic.jpg";
 import Rico from "../assets/images/rico.jpg";
 import Ruben from "../assets/images/ruben.jpg";
-
+import Norway from "../assets/images/norway.webp";
+import Belgium from "../assets/images/belgium.png";
+import Portugal from "../assets/images/portugal.webp";
+import Germany from "../assets/images/germany.png";
+import England from "../assets/images/eng.png";
+import Croatia from "../assets/images/cro.png";
+import Spain from "../assets/images/spain.png";
+import Brazil from "../assets/images/brazil.png";
 // Sample player data
 const players = [
   {
     name: "Erling Haaland",
     position: "ST",
     number: 9,
+    country: Norway,
     age: 24,
     image: ErlingHaaland,
     careerStats: {
@@ -37,6 +45,7 @@ const players = [
     name: "Kevin De Bruyne",
     position: "AM",
     age: 33,
+    country: Belgium,
     number: 17,
     image: KevinDeBruyne,
     careerStats: {
@@ -51,9 +60,28 @@ const players = [
     },
   },
   {
+    name: "İlkay Gündoğan",
+    number: 19,
+    position: "CM",
+    age: 33,
+    country: Germany,
+    image: IlkayGundogan,
+    careerStats: {
+      goals: 112,
+      assists: 86,
+      appearances: 649,
+    },
+    seasonStats: {
+      goals: 0,
+      assists: 0,
+      appearances: 2,
+    },
+  },
+  {
     name: "Bernardo Silva",
     position: "AM",
     number: 20,
+    country: Portugal,
     age: 30,
     image: BernardoSilva,
     careerStats: {
@@ -67,28 +95,13 @@ const players = [
       appearances: 6,
     },
   },
-  {
-    name: "İlkay Gündoğan",
-    number: 19,
-    position: "CM",
-    age: 33,
-    image: IlkayGundogan,
-    careerStats: {
-      goals: 107,
-      assists: 86,
-      appearances: 649,
-    },
-    seasonStats: {
-      goals: 0,
-      assists: 0,
-      appearances: 2,
-    },
-  },
+
   {
     name: "Phil Foden",
-    position: "RW",
+    position: "LW",
     number: 47,
     age: 24,
+    country: England,
     image: PhilFoden,
     careerStats: {
       goals: 91,
@@ -106,6 +119,7 @@ const players = [
     position: "LW",
     number: 10,
     age: 28,
+    country: England,
     image: JackGrealish,
     careerStats: {
       goals: 54,
@@ -123,6 +137,7 @@ const players = [
     number: 16,
     position: "DM",
     age: 28,
+    country: Spain,
     image: Rodrigo,
     careerStats: {
       goals: 37,
@@ -140,6 +155,7 @@ const players = [
     number: 8,
     position: "DM",
     age: 30,
+    country: Croatia,
     image: MateoKovacic,
     careerStats: {
       goals: 33,
@@ -157,6 +173,7 @@ const players = [
     number: 11,
     position: "LW",
     age: 22,
+    country: Belgium,
     image: JeremyDoku,
     careerStats: {
       goals: 26,
@@ -175,6 +192,7 @@ const players = [
     number: 26,
     position: "RW",
     age: 20,
+    country: Brazil,
     image: Savinho,
     careerStats: {
       goals: 16,
@@ -192,6 +210,7 @@ const players = [
     number: 24,
     position: "LB",
     age: 22,
+    country: Croatia,
     image: JoskoGvardiol,
     careerStats: {
       goals: 16,
@@ -208,6 +227,7 @@ const players = [
     name: "Kyle Walker",
     position: "RB",
     number: 2,
+    country: England,
     age: 34,
     image: KyleWalker,
     careerStats: {
@@ -227,6 +247,7 @@ const players = [
     number: 82,
     position: "RB",
     age: 19,
+    country: England,
     image: Rico,
     careerStats: {
       goals: 3,
@@ -244,6 +265,7 @@ const players = [
     number: 3,
     position: "CB",
     age: 27,
+    country: Portugal,
     image: Ruben,
     careerStats: {
       goals: 19,
