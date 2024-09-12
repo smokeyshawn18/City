@@ -11,7 +11,6 @@ import Norway from "../assets/images/norway.webp";
 import Belgium from "../assets/images/belgium.png";
 import Portugal from "../assets/images/portugal.webp";
 import { FaMapMarkerAlt, FaClock, FaTicketAlt } from "react-icons/fa";
-
 import Brent from "../assets/images/brentford.png";
 
 import {
@@ -24,10 +23,12 @@ import {
 import { GoGoal } from "react-icons/go";
 
 import { useState, useMemo, useEffect, useCallback } from "react";
+import Kit from "./Kit";
 
 const players = [
   {
     name: "Erling Haaland",
+
     matches: {
       premierLeague: 3,
       championsLeague: 0,
@@ -57,6 +58,7 @@ const players = [
   },
   {
     name: "Kevin De Bruyne",
+
     matches: {
       premierLeague: 3,
       championsLeague: 0,
@@ -86,6 +88,7 @@ const players = [
   },
   {
     name: "Bernardo Silva",
+
     matches: {
       premierLeague: 3,
       championsLeague: 0,
@@ -198,7 +201,7 @@ const Home = () => {
       <div className="relative container mx-auto px-4 lg:px-8">
         {todayMatches.length > 0 && (
           <div className="bg-gray-100 py-8 px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl sm:text-4xl font-bold text-center text-blue-900 mb-8">
+            <h2 className="text-3xl sm:text-4xl font-bold text-center text-[#1b3c42] mb-8">
               Match Day
             </h2>
 
@@ -262,7 +265,7 @@ const Home = () => {
                   </div>
 
                   {/* Action and Competition */}
-                  <div className="flex flex-col items-center md:items-end mt-4 md:mt-0">
+                  <div className="flex flex-col items-center text-[#1b3c42] md:items-end mt-4 md:mt-0">
                     <a
                       href="https://www.mancity.com/tickets"
                       target="_blank"
@@ -274,7 +277,7 @@ const Home = () => {
                     </a>
 
                     <div className="mt-4 flex items-center">
-                      <p className="text-sm font-bold text-gray-600 mr-2">
+                      <p className="text-sm font-bold text-[#1b3c42] mr-2">
                         Competition:
                       </p>
                       <img
@@ -300,13 +303,13 @@ const Home = () => {
           <div className="absolute inset-0 bg-gradient-to-r from-black to-transparent opacity-60 rounded-3xl"></div>
           <div className="absolute bottom-0 left-0 p-8 text-white">
             <h1 className="text-6xl font-bold">CityPulse</h1>
-            <p className="text-lg font-medium mt-3">
+            <p className="text-lg font-medium mt-3 ">
               Your Home for Manchester City.
             </p>
           </div>
         </div>
         <div className="bg-white p-6 rounded-3xl shadow-lg mb-8">
-          <h2 className="text-3xl font-extrabold text-[#2ea9cb] mb-5 text-center uppercase">
+          <h2 className="text-3xl font-extrabold text-[#1b3c42] mb-10 text-center uppercase">
             UCL Opponents - 2024/25
           </h2>
 
@@ -321,7 +324,7 @@ const Home = () => {
 
         {/* Key Performers Section */}
         <div className="mb-12">
-          <h2 className="text-4xl font-extrabold mb-8 text-center text-[#2ea9cb] uppercase tracking-widest">
+          <h2 className="text-4xl font-extrabold mb-8 text-center text-[#1b3c42] uppercase tracking-widest">
             Key Performers this Season
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -361,14 +364,19 @@ const Home = () => {
                       className="w-32 h-32 rounded-full object-cover border-4 border-black mb-4"
                     />
                     <div className="text-center">
-                      <h3 className="text-2xl font-bold text-[#2ea9cb] uppercase">
+                      <h3 className="text-2xl font-bold text-[#182d33] uppercase">
                         {player.name}
                       </h3>
-                      <p className="text-lg font-semibold text-[#2ea9cb]">
+                      <img
+                        src={player.nimg}
+                        alt=""
+                        className="w-10 h-8 mx-auto mb-5 mt-3"
+                      />
+                      <p className="text-lg font-semibold text-[#182d33]">
                         {player.position}
                       </p>
 
-                      <p className="text-[#396b79] font-semibold">
+                      <p className="text-[#182d33] font-semibold">
                         Age: {player.age}
                       </p>
                     </div>
@@ -621,6 +629,7 @@ const Home = () => {
           </div>
         </div>
       </div>
+      <Kit />
     </section>
   );
 };
