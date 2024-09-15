@@ -7,10 +7,21 @@ import {
   FaFlag,
   FaTrophy,
 } from "react-icons/fa";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const PlayerCard = ({ player }) => {
   const [activeTab, setActiveTab] = useState("career");
+  const [careerStats, setCareerStats] = useState(player.careerStats);
+
+  // UseEffect to automatically update career stats based on season stats
+  useEffect(() => {
+    setCareerStats({
+      goals: player.careerStats.goals + player.seasonStats.goals,
+      assists: player.careerStats.assists + player.seasonStats.assists,
+      appearances:
+        player.careerStats.appearances + player.seasonStats.appearances,
+    });
+  }, [player]);
 
   return (
     <>
@@ -19,23 +30,7 @@ const PlayerCard = ({ player }) => {
           <img
             src={player.image}
             alt={player.name}
-            className="
-   
-    absolute inset-0 p-3 m-2
-    w-[95%] h-[95%] 
-    object-cover object-top 
-    rounded-t-xs
-    shadow-2xl 
-    transition-transform 
-    duration-500 
-    hover:scale-110 
-    hover:shadow-3xl 
-    mx-auto 
-    hover:brightness-110 
-    hover:contrast-125 
-    hover:saturate-150 
-    hover:rotate-1 
-    hover:-translate-y-1"
+            className="absolute inset-0 p-3 m-2 w-[95%] h-[95%] object-cover object-top rounded-t-xs shadow-2xl transition-transform duration-500 hover:scale-110 hover:shadow-3xl mx-auto hover:brightness-110 hover:contrast-125 hover:saturate-150 hover:rotate-1 hover:-translate-y-1"
           />
 
           <div className="absolute inset-0 bg-gradient-to-t from-[#00000080] to-transparent rounded-t-lg"></div>
@@ -49,7 +44,11 @@ const PlayerCard = ({ player }) => {
           <p className="text-[#000000] mb-6 text-2xl font-bold text-center">
             {player.position}
           </p>
-          <img src={player.country} alt="" className="w-10 h-8 mx-auto mb-5" />
+          <img
+            src={player.country}
+            alt={player.country}
+            className="w-10 h-8 mx-auto mb-5"
+          />
           <p className="text-[#245664] mb-6 text-2xl font-bold text-center uppercase">
             {player.age}
           </p>
@@ -88,14 +87,14 @@ const PlayerCard = ({ player }) => {
                   <FaRunning className="mr-2 text-[#1e3a8a]" />
                   <span className="flex-1 text-lg text-[#1e3a8a] font-extrabold">
                     <strong className="text-green-600">Matches:</strong>{" "}
-                    {player.careerStats.appearances}
+                    {careerStats.appearances}
                   </span>
                 </div>
                 <div className="flex items-center justify-between">
                   <FaFutbol className="mr-2 text-[#1e3a8a]" />
                   <span className="flex-1 text-lg text-[#1e3a8a] font-extrabold">
                     <strong className="text-pink-600">Goals:</strong>{" "}
-                    {player.careerStats.goals}
+                    {careerStats.goals}
                   </span>
                 </div>
 
@@ -103,7 +102,7 @@ const PlayerCard = ({ player }) => {
                   <FaRegFutbol className="mr-2 text-[#1e3a8a]" />
                   <span className="flex-1 text-lg text-[#1e3a8a] font-extrabold">
                     <strong className="text-purple-600">Assists:</strong>{" "}
-                    {player.careerStats.assists}
+                    {careerStats.assists}
                   </span>
                 </div>
               </div>

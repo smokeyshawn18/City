@@ -31,14 +31,14 @@ const players = [
     age: 24,
     image: ErlingHaaland,
     careerStats: {
-      goals: 264,
+      goals: 256,
       assists: 53,
-      appearances: 318,
+      appearances: 312,
     },
     seasonStats: {
-      goals: 8,
+      goals: 10,
       assists: 0,
-      appearances: 6,
+      appearances: 8,
     },
   },
   {
@@ -49,14 +49,14 @@ const players = [
     number: 17,
     image: KevinDeBruyne,
     careerStats: {
-      goals: 180,
-      assists: 304,
-      appearances: 722,
+      goals: 177,
+      assists: 303,
+      appearances: 716,
     },
     seasonStats: {
       goals: 3,
       assists: 1,
-      appearances: 6,
+      appearances: 7,
     },
   },
   {
@@ -69,12 +69,12 @@ const players = [
     careerStats: {
       goals: 112,
       assists: 86,
-      appearances: 649,
+      appearances: 647,
     },
     seasonStats: {
       goals: 0,
       assists: 0,
-      appearances: 2,
+      appearances: 3,
     },
   },
   {
@@ -85,14 +85,14 @@ const players = [
     age: 30,
     image: BernardoSilva,
     careerStats: {
-      goals: 108,
-      assists: 116,
-      appearances: 604,
+      goals: 107,
+      assists: 114,
+      appearances: 598,
     },
     seasonStats: {
       goals: 1,
       assists: 2,
-      appearances: 6,
+      appearances: 7,
     },
   },
 
@@ -106,7 +106,7 @@ const players = [
     careerStats: {
       goals: 91,
       assists: 61,
-      appearances: 312,
+      appearances: 311,
     },
     seasonStats: {
       goals: 0,
@@ -122,9 +122,9 @@ const players = [
     country: England,
     image: JackGrealish,
     careerStats: {
-      goals: 54,
+      goals: 53,
       assists: 74,
-      appearances: 416,
+      appearances: 412,
     },
     seasonStats: {
       goals: 1,
@@ -140,9 +140,9 @@ const players = [
     country: Spain,
     image: Rodrigo,
     careerStats: {
-      goals: 37,
+      goals: 35,
       assists: 39,
-      appearances: 445,
+      appearances: 444,
     },
     seasonStats: {
       goals: 0,
@@ -158,14 +158,14 @@ const players = [
     country: Croatia,
     image: MateoKovacic,
     careerStats: {
-      goals: 33,
+      goals: 32,
       assists: 55,
-      appearances: 646,
+      appearances: 640,
     },
     seasonStats: {
       goals: 1,
       assists: 0,
-      appearances: 6,
+      appearances: 7,
     },
   },
   {
@@ -196,13 +196,13 @@ const players = [
     image: Savinho,
     careerStats: {
       goals: 16,
-      assists: 16,
-      appearances: 103,
+      assists: 15,
+      appearances: 100,
     },
     seasonStats: {
       goals: 0,
       assists: 1,
-      appearances: 3,
+      appearances: 4,
     },
   },
   {
@@ -215,12 +215,12 @@ const players = [
     careerStats: {
       goals: 16,
       assists: 9,
-      appearances: 220,
+      appearances: 214,
     },
     seasonStats: {
       goals: 0,
       assists: 0,
-      appearances: 6,
+      appearances: 7,
     },
   },
   {
@@ -233,12 +233,12 @@ const players = [
     careerStats: {
       goals: 13,
       assists: 61,
-      appearances: 703,
+      appearances: 702,
     },
     seasonStats: {
       goals: 0,
       assists: 0,
-      appearances: 1,
+      appearances: 2,
     },
   },
 
@@ -252,12 +252,12 @@ const players = [
     careerStats: {
       goals: 3,
       assists: 5,
-      appearances: 56,
+      appearances: 51,
     },
     seasonStats: {
       goals: 0,
       assists: 1,
-      appearances: 5,
+      appearances: 6,
     },
   },
   {
@@ -270,12 +270,12 @@ const players = [
     careerStats: {
       goals: 19,
       assists: 11,
-      appearances: 381,
+      appearances: 375,
     },
     seasonStats: {
       goals: 0,
       assists: 0,
-      appearances: 6,
+      appearances: 7,
     },
   },
   // Add more players here
@@ -297,6 +297,16 @@ const PlayerSection = () => {
         <span className="text-xl font-semibold text-gray-200">
           This season stats include, all club matches and this season
           International stats.
+        </span>
+        <br />
+        <span className="text-xl font-semibold text-gray-200">
+          Stats are according to{" "}
+          <a
+            className="font-bold text-blue-400"
+            href="https://www.transfermarkt.com/"
+          >
+            transfermarket.com
+          </a>
         </span>
       </p>
     </div>

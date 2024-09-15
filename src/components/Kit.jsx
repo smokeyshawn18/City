@@ -30,7 +30,7 @@ const Kit = () => {
       shopLink: "https://shop.mancity.com/en/kits/",
     },
     {
-      name: "Fourth Kit",
+      name: "Definitely City - Kit",
       image: Fourth,
       sponsor: "Etihad Airways",
       shopLink: "https://shop.mancity.com/en/kits/",

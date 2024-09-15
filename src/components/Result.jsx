@@ -44,20 +44,35 @@ const competitionLogos = {
 
 const matches = [
   // {
-  //   id: 1,
+  //   id: 3,
   //   homeTeam: "Man City",
-  //   awayTeam: "Brentford",
+  //   awayTeam: "Inter Milan",
   //   homeScore: 3,
-  //   awayScore: 1,
+  //   awayScore: 2,
   //   homeLogo: "Man City",
-  //   awayLogo: "Brentford",
+  //   awayLogo: "Inter Milan",
   //   scorers: {
-  //     home: ["Haaland 10', 30', 83'"],
-  //     away: ["R. Dias(OG) 19'"],
+  //     home: ["Haaland 18'", "Kovacic 84'", "Foden 89'"],
+  //     away: ["Barella 10'", "Thuram 77'"],
   //   },
-  //   timestamp: "2024-08-31T22:15:00",
-  //   competition: "Premier League",
+  //   timestamp: "2024-09-19T12:45:00",
+  //   competition: "Champions League",
   // },
+  {
+    id: 1,
+    homeTeam: "Man City",
+    awayTeam: "Brentford",
+    homeScore: 2,
+    awayScore: 1,
+    homeLogo: "Man City",
+    awayLogo: "Brentford",
+    scorers: {
+      home: ["Haaland 19', 32'"],
+      away: ["Yoane Wissa 1'"],
+    },
+    timestamp: "2024-09-14T19:45:00",
+    competition: "Premier League",
+  },
   {
     id: 2,
     homeTeam: "Man City",
@@ -89,37 +104,22 @@ const matches = [
     timestamp: "2024-08-18T21:15:00",
     competition: "Premier League",
   },
+
   // {
-  //   id: 3,
+  //   id: 4,
   //   homeTeam: "Man City",
-  //   awayTeam: "Inter Milan",
+  //   awayTeam: "Real Madrid",
   //   homeScore: 3,
-  //   awayScore: 2,
+  //   awayScore: 3,
   //   homeLogo: "Man City",
-  //   awayLogo: "Inter Milan",
+  //   awayLogo: "Real Madrid",
   //   scorers: {
-  //     home: ["Haaland 18'", "Kovacic 84'", "Foden 89'"],
-  //     away: ["Barella 10'", "Thuram 77'"],
+  //     home: ["B. Silva 2'", "Foden 66'", "Gvardiol 71'"],
+  //     away: ["R. Dias(OG) 12'", "Rodrygo 14'", "Valverde 79'"],
   //   },
-  //   timestamp: "2024-09-19T12:45:00",
+  //   timestamp: "2024-04-10T12:45:00",
   //   competition: "Champions League",
   // },
-
-  {
-    id: 4,
-    homeTeam: "Man City",
-    awayTeam: "Real Madrid",
-    homeScore: 3,
-    awayScore: 3,
-    homeLogo: "Man City",
-    awayLogo: "Real Madrid",
-    scorers: {
-      home: ["B. Silva 2'", "Foden 66'", "Gvardiol 71'"],
-      away: ["R. Dias(OG) 12'", "Rodrygo 14'", "Valverde 79'"],
-    },
-    timestamp: "2024-04-10T12:45:00",
-    competition: "Champions League",
-  },
 ];
 
 const Results = () => {
