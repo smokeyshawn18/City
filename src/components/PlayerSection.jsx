@@ -50,7 +50,7 @@ const players = [
     image: KevinDeBruyne,
     careerStats: {
       goals: 177,
-      assists: 303,
+      assists: 304,
       appearances: 716,
     },
     seasonStats: {
@@ -66,6 +66,7 @@ const players = [
     age: 33,
     country: Germany,
     image: IlkayGundogan,
+
     careerStats: {
       goals: 112,
       assists: 86,

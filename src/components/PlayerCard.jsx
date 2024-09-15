@@ -25,36 +25,34 @@ const PlayerCard = ({ player }) => {
 
   return (
     <>
-      <div className="relative bg-gradient-to-br from-[#e0f2f1] via-[#c1d3fd] to-[#a5b4fc] shadow-2xl rounded-lg overflow-hidden transform transition-transform hover:scale-105 hover:shadow-3xl duration-300 ease-in-out">
-        <div className="relative w-full h-56  sm:h-64 md:h-72 p-2">
+      <div className="relative bg-white shadow-lg rounded-lg overflow-hidden transform transition-transform hover:scale-105 hover:shadow-3xl duration-300 ease-in-out">
+        <div className="relative w-24 h-24 mx-auto mt-4 overflow-hidden rounded-full bg-[#6accf5] shadow-md">
           <img
             src={player.image}
             alt={player.name}
-            className="absolute inset-0 p-3 m-2 w-[95%] h-[95%] object-cover object-top rounded-t-xs shadow-2xl transition-transform duration-500 hover:scale-110 hover:shadow-3xl mx-auto hover:brightness-110 hover:contrast-125 hover:saturate-150 hover:rotate-1 hover:-translate-y-1"
+            className="w-full h-full object-contain object-center"
           />
-
-          <div className="absolute inset-0 bg-gradient-to-t from-[#00000080] to-transparent rounded-t-lg"></div>
         </div>
 
         <div className="p-6 bg-gradient-to-b from-[#ffffff] via-[#f9fafb] to-[#f0f4f8]">
-          <h2 className="text-3xl sm:text-4xl md:text-3xl font-extrabold text-[#2ea9cb] mb-4 text-center uppercase tracking-widest">
+          <h2 className="text-2xl sm:text-3xl md:text-3xl font-extrabold text-[#2ea9cb] mb-2 text-center uppercase tracking-widest">
             {player.name}
           </h2>
 
-          <p className="text-[#000000] mb-6 text-2xl font-bold text-center">
+          <p className="text-[#000000] mb-4 text-xl font-bold text-center">
             {player.position}
           </p>
           <img
             src={player.country}
             alt={player.country}
-            className="w-10 h-8 mx-auto mb-5"
+            className="w-10 h-8 mx-auto mb-4"
           />
-          <p className="text-[#245664] mb-6 text-2xl font-bold text-center uppercase">
+          <p className="text-[#245664] mb-6 text-xl font-bold text-center uppercase">
             {player.age}
           </p>
 
           {/* Tab Navigation */}
-          <div className="flex justify-center mb-4">
+          <div className="flex justify-center mb-4 space-x-2">
             <button
               className={`px-4 py-2 mx-1 font-bold text-sm uppercase tracking-wider rounded-full flex items-center ${
                 activeTab === "career"
@@ -135,7 +133,7 @@ const PlayerCard = ({ player }) => {
           </div>
         </div>
 
-        <div className="absolute top-2 right-2 bg-[#1e3a8a] text-white text-xs sm:text-sm md:text-xl font-extrabold px-6 py-4 rounded-full shadow-lg transform transition-transform hover:scale-110">
+        <div className="absolute top-2 right-2 bg-[#1e3a8a] text-white text-xs sm:text-sm md:text-xl font-extrabold px-4 py-2 rounded-full shadow-lg transform transition-transform hover:scale-110">
           #{player.number}
         </div>
       </div>
