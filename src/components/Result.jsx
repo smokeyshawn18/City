@@ -7,8 +7,8 @@ import AstonVillaLogo from "../assets/images/aston-villa.png";
 import RealMadridLogo from "../assets/images/rma.png";
 import ArsenalLogo from "../assets/images/arsenal.png";
 import PremierLeagueLogo from "../assets/images/prem.webp";
-import ChampionsLeagueLogo from "../assets/images/Champ.png";
-import FACupLogo from "../assets/images/fa.jpg";
+// import ChampionsLeagueLogo from "../assets/images/Champ.png";
+// import FACupLogo from "../assets/images/fa.jpg";
 import InterMilan from "../assets/images/inter.webp";
 import Brent from "../assets/images/brentford.png";
 
@@ -36,28 +36,7 @@ const teamLogos = {
   Brentford: Brent,
 };
 
-const competitionLogos = {
-  "Premier League": PremierLeagueLogo,
-  "Champions League": ChampionsLeagueLogo,
-  "FA Cup": FACupLogo,
-};
-
 const matches = [
-  // {
-  //   id: 3,
-  //   homeTeam: "Man City",
-  //   awayTeam: "Inter Milan",
-  //   homeScore: 3,
-  //   awayScore: 2,
-  //   homeLogo: "Man City",
-  //   awayLogo: "Inter Milan",
-  //   scorers: {
-  //     home: ["Haaland 18'", "Kovacic 84'", "Foden 89'"],
-  //     away: ["Barella 10'", "Thuram 77'"],
-  //   },
-  //   timestamp: "2024-09-19T12:45:00",
-  //   competition: "Champions League",
-  // },
   {
     id: 1,
     homeTeam: "Man City",
@@ -72,6 +51,8 @@ const matches = [
     },
     timestamp: "2024-09-14T19:45:00",
     competition: "Premier League",
+    venue: "Etihad Stadium",
+    competitionLogo: PremierLeagueLogo,
   },
   {
     id: 2,
@@ -87,8 +68,9 @@ const matches = [
     },
     timestamp: "2024-08-31T22:15:00",
     competition: "Premier League",
+    venue: "Etihad Stadium",
+    competitionLogo: PremierLeagueLogo,
   },
-
   {
     id: 3,
     homeTeam: "Man City",
@@ -103,158 +85,132 @@ const matches = [
     },
     timestamp: "2024-08-18T21:15:00",
     competition: "Premier League",
+    venue: "Etihad Stadium",
+    competitionLogo: PremierLeagueLogo,
   },
-
-  // {
-  //   id: 4,
-  //   homeTeam: "Man City",
-  //   awayTeam: "Real Madrid",
-  //   homeScore: 3,
-  //   awayScore: 3,
-  //   homeLogo: "Man City",
-  //   awayLogo: "Real Madrid",
-  //   scorers: {
-  //     home: ["B. Silva 2'", "Foden 66'", "Gvardiol 71'"],
-  //     away: ["R. Dias(OG) 12'", "Rodrygo 14'", "Valverde 79'"],
-  //   },
-  //   timestamp: "2024-04-10T12:45:00",
-  //   competition: "Champions League",
-  // },
 ];
 
+const formatDateTime = (dateTimeString) => {
+  const date = new Date(dateTimeString);
+  if (isNaN(date.getTime())) {
+    return "Invalid date";
+  }
+  return `${date.toLocaleDateString("en-GB", {
+    day: "2-digit",
+    month: "long",
+    year: "numeric",
+  })}, ${date.toLocaleTimeString("en-GB", {
+    hour: "2-digit",
+    minute: "2-digit",
+  })}`;
+};
+
 const Results = () => {
-  const formatDate = (timestamp) => {
-    const date = new Date(timestamp);
-    return date.toLocaleDateString("en-GB", {
-      day: "2-digit",
-      month: "long",
-      year: "numeric",
-    });
-  };
-
-  const formatTime = (timestamp) => {
-    const date = new Date(timestamp);
-    return date.toLocaleTimeString("en-GB", {
-      hour: "2-digit",
-      minute: "2-digit",
-    });
-  };
-
   return (
-    <div className="container mx-auto px-4 py-8">
-      <h2 className="uppercase text-3xl font-bold text-center text-white mb-8">
-        main Matches Results 2024/25
-      </h2>
-      <div className="space-y-6">
+    <div className="min-h-screen bg-darkblue p-8">
+      {/* Heading */}
+      <h1 className="text-4xl font-bold text-white text-center mb-8">
+        Main Matches Results 24/25 Season
+      </h1>
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-10">
         {matches.map((match) => (
           <div
             key={match.id}
-            className="bg-white shadow-lg rounded-lg overflow-hidden transition transform hover:scale-105"
+            className="bg-gray-800 text-white rounded-lg shadow-lg overflow-hidden transition-transform transform hover:scale-105 hover:shadow-2xl"
           >
-            <div className="flex flex-col md:flex-row">
-              {/* Home Team Section */}
-              <div
-                className="flex-1 flex items-center justify-center p-4"
-                style={{ backgroundColor: teamColors[match.homeTeam] }}
-              >
-                <div className="text-center">
+            <div className="relative">
+              <div className="w-full h-40 bg-gradient-to-r from-[#31607f] to-[#002f6c] flex items-center justify-center text-center text-white">
+                {/* Home Team Section */}
+                <div className="absolute left-4 flex flex-col items-center">
                   <img
                     src={teamLogos[match.homeLogo]}
                     alt={`${match.homeTeam} Logo`}
-                    className="w-16 h-16 mx-auto mb-2"
+                    className="w-24 h-24 rounded-full border-2 border-white"
                   />
-                  <h3 className="text-xl font-bold text-white">
-                    {match.homeTeam}
-                  </h3>
+                  <p className="mt-2 text-lg font-semibold">{match.homeTeam}</p>
                 </div>
-              </div>
 
-              {/* Match Details Section */}
-              <div className="flex-1 flex flex-col items-center justify-center p-4 bg-gray-100">
-                <div className="flex items-center space-x-2 mb-2">
-                  <img
-                    src={competitionLogos[match.competition]}
-                    alt={`${match.competition} Logo`}
-                    className="w-8 h-8"
-                  />
-                  <span className="text-gray-700 font-bold">
-                    {match.competition}
-                  </span>
-                </div>
-                <div className="flex items-center space-x-4 mb-2">
-                  <span className="text-2xl font-bold text-gray-800">
-                    {match.homeScore}
-                  </span>
-                  <span className="text-2xl font-bold text-gray-600">-</span>
-                  <span className="text-2xl font-bold text-gray-800">
-                    {match.awayScore}
-                  </span>
-                </div>
-                <div className="flex items-center space-x-2 font-bold text-gray-600">
-                  <FaCalendarAlt />
-                  <span>{formatDate(match.timestamp)}</span>
-                  <span>{formatTime(match.timestamp)}</span>
-                </div>
-              </div>
+                {/* VS Text */}
+                <p className="text-3xl font-bold mx-8">VS</p>
 
-              {/* Away Team Section */}
-              <div
-                className="flex-1 flex items-center justify-center p-4"
-                style={{ backgroundColor: teamColors[match.awayTeam] }}
-              >
-                <div className="text-center">
+                {/* Away Team (Opponent) */}
+                <div className="absolute right-4 flex flex-col items-center">
                   <img
                     src={teamLogos[match.awayLogo]}
                     alt={`${match.awayTeam} Logo`}
-                    className="w-16 h-16 mx-auto mb-2"
+                    className="w-24 h-24 rounded-full border-2 border-white"
                   />
-                  <h3 className="text-xl font-bold text-white">
-                    {match.awayTeam}
-                  </h3>
+                  <p className="mt-2 text-lg font-semibold">{match.awayTeam}</p>
                 </div>
               </div>
-            </div>
+              <div className="p-4 bg-gray-900">
+                <div className="flex flex-col md:flex-row md:space-x-8">
+                  {/* Home Scorers */}
+                  <div className="flex-1 mb-4 md:mb-0 p-2">
+                    <h4
+                      className="text-lg font-extrabold mb-2 flex items-center"
+                      style={{ color: teamColors[match.homeTeam] }}
+                    >
+                      <FaFutbol className="mr-2 text-green-400" />
+                      {match.homeTeam}
+                    </h4>
+                    {match.scorers.home.length > 0 ? (
+                      <ul className="list-disc list-inside text-gray-300 font-bold">
+                        {match.scorers.home.map((scorer, index) => (
+                          <li key={index}>{scorer}</li>
+                        ))}
+                      </ul>
+                    ) : (
+                      <p className="text-gray-500">No goals scored.</p>
+                    )}
+                  </div>
 
-            {/* Scorers Section */}
-            <div className="p-4 bg-gray-50">
-              <div className="flex flex-col md:flex-row md:space-x-8">
-                {/* Home Scorers */}
-                <div className="flex-1 mb-4 md:mb-0 p-2">
-                  <h4
-                    className="text-lg font-extrabold mb-2 flex items-center"
-                    style={{ color: teamColors[match.homeTeam] }}
-                  >
-                    <FaFutbol className="mr-2 text-green-500" />
-                    {match.homeTeam}
-                  </h4>
-                  {match.scorers.home.length > 0 ? (
-                    <ul className="list-disc list-inside text-[#001838] font-bold">
-                      {match.scorers.home.map((scorer, index) => (
-                        <li key={index}>{scorer}</li>
-                      ))}
-                    </ul>
-                  ) : (
-                    <p className="text-gray-500">No goals scored.</p>
-                  )}
-                </div>
-
-                {/* Away Scorers */}
-                <div className="p-2">
-                  <h4 className="text-lg font-extrabold text-gray-700 mb-2 flex items-center">
-                    <FaFutbol className="mr-2 text-green-500" />
-                    {match.awayTeam}
-                  </h4>
-                  {match.scorers.away.length > 0 ? (
-                    <ul className="list-disc list-inside text-gray-700 font-bold ">
-                      {match.scorers.away.map((scorer, index) => (
-                        <li key={index}>{scorer}</li>
-                      ))}
-                    </ul>
-                  ) : (
-                    <p className="text-gray-700 font-bold"></p>
-                  )}
+                  {/* Away Scorers */}
+                  <div className="p-2">
+                    <h4 className="text-lg font-extrabold text-gray-300 mb-2 flex items-center">
+                      <FaFutbol className="mr-2 text-green-400" />
+                      {match.awayTeam}
+                    </h4>
+                    {match.scorers.away.length > 0 ? (
+                      <ul className="list-disc list-inside text-gray-300 font-bold">
+                        {match.scorers.away.map((scorer, index) => (
+                          <li key={index}>{scorer}</li>
+                        ))}
+                      </ul>
+                    ) : (
+                      <p className="text-gray-500 font-bold">
+                        No goals scored.
+                      </p>
+                    )}
+                  </div>
                 </div>
               </div>
+
+              <div className="p-4 text-center">
+                <FaCalendarAlt className="text-blue-500 text-2xl mb-2 mx-auto" />
+                <p className="text-xl font-semibold text-blue-200">
+                  {formatDateTime(match.timestamp, match.timestamp)}
+                </p>
+                <img
+                  src={match.competitionLogo}
+                  className="w-14 h-14 mx-auto mt-3 mb-3"
+                  alt={`${match.competition} Logo`}
+                />
+                <p className="text-xl font-bold text-blue-300">
+                  {match.competition}
+                </p>
+
+                <p className="text-md font-semibold text-gray-200 mt-4">
+                  {match.venue}
+                </p>
+
+                <button className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-full mt-4">
+                  Enjoy The Game
+                </button>
+              </div>
+
+              {/* Scorers Section */}
             </div>
           </div>
         ))}

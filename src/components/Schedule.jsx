@@ -8,6 +8,8 @@ import PremierLeagueLogo from "../assets/images/prem.webp";
 import ChampionsLeagueLogo from "../assets/images/champions.png";
 import ParisSaintGerman from "../assets/images/psg.png";
 import Juventus from "../assets/images/juv.jpg";
+import { FaCalendarAlt } from "react-icons/fa";
+import ManCityLogo from "../assets/images/logo.svg"; // Assuming Manchester City logo
 
 const matches = [
   {
@@ -107,51 +109,70 @@ const formatDateTime = (date, time) => {
 
 const Schedule = () => {
   return (
-    <section id="schedule" className="bg-gray-900 py-16">
-      <div className="container mx-auto px-4">
+    <section id="schedule" className="bg-gray-900 py-15 ">
+      <div className="container mx-auto px-2">
         <h2 className="text-white text-3xl font-extrabold text-center mb-6 uppercase tracking-wider">
           Upcoming Matches
         </h2>
         <h2 className="text-white text-xl font-medium text-center mb-12 uppercase tracking-wide">
           All times are in NPT
         </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-10 p-8 bg-darkblue min-h-screen">
           {matches.map((match, index) => (
             <div
               key={index}
               className="bg-gray-800 text-white rounded-lg shadow-lg overflow-hidden transition-transform transform hover:scale-105 hover:shadow-2xl"
             >
-              <div className="p-4 text-center">
-                <img
-                  src={match.opponentLogo}
-                  alt={`${match.opponent} Logo`}
-                  className="w-24 h-24 mb-4 mx-auto rounded-full border-4 border-white"
-                />
-                <h3 className="text-xl font-bold mb-2 text-blue-300">
-                  {match.opponent}
-                </h3>
-                <p className="text-blue-200 text-base mb-1 font-bold">
-                  <strong>Date & Time:</strong>
-                </p>
-                <p className="text-blue-200 text-base mb-2 font-semibold">
-                  {formatDateTime(match.date, match.time)}
-                </p>
-                <p className="text-blue-200 text-base mb-1 font-bold">
-                  <strong>Venue:</strong>
-                </p>
-                <p className="text-blue-200 text-base mb-4 font-semibold">
-                  {match.venue}
-                </p>
-                <div className="flex items-center justify-center mb-4">
+              <div className="relative">
+                <div className="w-full h-40 bg-gradient-to-r from-[#31607f] to-[#002f6c] flex items-center justify-center text-center text-white">
+                  {/* Manchester City as Home Team */}
+                  <div className="absolute left-4 flex flex-col items-center">
+                    <img
+                      src={ManCityLogo} // Manchester City Logo
+                      alt="Manchester City"
+                      className="w-24 h-24 rounded-full border-2 border-white"
+                    />
+                    <p className="mt-2 text-lg font-semibold">Man City</p>
+                  </div>
+
+                  {/* VS Text */}
+                  <p className="text-3xl font-bold mx-8">VS</p>
+
+                  {/* Away Team (Opponent) */}
+                  <div className="absolute right-4 flex flex-col items-center">
+                    <img
+                      src={match.opponentLogo}
+                      alt={match.opponent}
+                      className="w-24 h-24 rounded-full border-2 border-white"
+                    />
+                    <p className="mt-2 text-lg font-semibold">
+                      {match.opponent}
+                    </p>
+                  </div>
+                </div>
+
+                <div className="p-4 text-center">
+                  <FaCalendarAlt className="text-blue-500 text-2xl mb-2 mx-auto" />
+                  <p className="text-xl font-semibold text-blue-200">
+                    {formatDateTime(match.date, match.time)}
+                  </p>
                   <img
                     src={match.competitionLogo}
+                    className="w-14 h-14 mx-auto mt-3 mb-3"
                     alt={`${match.competition} Logo`}
-                    className="w-16 h-16 mr-2 mb-2 mt-2"
                   />
+                  <p className="text-xl font-bold text-blue-300">
+                    {match.competition}
+                  </p>
+
+                  <p className="text-md font-semibold text-gray-200 mt-4">
+                    {match.venue}
+                  </p>
+
+                  <button className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-full mt-4">
+                    Enjoy The Game
+                  </button>
                 </div>
-                <button className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-full">
-                  Enjoy The Game
-                </button>
               </div>
             </div>
           ))}
