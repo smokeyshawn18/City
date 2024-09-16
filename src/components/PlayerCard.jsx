@@ -26,11 +26,11 @@ const PlayerCard = ({ player }) => {
   return (
     <>
       <div className="relative bg-white shadow-lg rounded-lg overflow-hidden transform transition-transform hover:scale-105 hover:shadow-3xl duration-300 ease-in-out">
-        <div className="relative w-24 h-24 mx-auto mt-4 overflow-hidden rounded-full bg-[#6accf5] shadow-md">
+        <div className="relative w-24 h-24 mx-auto mt-4 rounded-full overflow-hidden bg-[#6accf5] shadow-lg clip-star">
           <img
             src={player.image}
             alt={player.name}
-            className="w-full h-full object-contain object-center"
+            className="absolute inset-0 w-full h-full object-cover  origin-center"
           />
         </div>
 
