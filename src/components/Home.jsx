@@ -11,7 +11,7 @@ import Norway from "../assets/images/norway.webp";
 import Belgium from "../assets/images/belgium.png";
 import Portugal from "../assets/images/portugal.webp";
 import { FaMapMarkerAlt, FaClock, FaTicketAlt } from "react-icons/fa";
-import Brent from "../assets/images/brentford.png";
+import Inter from "../assets/images/inter.webp";
 
 import {
   FaHandsHelping,
@@ -122,21 +122,14 @@ const Home = () => {
   const matchDay = useMemo(
     () => [
       {
-        date: "2024-09-14",
-        opponent: "Brentford",
-        time: "19:45",
+        date: "2024-09-18",
+        opponent: "Inter Milan",
+        time: "23:59",
         venue: "Etihad Stadium",
-        opponentLogo: Brent,
-        competition: premierLeagueLogo,
+        opponentLogo: Inter,
+        kick: "KickOff in:",
+        competition: championsLeagueLogo,
       },
-      //   {
-      //     date: "2024-09-19",
-      //     opponent: "Inter Milan",
-      //     time: "12:45",
-      //     venue: "Etihad Stadium",
-      //     opponentLogo: Inter,
-      //     competition: championsLeagueLogo,
-      //   },
     ],
     []
   );
@@ -202,7 +195,7 @@ const Home = () => {
         {todayMatches.length > 0 && (
           <div className="bg-gray-100 py-8 px-4 sm:px-6 lg:px-8">
             <h2 className="text-3xl sm:text-4xl font-bold text-center text-[#1b3c42] mb-8">
-              Match Day
+              Match Day (All time are in Nepal Time.)
             </h2>
 
             <div className="flex flex-col items-center gap-8">
@@ -238,7 +231,9 @@ const Home = () => {
                     </div>
 
                     {/* Square Timer */}
+
                     <div className="flex items-center justify-center mt-4 md:mt-0">
+                      <p className="font-bold text-2xl m-5">{match.kick}</p>
                       <div className="bg-gray-200 p-4 rounded-lg shadow-md">
                         <div className="grid grid-cols-3 gap-2">
                           <div className="bg-white p-3 rounded-md text-center">
@@ -276,7 +271,7 @@ const Home = () => {
                       <span>Buy Tickets</span>
                     </a>
 
-                    <div className="mt-4 flex items-center">
+                    <div className="mt-6 flex items-center">
                       <p className="text-sm font-bold text-[#1b3c42] mr-2">
                         Competition:
                       </p>

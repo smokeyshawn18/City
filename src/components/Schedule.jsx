@@ -3,7 +3,7 @@ import Tottenham from "../assets/images/tottenham.webp";
 import Liverpool from "../assets/images/lfc.webp";
 import ManUnited from "../assets/images/united.png";
 import AstonVilla from "../assets/images/aston-villa.png";
-import InterMilan from "../assets/images/inter.png";
+import InterMilan from "../assets/images/inter.webp";
 import PremierLeagueLogo from "../assets/images/prem.webp";
 import ChampionsLeagueLogo from "../assets/images/champions.png";
 import ParisSaintGerman from "../assets/images/psg.png";
