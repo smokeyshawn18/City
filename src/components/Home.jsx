@@ -24,6 +24,7 @@ import { GoGoal } from "react-icons/go";
 
 import { useState, useMemo, useEffect, useCallback } from "react";
 import Kit from "./Kit";
+import CoachProfile from "./Coach";
 
 const players = [
   {
@@ -303,6 +304,7 @@ const Home = () => {
             </p>
           </div>
         </div>
+        <CoachProfile />
         <div className="bg-white p-6 rounded-3xl shadow-lg mb-8">
           <h2 className="text-3xl font-extrabold text-[#1b3c42] mb-10 text-center uppercase">
             UCL Opponents - 2024/25
