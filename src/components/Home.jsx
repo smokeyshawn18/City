@@ -232,9 +232,8 @@ const Home = () => {
                     </div>
 
                     {/* Square Timer */}
-
-                    <div className="flex items-center justify-center mt-4 md:mt-0">
-                      <p className="font-bold text-2xl m-5">{match.kick}</p>
+                    <p className="font-bold text-xl mt-2 p-2">{match.kick}</p>
+                    <div className="flex items-center justify-center md:mt-0">
                       <div className="bg-gray-200 p-4 rounded-lg shadow-md">
                         <div className="grid grid-cols-3 gap-2">
                           <div className="bg-white p-3 rounded-md text-center">
@@ -272,14 +271,11 @@ const Home = () => {
                       <span>Buy Tickets</span>
                     </a>
 
-                    <div className="mt-6 flex items-center">
-                      <p className="text-sm font-bold text-[#1b3c42] mr-2">
-                        Competition:
-                      </p>
+                    <div className="mt-6 flex items-center mx-auto">
                       <img
                         src={match.competition}
                         alt="Competition Logo"
-                        className="w-14 h-14"
+                        className="w-16 h-16"
                       />
                     </div>
                   </div>
