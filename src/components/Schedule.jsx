@@ -8,7 +8,7 @@ import PremierLeagueLogo from "../assets/images/prem.webp";
 import ChampionsLeagueLogo from "../assets/images/champions.png";
 import ParisSaintGerman from "../assets/images/psg.png";
 import Juventus from "../assets/images/juv.jpg";
-import { FaCalendarAlt } from "react-icons/fa";
+
 import ManCityLogo from "../assets/images/logo.svg";
 import NewCastle from "../assets/images/newcastle.png"; // Assuming Manchester City logo
 
@@ -24,7 +24,7 @@ const matches = [
   },
   {
     date: "2024-09-28",
-    opponent: "NewCastle United",
+    opponent: "NewCastle",
     time: "17:15",
     venue: "St James' Park",
     competition: "Premier League",
@@ -118,76 +118,69 @@ const Schedule = () => {
   });
 
   return (
-    <section id="schedule" className="bg-gray-900 py-15">
-      <div className="container mx-auto px-2">
-        <h2 className="text-white text-3xl font-extrabold text-center mb-2 mt-8 uppercase tracking-wider">
+    <section id="schedule" className="bg-white py-12">
+      <div className="container mx-auto px-4">
+        <h2 className="text-[#0047AB] text-3xl font-bold text-center mb-6 uppercase">
           Upcoming Matches
         </h2>
-        <h2 className="text-white text-xl font-medium text-center mb-2 uppercase tracking-wide">
+        <h3 className="text-gray-500 text-lg text-center mb-6">
           All times are in NPT
-        </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-10 p-8 bg-darkblue min-h-screen">
+        </h3>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {upcomingMatches.length > 0 ? (
             upcomingMatches.map((match, index) => (
               <div
                 key={index}
-                className="bg-gray-800 text-white rounded-lg shadow-lg overflow-hidden transition-transform transform hover:scale-105 hover:shadow-2xl"
+                className="bg-[#E6F1FA] rounded-lg shadow-md hover:shadow-lg transition-all"
               >
-                <div className="relative">
-                  <div className="w-full h-40 bg-gradient-to-r from-[#31607f] to-[#002f6c] flex items-center justify-center text-center text-white">
-                    {/* Manchester City as Home Team */}
-                    <div className="absolute left-4 flex flex-col items-center">
-                      <img
-                        src={ManCityLogo} // Manchester City Logo
-                        alt="Manchester City"
-                        className="w-24 h-24 rounded-full border-2 border-white"
-                      />
-                      <p className="mt-2 text-lg font-semibold">Man City</p>
-                    </div>
-
-                    {/* VS Text */}
-                    <p className="text-3xl font-bold mx-8">VS</p>
-
-                    {/* Away Team (Opponent) */}
-                    <div className="absolute right-4 flex flex-col items-center">
-                      <img
-                        src={match.opponentLogo}
-                        alt={match.opponent}
-                        className="w-24 h-24 rounded-full border-2 border-white"
-                      />
-                      <p className="mt-2 text-lg font-semibold">
-                        {match.opponent}
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="p-4 text-center">
-                    <FaCalendarAlt className="text-blue-500 text-2xl mb-2 mx-auto" />
-                    <p className="text-xl font-semibold text-blue-200">
-                      {formatDateTime(match.date, match.time)}
-                    </p>
+                <div className="flex items-center justify-between p-4 bg-[#B0D1E6] rounded-t-lg">
+                  <div className="flex flex-col items-center">
                     <img
-                      src={match.competitionLogo}
-                      className="w-14 h-14 mx-auto mt-3 mb-3"
-                      alt={`${match.competition} Logo`}
+                      src={ManCityLogo}
+                      alt="Manchester City"
+                      className="w-20 h-20 rounded-full border-2 border-white"
                     />
-                    <p className="text-xl font-bold text-blue-300">
-                      {match.competition}
+                    <p className="mt-2 text-lg font-semibold text-[#0047AB]">
+                      Man City
                     </p>
-
-                    <p className="text-md font-semibold text-gray-200 mt-4">
-                      {match.venue}
-                    </p>
-
-                    <button className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-full mt-4">
-                      Enjoy The Game
-                    </button>
                   </div>
+
+                  <p className="text-2xl font-bold text-gray-700">VS</p>
+
+                  <div className="flex flex-col items-center">
+                    <img
+                      src={match.opponentLogo}
+                      alt={match.opponent}
+                      className="w-20 h-20 rounded-full border-2 border-white"
+                    />
+                    <p className="mt-2 text-lg font-semibold text-[#0047AB]">
+                      {match.opponent}
+                    </p>
+                  </div>
+                </div>
+
+                <div className="p-6 text-center">
+                  <p className="text-lg font-semibold text-gray-600">
+                    {formatDateTime(match.date, match.time)}
+                  </p>
+                  <img
+                    src={match.competitionLogo}
+                    alt={`${match.competition} Logo`}
+                    className="w-10 h-10 mx-auto my-4"
+                  />
+                  <p className="text-xl font-bold text-[#0047AB]">
+                    {match.competition}
+                  </p>
+                  <p className="text-gray-500">{match.venue}</p>
+
+                  <button className="bg-[#0047AB] text-white font-semibold py-2 px-6 rounded-full mt-4 hover:bg-[#003578] transition-colors">
+                    Enjoy The Game
+                  </button>
                 </div>
               </div>
             ))
           ) : (
-            <p className="text-white text-center">No upcoming matches.</p>
+            <p className="text-gray-500 text-center">No upcoming matches.</p>
           )}
         </div>
       </div>

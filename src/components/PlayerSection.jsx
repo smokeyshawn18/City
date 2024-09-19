@@ -284,8 +284,8 @@ const players = [
 
 const PlayerSection = () => {
   return (
-    <div className="p-8 bg-gray-900">
-      <h1 className="text-4xl font-extrabold text-white mb-10 text-center uppercase tracking-wider ">
+    <div className="p-8 bg-sky-200">
+      <h1 className="text-4xl font-extrabold text-sky-700 mb-10 text-center uppercase tracking-wider ">
         Manchester City Player Stats
       </h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

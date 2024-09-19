@@ -1,6 +1,11 @@
 import logo from "../assets/images/logo.jpg";
+import { NavLink } from "react-router-dom";
 
 function Footer() {
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
     <footer className="relative bg-gradient-to-r from-[#1F5673] to-[#6CABDD] text-white font-semibold p-10 md:p-16 overflow-hidden">
       {/* Decorative Overlays */}
@@ -42,7 +47,7 @@ function Footer() {
       <div className="relative z-10 container mx-auto flex flex-col md:flex-row items-center justify-between space-y-8 md:space-y-0">
         {/* Logo and Text */}
         <aside className="text-center md:text-left flex flex-col items-center md:items-start space-y-4">
-          <div className="relative">
+          <NavLink to="/" onClick={scrollToTop} className="relative">
             <img
               src={logo}
               alt="Logo"
@@ -50,7 +55,7 @@ function Footer() {
             />
             <div className="absolute inset-0 rounded-full border-4 border-white opacity-50 animate-pulse"></div>
             <div className="absolute inset-0 rounded-full bg-gradient-to-br from-blue-400 to-blue-600 opacity-20 animate-spin-slow"></div>
-          </div>
+          </NavLink>
           <div className="bg-white/30 p-4 rounded-xl shadow-2xl backdrop-blur-xl animate-fade-in-down">
             <p className="text-2xl font-extrabold uppercase text-gray-900">
               CityPulse
@@ -61,20 +66,43 @@ function Footer() {
           </div>
         </aside>
 
+        {/* Navigation Links */}
+        <nav className="text-center md:text-left md:mr-4">
+          <p className="mb-4 text-2xl font-bold uppercase">Quick Links</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {[
+              { path: "/", label: "Home" },
+              { path: "/Schedule", label: "Schedule" },
+              { path: "/Results", label: "Results" },
+              { path: "/Trophy-Cabinet", label: "Trophy Cabinet" },
+              { path: "/Player-Card", label: "Player Card" },
+              { path: "/History", label: "History" },
+            ].map(({ path, label }, index) => (
+              <NavLink
+                key={index}
+                to={path}
+                onClick={scrollToTop}
+                className="block bg-white/30 hover:bg-white/40 transition duration-300 text-gray-900 text-center py-2 rounded-lg shadow-lg"
+              >
+                {label}
+              </NavLink>
+            ))}
+          </div>
+        </nav>
+
         {/* Social Media Icons */}
-        <nav className="text-center md:text-right">
-          <p className="mb-4 text-2xl  font-bold uppercase">Connect with Us</p>
+        <nav className="text-center md:text-right md:ml-4">
+          <p className="mb-4 text-2xl font-bold uppercase">Connect with Us</p>
           <div className="flex justify-center md:justify-end space-x-6">
             {[
               {
                 href: "#",
                 label: "X",
-                colorFrom: "from-gray-800", // Darker color scheme to match X.com's branding
+                colorFrom: "from-gray-800",
                 colorTo: "to-gray-900",
                 svgPath:
                   "M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z",
               },
-
               {
                 href: "#",
                 label: "YouTube",

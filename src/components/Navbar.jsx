@@ -14,7 +14,14 @@ const Navbar = () => {
     <nav className="bg-[#6caddf] p-4 sticky top-0 z-50">
       <div className="container mx-auto flex justify-between items-center">
         <div className="flex items-center">
-          <img src={logo} alt="Logo" className="h-10 w-10 mr-2 rounded-full" />
+          <a href="/">
+            {" "}
+            <img
+              src={logo}
+              alt="Logo"
+              className="h-14 w-14 mx-2 rounded-full"
+            />
+          </a>
           <span className="text-white font-bold text-xl uppercase tracking-wider">
             CityPulse
           </span>

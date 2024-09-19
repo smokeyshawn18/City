@@ -1,4 +1,4 @@
-import { FaFutbol, FaCalendarAlt } from "react-icons/fa";
+import { FaCalendarAlt } from "react-icons/fa";
 import ManCityLogo from "../assets/images/logo.svg";
 import ChelseaLogo from "../assets/images/Chelsea.webp";
 import LiverpoolLogo from "../assets/images/lfc.webp";
@@ -42,7 +42,6 @@ const calculateScore = (scorers) => {
   if (!scorers || !Array.isArray(scorers)) {
     return 0;
   }
-
   return scorers.reduce((total, scorer) => {
     const goals = scorer.split(",").length;
     return total + goals;
@@ -54,10 +53,7 @@ const matches = [
     id: 1,
     homeTeam: "Man City",
     awayTeam: "Inter Milan",
-    scorers: {
-      home: [],
-      away: [],
-    },
+    scorers: { home: [], away: [] },
     timestamp: "2024-09-19T12:45:00",
     time: "FT",
     competition: "Champions League",
@@ -70,10 +66,7 @@ const matches = [
     id: 2,
     homeTeam: "Man City",
     awayTeam: "Brentford",
-    scorers: {
-      home: ["Haaland 19', 32'"],
-      away: ["Yoane Wissa 1'"],
-    },
+    scorers: { home: ["Haaland 19', 32'"], away: ["Yoane Wissa 1'"] },
     timestamp: "2024-09-14T19:45:00",
     time: "FT",
     competition: "Premier League",
@@ -86,10 +79,7 @@ const matches = [
     id: 3,
     homeTeam: "Man City",
     awayTeam: "West Ham",
-    scorers: {
-      home: ["Haaland 10', 30', 83'"],
-      away: ["R. Dias(OG) 19'"],
-    },
+    scorers: { home: ["Haaland 10', 30', 83'"], away: ["R. Dias(OG) 19'"] },
     timestamp: "2024-08-31T22:15:00",
     time: "FT",
     competition: "Premier League",
@@ -102,10 +92,7 @@ const matches = [
     id: 4,
     homeTeam: "Man City",
     awayTeam: "Chelsea",
-    scorers: {
-      home: ["Haaland 18'", "Kovacic 84'"],
-      away: [],
-    },
+    scorers: { home: ["Haaland 18'", "Kovacic 84'"], away: [] },
     timestamp: "2024-08-18T21:15:00",
     time: "FT",
     competition: "Premier League",
@@ -133,52 +120,45 @@ const formatDateTime = (dateTimeString) => {
 
 const Results = () => {
   return (
-    <div className="min-h-screen bg-darkblue p-8">
-      <h1 className="text-4xl font-bold text-white text-center mb-8">
+    <div className="min-h-screen bg-sky-100 p-8">
+      <h1 className="text-4xl font-bold text-center mb-8 text-sky-900">
         Main Matches Results 24/25 Season
       </h1>
-
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-10">
         {matches.map((match) => {
-          // Calculate home and away team scores dynamically
           const homeScore = calculateScore(match.scorers.home);
           const awayScore = calculateScore(match.scorers.away);
 
           return (
             <div
               key={match.id}
-              className="bg-gray-800 text-white rounded-lg shadow-lg overflow-hidden transition-transform transform hover:scale-105 hover:shadow-2xl"
+              className="bg-white text-sky-900 rounded-lg shadow-lg transition-transform transform hover:scale-105 hover:shadow-2xl p-4"
             >
               <div className="relative">
-                <div className="w-full h-40 bg-gradient-to-r from-[#31607f] to-[#002f6c] flex items-center justify-center text-center text-white">
-                  {/* Home Team Section */}
-                  <div className="absolute left-4 flex flex-col items-center">
+                <div className="w-full h-40 bg-gradient-to-r from-sky-300 to-sky-500 flex items-center justify-between p-4">
+                  <div className="flex flex-col items-center">
                     <img
                       src={teamLogos[match.homeTeam]}
                       alt={`${match.homeTeam} Logo`}
-                      className="w-24 h-24 rounded-full border-2 border-white"
+                      className="w-20 h-20 rounded-full border-2 border-white"
                     />
                     <p className="mt-2 text-lg font-semibold">
                       {match.homeTeam}
                     </p>
                   </div>
-
-                  {/* Score Display */}
                   <div className="text-center">
                     <p className="text-3xl font-bold">
                       {homeScore} - {awayScore}
                     </p>
-                    <p className="text-xl font-bold mt-3 text-zinc-100">
+                    <p className="text-xl font-bold mt-3 text-gray-100">
                       {match.time}
                     </p>
                   </div>
-
-                  {/* Away Team Section */}
-                  <div className="absolute right-4 flex flex-col items-center">
+                  <div className="flex flex-col items-center">
                     <img
                       src={teamLogos[match.awayTeam]}
                       alt={`${match.awayTeam} Logo`}
-                      className="w-24 h-24 rounded-full border-2 border-white"
+                      className="w-20 h-20 rounded-full border-2 border-white"
                     />
                     <p className="mt-2 text-lg font-semibold">
                       {match.awayTeam}
@@ -186,22 +166,29 @@ const Results = () => {
                   </div>
                 </div>
 
-                {/* Scorers Section */}
-                <div className="p-4 bg-gray-900">
-                  <div className="flex flex-col md:flex-row md:space-x-8 items-center justify-between">
+                <div className="p-4 bg-sky-50 rounded-md mt-4">
+                  <div className="flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0 md:space-x-10">
                     {/* Home Scorers */}
-                    <div className="flex-1 mb-4 md:mb-0 p-2">
+                    <div className="flex-1">
                       <h4
-                        className="text-lg font-extrabold mb-2 flex items-center"
+                        className="text-lg font-bold mb-2"
                         style={{ color: teamColors[match.homeTeam] }}
                       >
-                        <FaFutbol className="mr-2 text-green-400" />
-                        {match.homeTeam}
+                        <img
+                          src={teamLogos[match.homeTeam]}
+                          className="w-10 h-10 mx-auto"
+                          alt={`${match.homeTeam} Logo`}
+                        />
                       </h4>
                       {match.scorers.home.length > 0 ? (
-                        <ul className="list-disc list-inside text-gray-300 font-bold">
+                        <ul className="list-disc pl-5 space-y-2">
                           {match.scorers.home.map((scorer, index) => (
-                            <li key={index}>{scorer}</li>
+                            <li
+                              key={index}
+                              className="font-semibold text-gray-800"
+                            >
+                              {scorer}
+                            </li>
                           ))}
                         </ul>
                       ) : (
@@ -209,34 +196,44 @@ const Results = () => {
                       )}
                     </div>
 
-                    {/* Man of the Match Section */}
-
-                    <div className="flex flex-col items-center justify-center p-4 bg-sky-900 rounded-lg shadow-md md:w-30 my-4 md:my-0">
-                      <p className=" text-white text-base font-medium mb-3">
-                        Man of the Match
+                    {/* Player of the Match */}
+                    <div className="flex flex-col items-center bg-sky-200 p-4 rounded-lg shadow-md">
+                      <p className="text-base font-medium text-sky-700 mb-3">
+                        Player of the Match
                       </p>
-                      <div className="w-16 h-16 flex items-center justify-center  rounded-full overflow-hidden">
+                      <div className="w-20 h-20 rounded-full overflow-hidden">
                         <img
                           src={match.manOfTheMatch}
+                          alt="Player of the Match"
                           className="w-full h-full object-cover"
-                          alt="Man of the Match"
                         />
                       </div>
-                      <p className="mt-2 text-sky-100 text-base font-bold">
+                      <p className="mt-2 text-lg font-bold text-sky-700">
                         {match.motm}
                       </p>
                     </div>
 
                     {/* Away Scorers */}
-                    <div className="flex-1 p-2">
-                      <h4 className="text-lg font-extrabold text-gray-300 mb-2 flex items-center">
-                        <FaFutbol className="mr-2 text-green-400" />
-                        {match.awayTeam}
+                    <div className="flex-1">
+                      <h4
+                        className="text-lg font-bold mb-2"
+                        style={{ color: teamColors[match.awayTeam] }}
+                      >
+                        <img
+                          src={teamLogos[match.awayTeam]}
+                          className="w-10 h-10 mx-auto"
+                          alt={`${match.awayTeam} Logo`}
+                        />
                       </h4>
                       {match.scorers.away.length > 0 ? (
-                        <ul className="list-disc list-inside text-gray-300 font-bold">
+                        <ul className="list-disc pl-5 space-y-2">
                           {match.scorers.away.map((scorer, index) => (
-                            <li key={index}>{scorer}</li>
+                            <li
+                              key={index}
+                              className="font-semibold text-gray-800"
+                            >
+                              {scorer}
+                            </li>
                           ))}
                         </ul>
                       ) : (
@@ -246,10 +243,9 @@ const Results = () => {
                   </div>
                 </div>
 
-                {/* Match Details Section */}
                 <div className="p-4 text-center">
-                  <FaCalendarAlt className="text-blue-500 text-2xl mb-2 mx-auto" />
-                  <p className="text-xl font-semibold text-blue-200">
+                  <FaCalendarAlt className="text-sky-500 text-2xl mb-2 mx-auto" />
+                  <p className="text-xl font-semibold text-sky-700">
                     {formatDateTime(match.timestamp)}
                   </p>
                   <img
@@ -257,15 +253,14 @@ const Results = () => {
                     className="w-14 h-14 mx-auto mt-3 mb-3"
                     alt={`${match.competition} Logo`}
                   />
-                  <p className="text-xl font-bold text-blue-300">
+                  <p className="text-xl font-bold text-sky-600">
                     {match.competition}
                   </p>
-                  <MdOutlineStadium className="text-blue-500 text-2xl mb-2 mt-4 mx-auto" />
-                  <p className="text-md font-semibold text-gray-200 mt-4">
+                  <MdOutlineStadium className="text-sky-500 text-2xl mb-2 mt-4 mx-auto" />
+                  <p className="text-md font-semibold text-gray-600 mt-4">
                     {match.venue}
                   </p>
-
-                  <button className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-full mt-4">
+                  <button className="bg-sky-600 hover:bg-sky-700 text-white font-bold py-2 px-4 rounded-full mt-4">
                     Enjoy The Game
                   </button>
                 </div>
