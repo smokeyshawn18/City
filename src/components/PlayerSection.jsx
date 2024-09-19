@@ -38,7 +38,7 @@ const players = [
     seasonStats: {
       goals: 10,
       assists: 0,
-      appearances: 8,
+      appearances: 9,
     },
   },
   {
@@ -56,7 +56,7 @@ const players = [
     seasonStats: {
       goals: 3,
       assists: 1,
-      appearances: 7,
+      appearances: 8,
     },
   },
   {
@@ -75,7 +75,7 @@ const players = [
     seasonStats: {
       goals: 0,
       assists: 0,
-      appearances: 3,
+      appearances: 4,
     },
   },
   {
@@ -93,7 +93,7 @@ const players = [
     seasonStats: {
       goals: 1,
       assists: 2,
-      appearances: 7,
+      appearances: 8,
     },
   },
 
@@ -112,7 +112,7 @@ const players = [
     seasonStats: {
       goals: 0,
       assists: 0,
-      appearances: 1,
+      appearances: 2,
     },
   },
   {
@@ -130,7 +130,7 @@ const players = [
     seasonStats: {
       goals: 1,
       assists: 0,
-      appearances: 4,
+      appearances: 5,
     },
   },
   {
@@ -148,7 +148,7 @@ const players = [
     seasonStats: {
       goals: 0,
       assists: 0,
-      appearances: 2,
+      appearances: 3,
     },
   },
   {
@@ -184,7 +184,7 @@ const players = [
     seasonStats: {
       goals: 0,
       assists: 1,
-      appearances: 6,
+      appearances: 7,
     },
   },
 
@@ -203,7 +203,7 @@ const players = [
     seasonStats: {
       goals: 0,
       assists: 1,
-      appearances: 4,
+      appearances: 5,
     },
   },
   {
@@ -221,7 +221,7 @@ const players = [
     seasonStats: {
       goals: 0,
       assists: 0,
-      appearances: 7,
+      appearances: 8,
     },
   },
   {
@@ -258,7 +258,7 @@ const players = [
     seasonStats: {
       goals: 0,
       assists: 1,
-      appearances: 6,
+      appearances: 7,
     },
   },
   {
@@ -276,7 +276,7 @@ const players = [
     seasonStats: {
       goals: 0,
       assists: 0,
-      appearances: 7,
+      appearances: 8,
     },
   },
   // Add more players here

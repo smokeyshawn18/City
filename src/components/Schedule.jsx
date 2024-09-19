@@ -3,7 +3,7 @@ import Tottenham from "../assets/images/tottenham.webp";
 import Liverpool from "../assets/images/lfc.webp";
 import ManUnited from "../assets/images/united.png";
 import AstonVilla from "../assets/images/aston-villa.png";
-import InterMilan from "../assets/images/inter.webp";
+
 import PremierLeagueLogo from "../assets/images/prem.webp";
 import ChampionsLeagueLogo from "../assets/images/champions.png";
 import ParisSaintGerman from "../assets/images/psg.png";
@@ -12,15 +12,6 @@ import { FaCalendarAlt } from "react-icons/fa";
 import ManCityLogo from "../assets/images/logo.svg"; // Assuming Manchester City logo
 
 const matches = [
-  {
-    date: "2024-09-19",
-    opponent: "Inter Milan",
-    time: "12:45",
-    venue: "Etihad Stadium",
-    competition: "Champions League",
-    opponentLogo: InterMilan,
-    competitionLogo: ChampionsLeagueLogo,
-  },
   {
     date: "2024-09-22",
     opponent: "Arsenal",

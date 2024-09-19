@@ -10,6 +10,9 @@ import PremierLeagueLogo from "../assets/images/prem.webp";
 import { MdOutlineStadium } from "react-icons/md";
 import InterMilan from "../assets/images/inter.webp";
 import Brent from "../assets/images/brentford.png";
+import ChampionsLeague from "../assets/images/champions.png";
+import Barella from "../assets/images/barella.webp";
+import Haaland from "../assets/images/haaland.jpg";
 
 const teamColors = {
   "Man City": "#6caddf",
@@ -50,18 +53,37 @@ const matches = [
   {
     id: 1,
     homeTeam: "Man City",
+    awayTeam: "Inter Milan",
+    scorers: {
+      home: [],
+      away: [],
+    },
+    timestamp: "2024-09-19T12:45:00",
+    time: "FT",
+    competition: "Champions League",
+    venue: "Etihad Stadium",
+    competitionLogo: ChampionsLeague,
+    manOfTheMatch: Barella,
+    motm: "Nicolo Barella",
+  },
+  {
+    id: 2,
+    homeTeam: "Man City",
     awayTeam: "Brentford",
     scorers: {
       home: ["Haaland 19', 32'"],
       away: ["Yoane Wissa 1'"],
     },
     timestamp: "2024-09-14T19:45:00",
+    time: "FT",
     competition: "Premier League",
     venue: "Etihad Stadium",
     competitionLogo: PremierLeagueLogo,
+    manOfTheMatch: Haaland,
+    motm: "Erling Haaland",
   },
   {
-    id: 2,
+    id: 3,
     homeTeam: "Man City",
     awayTeam: "West Ham",
     scorers: {
@@ -69,12 +91,15 @@ const matches = [
       away: ["R. Dias(OG) 19'"],
     },
     timestamp: "2024-08-31T22:15:00",
+    time: "FT",
     competition: "Premier League",
     venue: "Etihad Stadium",
     competitionLogo: PremierLeagueLogo,
+    manOfTheMatch: Haaland,
+    motm: "Erling Haaland",
   },
   {
-    id: 3,
+    id: 4,
     homeTeam: "Man City",
     awayTeam: "Chelsea",
     scorers: {
@@ -82,9 +107,12 @@ const matches = [
       away: [],
     },
     timestamp: "2024-08-18T21:15:00",
+    time: "FT",
     competition: "Premier League",
     venue: "Stamford Bridge",
     competitionLogo: PremierLeagueLogo,
+    manOfTheMatch: Haaland,
+    motm: "Erling Haaland",
   },
 ];
 
@@ -136,9 +164,14 @@ const Results = () => {
                   </div>
 
                   {/* Score Display */}
-                  <p className="text-3xl font-bold mx-8">
-                    {homeScore} - {awayScore}
-                  </p>
+                  <div className="text-center">
+                    <p className="text-3xl font-bold">
+                      {homeScore} - {awayScore}
+                    </p>
+                    <p className="text-xl font-bold mt-3 text-zinc-100">
+                      {match.time}
+                    </p>
+                  </div>
 
                   {/* Away Team Section */}
                   <div className="absolute right-4 flex flex-col items-center">
@@ -155,7 +188,7 @@ const Results = () => {
 
                 {/* Scorers Section */}
                 <div className="p-4 bg-gray-900">
-                  <div className="flex flex-col md:flex-row md:space-x-8">
+                  <div className="flex flex-col md:flex-row md:space-x-8 items-center justify-between">
                     {/* Home Scorers */}
                     <div className="flex-1 mb-4 md:mb-0 p-2">
                       <h4
@@ -176,8 +209,26 @@ const Results = () => {
                       )}
                     </div>
 
+                    {/* Man of the Match Section */}
+
+                    <div className="flex flex-col items-center justify-center p-4 bg-sky-900 rounded-lg shadow-md md:w-30 my-4 md:my-0">
+                      <p className=" text-white text-base font-medium mb-3">
+                        Man of the Match
+                      </p>
+                      <div className="w-16 h-16 flex items-center justify-center  rounded-full overflow-hidden">
+                        <img
+                          src={match.manOfTheMatch}
+                          className="w-full h-full object-cover"
+                          alt="Man of the Match"
+                        />
+                      </div>
+                      <p className="mt-2 text-sky-100 text-base font-bold">
+                        {match.motm}
+                      </p>
+                    </div>
+
                     {/* Away Scorers */}
-                    <div className="p-2">
+                    <div className="flex-1 p-2">
                       <h4 className="text-lg font-extrabold text-gray-300 mb-2 flex items-center">
                         <FaFutbol className="mr-2 text-green-400" />
                         {match.awayTeam}

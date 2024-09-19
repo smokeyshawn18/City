@@ -32,7 +32,7 @@ const players = [
 
     matches: {
       premierLeague: 4,
-      championsLeague: 0,
+      championsLeague: 1,
       other: 1,
       Carabao: 0,
       nationalStats: 2,
@@ -62,7 +62,7 @@ const players = [
 
     matches: {
       premierLeague: 4,
-      championsLeague: 0,
+      championsLeague: 1,
       other: 1,
       Carabao: 0,
       nationalStats: 2,
@@ -92,7 +92,7 @@ const players = [
 
     matches: {
       premierLeague: 4,
-      championsLeague: 0,
+      championsLeague: 1,
       other: 1,
       Carabao: 0,
       nationalStats: 2,
