@@ -27,7 +27,7 @@ const Navbar = () => {
         </div>
 
         {/* Desktop Menu */}
-        <div className="hidden lg:flex space-x-4 md:space-x-6">
+        <div className="hidden lg:flex space-x-4 md:space-x-8">
           {[
             { path: "/", label: "Home" },
             { path: "/Schedule", label: "Schedule" },
@@ -42,7 +42,7 @@ const Navbar = () => {
               onClick={handleNavLinkClick}
               className={({ isActive }) =>
                 isActive
-                  ? "text-white bg-sky-900 rounded-md font-bold px-3 py-2 transition-colors duration-300 ease-in-out shadow-md"
+                  ? "text-white bg-sky-900 rounded-md font-bold px-4 py-2 transition-colors duration-300 ease-in-out shadow-md"
                   : "text-white hover:bg-sky-900 hover:text-sky-300 rounded-md font-bold px-3 py-2 transition-colors duration-300 ease-in-out shadow-md"
               }
             >

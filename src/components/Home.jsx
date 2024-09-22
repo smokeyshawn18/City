@@ -9,17 +9,17 @@ import { useState, useMemo, useEffect, useCallback } from "react";
 import Kit from "./Kit";
 import CoachProfile from "./Coach";
 import KeyPerformers from "./KeyPerformers";
-import Arsenal from "../assets/images/arsenal.png";
+import New from "../assets/images/newcastle.png";
 
 const Home = () => {
   const matchDay = useMemo(
     () => [
       {
-        date: "2024-09-22",
-        opponent: "Arsenal",
-        time: "21:15", // Match time in user's local time format
-        venue: "Etihad Stadium",
-        opponentLogo: Arsenal,
+        date: "2024-09-28",
+        opponent: "NewCastle",
+        time: "17:15", // Match time in user's local time format
+        venue: "St James' Park",
+        opponentLogo: New,
         kick: "Starts in:",
         competition: premierLeagueLogo,
       },

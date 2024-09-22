@@ -68,7 +68,7 @@ const matches = [
   },
   {
     date: "2024-12-03",
-    opponent: "Manchester United",
+    opponent: "Man United",
     time: "20:00",
     venue: "Old Trafford",
     competition: "Premier League",
@@ -136,7 +136,7 @@ const Schedule = () => {
   return (
     <section id="schedule" className="bg-sky-100 py-12">
       <div className="container mx-auto px-4">
-        <h2 className="text-sky-900 text-3xl font-bold text-center mb-6 uppercase">
+        <h2 className="text-sky-900 text-4xl font-bold text-center mb-6 uppercase tracking-wider">
           Upcoming Matches
         </h2>
         <h3 className="text-gray-500 text-lg text-center mb-6">
@@ -183,17 +183,15 @@ const Schedule = () => {
                   <img
                     src={match.competitionLogo}
                     alt={`${match.competition} Logo`}
-                    className="w-10 h-10 mx-auto my-4"
+                    className="w-12 h-12 rounded-lg mx-auto my-4"
                   />
                   <p className="text-gray-700 font-semibold mb-2">
                     {calculateRelativeTime(
                       new Date(`${match.date}T${match.time}`)
                     )}
                   </p>
-                  <p className="text-xl font-bold text-[#0047AB]">
-                    {match.competition}
-                  </p>
-                  <p className="text-gray-500">{match.venue}</p>
+
+                  <p className="text-gray-700">{match.venue}</p>
 
                   <button className="bg-[#0047AB] text-white font-semibold py-2 px-6 rounded-full mt-4 hover:bg-[#003578] transition-colors">
                     Enjoy The Game

@@ -9,10 +9,10 @@ import Goat from "../assets/images/pep.jpg"; // Example new image
 function History() {
   return (
     <div className="w-full min-h-screen bg-sky-200  py-16 px-5 flex flex-col items-center">
-      <h1 className="uppercase text-sky-700 text-3xl sm:text-5xl font-extrabold tracking-widest mb-12 text-center">
+      <h1 className="uppercase text-sky-900 text-4xl sm:text-4xl font-extrabold tracking-widest mb-8 text-center">
         Manchester City History
       </h1>
-      <h2 className="text-xl sm:text-2xl text-sky-800 font-bold tracking-wide mb-8 text-center">
+      <h2 className="text-xl sm:text-2xl text-sky-800 font-bold tracking-wide mb-4 text-center">
         Number one Club in the World (According to{" "}
         <strong className="text-blue-800 font-extrabold">UEFA Rankings</strong>
         ).

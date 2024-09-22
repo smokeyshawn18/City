@@ -21,6 +21,7 @@ import England from "../assets/images/eng.png";
 import Croatia from "../assets/images/cro.png";
 import Spain from "../assets/images/spain.png";
 import Brazil from "../assets/images/brazil.png";
+import Stones from "../assets/images/stones.jpg";
 // Sample player data
 const players = [
   {
@@ -36,9 +37,9 @@ const players = [
       appearances: 312,
     },
     seasonStats: {
-      goals: 10,
+      goals: 11,
       assists: 0,
-      appearances: 9,
+      appearances: 10,
     },
   },
   {
@@ -75,7 +76,7 @@ const players = [
     seasonStats: {
       goals: 0,
       assists: 0,
-      appearances: 4,
+      appearances: 5,
     },
   },
   {
@@ -93,7 +94,7 @@ const players = [
     seasonStats: {
       goals: 1,
       assists: 2,
-      appearances: 8,
+      appearances: 9,
     },
   },
 
@@ -112,7 +113,7 @@ const players = [
     seasonStats: {
       goals: 0,
       assists: 0,
-      appearances: 2,
+      appearances: 3,
     },
   },
   {
@@ -130,7 +131,7 @@ const players = [
     seasonStats: {
       goals: 1,
       assists: 0,
-      appearances: 5,
+      appearances: 6,
     },
   },
   {
@@ -148,7 +149,7 @@ const players = [
     seasonStats: {
       goals: 0,
       assists: 0,
-      appearances: 3,
+      appearances: 4,
     },
   },
   {
@@ -166,7 +167,7 @@ const players = [
     seasonStats: {
       goals: 1,
       assists: 0,
-      appearances: 7,
+      appearances: 8,
     },
   },
   {
@@ -184,7 +185,7 @@ const players = [
     seasonStats: {
       goals: 0,
       assists: 1,
-      appearances: 7,
+      appearances: 8,
     },
   },
 
@@ -202,8 +203,8 @@ const players = [
     },
     seasonStats: {
       goals: 0,
-      assists: 1,
-      appearances: 5,
+      assists: 2,
+      appearances: 6,
     },
   },
   {
@@ -221,7 +222,7 @@ const players = [
     seasonStats: {
       goals: 0,
       assists: 0,
-      appearances: 8,
+      appearances: 9,
     },
   },
   {
@@ -239,10 +240,27 @@ const players = [
     seasonStats: {
       goals: 0,
       assists: 0,
-      appearances: 2,
+      appearances: 3,
     },
   },
-
+  {
+    name: "John Stones",
+    position: "CB",
+    number: 5,
+    country: England,
+    age: 30,
+    image: Stones,
+    careerStats: {
+      goals: 21,
+      assists: 10,
+      appearances: 461,
+    },
+    seasonStats: {
+      goals: 1,
+      assists: 0,
+      appearances: 3,
+    },
+  },
   {
     name: "Rico Lewis",
     number: 82,
@@ -276,7 +294,7 @@ const players = [
     seasonStats: {
       goals: 0,
       assists: 0,
-      appearances: 8,
+      appearances: 9,
     },
   },
   // Add more players here

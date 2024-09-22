@@ -97,73 +97,57 @@ const TrophyCabinet = () => {
   };
 
   return (
-    <section className="py-16 bg-sky-200">
+    <section className="py-16 bg-gradient-to-b from-sky-100 to-sky-200">
       <div className="container mx-auto">
-        <h2 className="text-4xl text-sky-700 font-extrabold text-center mb-12 uppercase tracking-wider">
+        <h2 className="text-4xl text-sky-900 font-extrabold text-center mb-8 uppercase tracking-wider">
           Trophy Cabinet
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <p className="text-center text-xl font-semibold text-gray-700 mb-8 px-4 md:px-0">
+          A showcase of our champion&apos;s achievements.
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 p-5">
           {trophies.map((trophy, index) => (
             <div
               key={index}
-              className="bg-white shadow-lg rounded-lg overflow-hidden cursor-pointer"
+              className="bg-white shadow-xl rounded-lg overflow-hidden transition-transform duration-300 transform hover:scale-105 relative"
               onClick={() => handleClick(trophy)}
             >
               <img
                 src={trophy.image}
                 alt={trophy.name}
-                className="
-    w-full h-48 
-    object-cover 
-    rounded-lg 
-    transition-transform 
-    duration-500 
-    transform 
-    hover:scale-105 
-    shadow-lg 
-    hover:shadow-2xl 
-    border-4 
-    border-transparent 
-    hover:border-blue-500 
-    hover:opacity-90 
-    bg-gradient-to-b 
-    from-transparent 
-    to-blue-900 
-    hover:from-blue-700 
-    hover:to-blue-500
-  "
+                className="w-full h-56 object-cover rounded-t-lg transition-shadow duration-300 hover:shadow-2xl"
               />
-
               <div className="p-6 text-center">
-                <h3 className="text-2xl font-bold text-[#004C8C] mb-5 mt-1">
+                <h3 className="text-2xl font-bold text-[#004C8C] mb-2">
                   {trophy.name}
                 </h3>
-                <span className="inline-block bg-[#3c9dec] text-white px-7 py-2 rounded-xl font-bold text-lg">
+                <span className="inline-block bg-[#3c9dec] text-white px-4 py-1 rounded-lg font-bold text-lg">
                   {trophy.wins} {trophy.wins > 1 ? "Wins" : "Win"}
                 </span>
               </div>
+              <div className="absolute inset-0 bg-blue-100 opacity-0 hover:opacity-40 transition-opacity duration-300"></div>
             </div>
           ))}
         </div>
 
         {/* Modal */}
         {selectedTrophy && (
-          <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50">
+          <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-70">
             <div className="bg-white rounded-lg overflow-hidden shadow-lg max-w-md mx-auto">
               <div className="p-6">
                 <h3 className="text-2xl font-bold text-[#004C8C] mb-4 text-center">
                   {selectedTrophy.name} - Winning Years
                 </h3>
-                <ul className="text-center">
+                <ul className="text-center mb-4">
                   {selectedTrophy.years.map((year, i) => (
-                    <li key={i} className="text-lg font-bold  text-[#214e6e]">
+                    <li key={i} className="text-lg font-bold text-[#214e6e]">
                       {year}
                     </li>
                   ))}
                 </ul>
                 <button
                   onClick={closeModal}
-                  className="mt-6 w-full bg-[#3c9dec] text-white py-2 rounded-lg font-bold text-lg hover:bg-[#1e6fb8] transition-colors duration-300 ease-in-out"
+                  className="mt-4 w-full bg-[#3c9dec] text-white py-2 rounded-lg font-bold text-lg hover:bg-[#1e6fb8] transition-colors duration-300 ease-in-out"
                 >
                   Close
                 </button>

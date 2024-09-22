@@ -85,7 +85,7 @@ function Footer() {
                 key={index}
                 to={path}
                 onClick={scrollToTop}
-                className="block bg-white/30 hover:bg-white/40 transition duration-300 text-gray-900 text-center py-2 rounded-lg shadow-lg"
+                className="block p-3 bg-white/10   hover:bg-blue-400 transition duration-300 text-white font-bold text-center py-2 rounded-lg shadow-lg"
               >
                 {label}
               </NavLink>

@@ -16,6 +16,7 @@ import ChampionsLeague from "../assets/images/champions.png";
 import Barella from "../assets/images/barella.webp";
 import Haaland from "../assets/images/haaland.jpg";
 import Bob from "../assets/images/bob.jpg";
+import Raya from "../assets/images/raya.jpg";
 
 const teamColors = {
   "Man City": "#6caddf",
@@ -57,7 +58,7 @@ const matches = [
   {
     id: 1,
     homeTeam: "Man City",
-    awayTeam: "United",
+    awayTeam: "Man United",
     scorers: { home: ["B. Silva 89'"], away: ["Garnacho 82'"] },
     timestamp: "2024-08-10T19:45:00",
     time: "FT",
@@ -127,20 +128,23 @@ const matches = [
     manOfTheMatch: Barella,
     motm: "Nicolo Barella",
   },
-  // {
-  //   id: 6,
-  //   homeTeam: "Man City",
-  //   awayTeam: "Arsenal",
-  //   scorers: { home: [], away: [] },
-  //   timestamp: "2024-09-22T21:15:00",
-  //   time: "FT",
-  //   competition: "Premier League",
-  //   venue: "Etihad Stadium",
-  //   competitionLogo: ChampionsLeague,
+  {
+    id: 6,
+    homeTeam: "Man City",
+    awayTeam: "Arsenal",
+    scorers: {
+      home: ["Haaland 9'", "Stones 90+8'"],
+      away: ["Calafiori 22'", "Gabriel 45+1'"],
+    },
+    timestamp: "2024-09-22T21:15:00",
+    time: "FT",
+    competition: "Premier League",
+    venue: "Etihad Stadium",
+    competitionLogo: PremierLeagueLogo,
 
-  //   manOfTheMatch: Barella,
-  //   motm: "Nicolo Barella",
-  // },
+    manOfTheMatch: Raya,
+    motm: "David Raya",
+  },
 ];
 
 const formatDateTime = (dateTimeString) => {
@@ -161,7 +165,7 @@ const formatDateTime = (dateTimeString) => {
 const Results = () => {
   return (
     <div className="min-h-screen bg-sky-100 p-8">
-      <h1 className="text-4xl font-bold text-center mb-8 text-sky-900">
+      <h1 className="text-4xl font-bold text-center mb-8 text-sky-900 uppercase">
         Main Matches Results 24/25 Season
       </h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-10">
