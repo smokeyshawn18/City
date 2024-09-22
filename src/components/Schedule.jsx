@@ -134,9 +134,9 @@ const Schedule = () => {
   });
 
   return (
-    <section id="schedule" className="bg-white py-12">
+    <section id="schedule" className="bg-sky-100 py-12">
       <div className="container mx-auto px-4">
-        <h2 className="text-[#0047AB] text-3xl font-bold text-center mb-6 uppercase">
+        <h2 className="text-sky-900 text-3xl font-bold text-center mb-6 uppercase">
           Upcoming Matches
         </h2>
         <h3 className="text-gray-500 text-lg text-center mb-6">
@@ -149,19 +149,19 @@ const Schedule = () => {
                 key={index}
                 className="bg-[#E6F1FA] rounded-lg shadow-md hover:shadow-lg transition-all"
               >
-                <div className="flex items-center justify-between p-4 bg-[#B0D1E6] rounded-t-lg">
+                <div className="flex items-center justify-between p-4 bg-gradient-to-r from-sky-300 to-sky-500 rounded-t-lg">
                   <div className="flex flex-col items-center">
                     <img
                       src={ManCityLogo}
                       alt="Manchester City"
                       className="w-20 h-20 rounded-full border-2 border-white"
                     />
-                    <p className="mt-2 text-lg font-semibold text-[#0047AB]">
+                    <p className="mt-2 text-lg font-semibold text-[#ffffff]">
                       Man City
                     </p>
                   </div>
 
-                  <p className="text-2xl font-bold text-gray-700">VS</p>
+                  <p className="text-2xl font-bold text-white">VS</p>
 
                   <div className="flex flex-col items-center">
                     <img
@@ -169,7 +169,7 @@ const Schedule = () => {
                       alt={match.opponent}
                       className="w-20 h-20 rounded-full border-2 border-white"
                     />
-                    <p className="mt-2 text-lg font-semibold text-[#0047AB]">
+                    <p className="mt-2 text-lg font-semibold text-[#ffffff]">
                       {match.opponent}
                     </p>
                   </div>

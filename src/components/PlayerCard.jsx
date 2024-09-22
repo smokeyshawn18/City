@@ -10,7 +10,7 @@ import {
 import { useState, useEffect } from "react";
 
 const PlayerCard = ({ player }) => {
-  const [activeTab, setActiveTab] = useState("career");
+  const [activeTab, setActiveTab] = useState("season");
   const [careerStats, setCareerStats] = useState(player.careerStats);
 
   // UseEffect to automatically update career stats based on season stats
@@ -55,17 +55,6 @@ const PlayerCard = ({ player }) => {
           <div className="flex justify-center mb-4 space-x-2">
             <button
               className={`px-4 py-2 mx-1 font-bold text-sm uppercase tracking-wider rounded-full flex items-center ${
-                activeTab === "career"
-                  ? "bg-[#1e3a8a] text-white shadow-md"
-                  : "bg-[#f0f4f8] text-[#1e3a8a] hover:bg-[#e2e8f0]"
-              } transition-colors duration-300 ease-in-out`}
-              onClick={() => setActiveTab("career")}
-            >
-              <FaTrophy className="mr-2" />
-              Career Stats
-            </button>
-            <button
-              className={`px-4 py-2 mx-1 font-bold text-sm uppercase tracking-wider rounded-full flex items-center ${
                 activeTab === "season"
                   ? "bg-[#1e3a8a] text-white shadow-md"
                   : "bg-[#f0f4f8] text-[#1e3a8a] hover:bg-[#e2e8f0]"
@@ -74,6 +63,17 @@ const PlayerCard = ({ player }) => {
             >
               <FaMedal className="mr-2" />
               This Season
+            </button>
+            <button
+              className={`px-4 py-2 mx-1 font-bold text-sm uppercase tracking-wider rounded-full flex items-center ${
+                activeTab === "career"
+                  ? "bg-[#1e3a8a] text-white shadow-md"
+                  : "bg-[#f0f4f8] text-[#1e3a8a] hover:bg-[#e2e8f0]"
+              } transition-colors duration-300 ease-in-out`}
+              onClick={() => setActiveTab("career")}
+            >
+              <FaTrophy className="mr-2" />
+              Career Stats
             </button>
           </div>
 

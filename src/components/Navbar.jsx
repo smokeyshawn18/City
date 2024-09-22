@@ -12,21 +12,22 @@ const Navbar = () => {
 
   return (
     <nav className="bg-[#6caddf] p-4 sticky top-0 z-50">
-      <div className="container mx-auto flex justify-between items-center">
-        <div className="flex items-center">
-          <a href="/">
-            {" "}
+      <div className="w-full max-w-7xl mx-auto flex justify-between items-center">
+        <div className="flex items-center space-x-2">
+          <a href="/" className="flex items-center">
             <img
               src={logo}
               alt="Logo"
-              className="h-14 w-14 mx-2 rounded-full"
+              className="h-12 w-12 sm:h-14 sm:w-14 mx-2 rounded-full"
             />
+            <span className="text-white font-bold text-lg sm:text-xl md:text-2xl uppercase tracking-wider">
+              CityPulse
+            </span>
           </a>
-          <span className="text-white font-bold text-xl uppercase tracking-wider">
-            CityPulse
-          </span>
         </div>
-        <div className="hidden md:flex space-x-6">
+
+        {/* Desktop Menu */}
+        <div className="hidden lg:flex space-x-4 md:space-x-6">
           {[
             { path: "/", label: "Home" },
             { path: "/Schedule", label: "Schedule" },
@@ -38,18 +39,20 @@ const Navbar = () => {
             <NavLink
               key={index}
               to={path}
-              onClick={handleNavLinkClick} // Ensure scroll to top on click
+              onClick={handleNavLinkClick}
               className={({ isActive }) =>
                 isActive
-                  ? "text-white bg-sky-900 rounded-md font-bold px-4 py-2 transition-colors duration-300 ease-in-out shadow-md"
-                  : "text-white hover:bg-sky-900 hover:text-sky-300 rounded-md font-bold px-4 py-2 transition-colors duration-300 ease-in-out shadow-md"
+                  ? "text-white bg-sky-900 rounded-md font-bold px-3 py-2 transition-colors duration-300 ease-in-out shadow-md"
+                  : "text-white hover:bg-sky-900 hover:text-sky-300 rounded-md font-bold px-3 py-2 transition-colors duration-300 ease-in-out shadow-md"
               }
             >
               {label}
             </NavLink>
           ))}
         </div>
-        <div className="md:hidden">
+
+        {/* Mobile Menu Button */}
+        <div className="lg:hidden">
           <button
             onClick={() => setIsOpen(!isOpen)}
             className="text-white focus:outline-none"
@@ -80,9 +83,11 @@ const Navbar = () => {
           </button>
         </div>
       </div>
+
+      {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden">
-          <div className="flex flex-col space-y-2 mt-4">
+        <div className="lg:hidden">
+          <div className="flex flex-col space-y-3 mt-4 bg-sky-200 p-4 rounded-lg shadow-md">
             {[
               { path: "/", label: "Home" },
               { path: "/Schedule", label: "Schedule" },
@@ -94,11 +99,11 @@ const Navbar = () => {
               <NavLink
                 key={index}
                 to={path}
-                onClick={handleNavLinkClick} // Close navbar on link click and scroll to top
+                onClick={handleNavLinkClick}
                 className={({ isActive }) =>
                   isActive
                     ? "text-white bg-sky-900 rounded-md px-4 py-2"
-                    : "text-white hover:text-gray-300"
+                    : "text-sky-700 hover:bg-sky-400 hover:text-white px-4 py-2 rounded-md transition-colors duration-300 ease-in-out"
                 }
               >
                 {label}

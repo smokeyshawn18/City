@@ -293,17 +293,17 @@ const PlayerSection = () => {
           <PlayerCard key={index} player={player} />
         ))}
       </div>
-      <p className="font-extrabold text-2xl mt-10 p-5 text-center text-white">
+      <p className="font-extrabold text-2xl mt-10 p-5 text-center text-sky-900">
         Note:{" "}
-        <span className="text-xl font-semibold text-gray-200">
+        <span className="text-xl font-semibold text-black">
           This season stats include, all club matches and this season
           International stats.
         </span>
         <br />
-        <span className="text-xl font-semibold text-gray-200">
+        <span className="text-xl font-semibold text-black">
           Stats are according to{" "}
           <a
-            className="font-bold text-blue-400"
+            className="font-bold text-blue-700"
             href="https://www.transfermarkt.com/"
           >
             transfermarket.com

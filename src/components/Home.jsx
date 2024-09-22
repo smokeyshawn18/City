@@ -86,7 +86,7 @@ const Home = () => {
       <div className="relative container mx-auto px-4 lg:px-8">
         {todayMatches.length > 0 && (
           <div className="bg-gray-100 py-8 px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl sm:text-4xl font-bold text-center text-[#1b3c42] mb-8">
+            <h2 className="text-2xl sm:text-4xl font-bold text-center text-[#1b3c42] mb-8">
               Match Day (All time are in Nepal Time.)
             </h2>
 
@@ -102,10 +102,10 @@ const Home = () => {
                       <img
                         src={match.opponentLogo}
                         alt={`${match.opponent} Logo`}
-                        className="w-20 h-20 rounded-full border-2 border-gray-300"
+                        className="w-16 h-16 sm:w-20 sm:h-20 rounded-full border-2 border-gray-300"
                       />
                       <div className="text-center md:text-left">
-                        <h3 className="text-xl font-bold text-blue-800 mb-1">
+                        <h3 className="text-lg sm:text-xl font-bold text-blue-800 mb-1">
                           {match.opponent}
                         </h3>
                         <p className="text-gray-600">
@@ -122,51 +122,45 @@ const Home = () => {
                       </div>
                     </div>
 
-                    {/* Square Timer */}
-                    <p className="font-bold text-xl mt-2 p-2">{match.kick}</p>
-                    <div className="flex items-center justify-center md:mt-0">
+                    {/* Timer */}
+                    <div className="flex items-center justify-center mt-4 md:mt-0">
                       <div className="bg-gray-200 p-4 rounded-lg shadow-md">
-                        <div className="grid grid-cols-3 gap-2">
-                          <div className="bg-white p-3 rounded-md text-center">
-                            <div className="text-2xl font-bold text-blue-900">
-                              {countdowns[match.opponent]?.hours || "00"}
+                        <div className="grid grid-cols-3 gap-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3">
+                          {["hours", "minutes", "seconds"].map((unit, i) => (
+                            <div
+                              key={i}
+                              className="bg-white p-3 rounded-md text-center"
+                            >
+                              <div className="text-xl sm:text-2xl font-bold text-blue-900">
+                                {countdowns[match.opponent]?.[unit] || "00"}
+                              </div>
+                              <div className="text-xs text-gray-600 capitalize">
+                                {unit}
+                              </div>
                             </div>
-                            <div className="text-xs text-gray-600">Hours</div>
-                          </div>
-                          <div className="bg-white p-3 rounded-md text-center">
-                            <div className="text-2xl font-bold text-blue-900">
-                              {countdowns[match.opponent]?.minutes || "00"}
-                            </div>
-                            <div className="text-xs text-gray-600">Minutes</div>
-                          </div>
-                          <div className="bg-white p-3 rounded-md text-center">
-                            <div className="text-2xl font-bold text-blue-900">
-                              {countdowns[match.opponent]?.seconds || "00"}
-                            </div>
-                            <div className="text-xs text-gray-600">Seconds</div>
-                          </div>
+                          ))}
                         </div>
                       </div>
                     </div>
                   </div>
 
                   {/* Action and Competition */}
-                  <div className="flex flex-col items-center text-[#1b3c42] md:items-end mt-4 md:mt-0">
+                  <div className="flex flex-col items-center text-[#1b3c42] mt-4 md:mt-0">
                     <a
                       href="https://www.mancity.com/tickets"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="bg-gradient-to-r from-red-600 to-orange-600 text-white text-lg px-4 py-2 rounded-full font-semibold shadow-lg hover:shadow-xl transition-shadow flex items-center justify-center gap-3"
+                      className="bg-gradient-to-r from-red-600 to-orange-600 text-white text-lg px-4 py-2 rounded-full font-semibold shadow-lg hover:shadow-xl transition-shadow flex items-center gap-2"
                     >
                       <FaTicketAlt className="text-2xl" />
                       <span>Buy Tickets</span>
                     </a>
 
-                    <div className="mt-6 flex items-center mx-auto">
+                    <div className="mt-6">
                       <img
                         src={match.competition}
                         alt="Competition Logo"
-                        className="w-16 h-16"
+                        className="w-12 h-12 sm:w-16 sm:h-16"
                       />
                     </div>
                   </div>
@@ -177,23 +171,27 @@ const Home = () => {
         )}
 
         {/* Hero Image */}
-        <div className="relative h-96 mb-12">
+        <div className="relative h-80 sm:h-96 mb-4">
           <img
             src={heroImage}
             alt="Hero"
             className="w-full h-full object-cover rounded-3xl shadow-md"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black to-transparent opacity-60 rounded-3xl"></div>
-          <div className="absolute bottom-0 left-0 p-8 text-white">
-            <h1 className="text-6xl font-bold">CityPulse</h1>
-            <p className="text-lg font-medium mt-3 ">
+          <div className="absolute bottom-0 left-0 p-4 sm:p-8 text-white">
+            <h1 className="text-4xl sm:text-6xl font-bold">CityPulse</h1>
+            <p className="text-md sm:text-lg font-medium mt-2 sm:mt-3">
               Your Home for Manchester City.
             </p>
           </div>
         </div>
-        <CoachProfile />
-        <div className="bg-white p-6 rounded-3xl shadow-lg mb-8">
-          <h2 className="text-3xl font-extrabold text-[#1b3c42] mb-10 text-center uppercase">
+
+        {/* Reduced margin for CoachProfile */}
+        <CoachProfile className="mt-4" />
+
+        {/* Reduced margin for UCL Opponents */}
+        <div className="bg-white p-6 rounded-3xl shadow-lg mb-8 mt-6">
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-[#1b3c42] mb-10 text-center uppercase">
             UCL Opponents - 2024/25
           </h2>
 
@@ -206,6 +204,7 @@ const Home = () => {
           </div>
         </div>
       </div>
+
       <KeyPerformers />
       <Kit />
     </section>
