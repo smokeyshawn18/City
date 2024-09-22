@@ -1,27 +1,27 @@
 import heroImage from "../assets/images/home.jpeg";
 
 import Opponent from "../assets/images/opponent.jpg";
-// import premierLeagueLogo from "../assets/images/prem.webp";
-import championsLeagueLogo from "../assets/images/Champ.png";
+import premierLeagueLogo from "../assets/images/prem.webp";
+// import championsLeagueLogo from "../assets/images/Champ.png";
 import { FaMapMarkerAlt, FaClock, FaTicketAlt } from "react-icons/fa";
-import Inter from "../assets/images/inter.webp";
 
 import { useState, useMemo, useEffect, useCallback } from "react";
 import Kit from "./Kit";
 import CoachProfile from "./Coach";
 import KeyPerformers from "./KeyPerformers";
+import Arsenal from "../assets/images/arsenal.png";
 
 const Home = () => {
   const matchDay = useMemo(
     () => [
       {
-        date: "2024-09-18",
-        opponent: "Inter Milan",
-        time: "23:59",
+        date: "2024-09-22",
+        opponent: "Arsenal",
+        time: "21:15", // Match time in user's local time format
         venue: "Etihad Stadium",
-        opponentLogo: Inter,
-        kick: "KickOff in:",
-        competition: championsLeagueLogo,
+        opponentLogo: Arsenal,
+        kick: "Starts in:",
+        competition: premierLeagueLogo,
       },
     ],
     []
@@ -30,12 +30,14 @@ const Home = () => {
   const formatDate = (dateString) => {
     const date = new Date(dateString);
     const options = { month: "short", day: "2-digit", year: "numeric" };
-    return date.toLocaleDateString("en-US", options);
+    return date.toLocaleDateString("en-US", options); // This converts date based on the user's locale
   };
 
   const calculateCountdown = (matchDate) => {
     const now = new Date();
-    const timeDifference = new Date(matchDate) - now;
+    const matchTime = new Date(matchDate); // No need to convert as it is in the user's local time
+
+    const timeDifference = matchTime - now; // Difference between match time and current time
 
     if (timeDifference <= 0) return { hours: 0, minutes: 0, seconds: 0 };
 
@@ -49,6 +51,7 @@ const Home = () => {
   const [todayMatches, setTodayMatches] = useState([]);
   const [countdowns, setCountdowns] = useState({});
 
+  // Filter today's matches based on the user's local time
   const getTodayMatches = useCallback(() => {
     const today = new Date();
     return matchDay.filter((match) => {
@@ -68,6 +71,7 @@ const Home = () => {
   useEffect(() => {
     const timer = setInterval(() => {
       const newCountdowns = matchDay.reduce((acc, match) => {
+        // Use dynamic local time for each match countdown
         acc[match.opponent] = calculateCountdown(`${match.date}T${match.time}`);
         return acc;
       }, {});

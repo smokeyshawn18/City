@@ -1,17 +1,16 @@
 import Arsenal from "../assets/images/arsenal.png";
-import Tottenham from "../assets/images/tottenham.webp";
-import Liverpool from "../assets/images/lfc.webp";
-import ManUnited from "../assets/images/united.png";
-import AstonVilla from "../assets/images/aston-villa.png";
-
+import NewCastle from "../assets/images/newcastle.png";
 import PremierLeagueLogo from "../assets/images/prem.webp";
 import ChampionsLeagueLogo from "../assets/images/champions.png";
 import ParisSaintGerman from "../assets/images/psg.png";
 import Juventus from "../assets/images/juv.jpg";
-
 import ManCityLogo from "../assets/images/logo.svg";
-import NewCastle from "../assets/images/newcastle.png"; // Assuming Manchester City logo
+import Tottenham from "../assets/images/tottenham.webp";
+import Liverpool from "../assets/images/lfc.webp";
+import ManUtd from "../assets/images/united.png";
+import AstonVilla from "../assets/images/aston-villa.png";
 
+// Full list of matches including additional teams
 const matches = [
   {
     date: "2024-09-22",
@@ -50,36 +49,36 @@ const matches = [
     competitionLogo: PremierLeagueLogo,
   },
   {
-    date: "2024-11-23",
+    date: "2024-11-05",
     opponent: "Tottenham",
-    time: "20:45",
-    venue: "Etihad Stadium",
+    time: "18:30",
+    venue: "Tottenham Hotspur Stadium",
     competition: "Premier League",
     opponentLogo: Tottenham,
     competitionLogo: PremierLeagueLogo,
   },
   {
-    date: "2024-11-30",
+    date: "2024-11-10",
     opponent: "Liverpool",
-    time: "20:45",
-    venue: "Etihad Stadium",
+    time: "17:00",
+    venue: "Anfield",
     competition: "Premier League",
     opponentLogo: Liverpool,
     competitionLogo: PremierLeagueLogo,
   },
   {
-    date: "2024-12-14",
-    opponent: "Man United",
-    time: "20:45",
-    venue: "Etihad Stadium",
+    date: "2024-12-03",
+    opponent: "Manchester United",
+    time: "20:00",
+    venue: "Old Trafford",
     competition: "Premier League",
-    opponentLogo: ManUnited,
+    opponentLogo: ManUtd,
     competitionLogo: PremierLeagueLogo,
   },
   {
-    date: "2024-12-21",
+    date: "2024-12-15",
     opponent: "Aston Villa",
-    time: "20:45",
+    time: "18:30",
     venue: "Villa Park",
     competition: "Premier League",
     opponentLogo: AstonVilla,
@@ -87,6 +86,25 @@ const matches = [
   },
 ];
 
+// Function to calculate if the match is Today, Tomorrow, or future
+const calculateRelativeTime = (matchDate) => {
+  const today = new Date().setHours(0, 0, 0, 0);
+  const matchDay = new Date(matchDate).setHours(0, 0, 0, 0);
+
+  const diffInDays = (matchDay - today) / (1000 * 60 * 60 * 24); // Difference in days
+
+  if (diffInDays === 0) {
+    return "Today";
+  } else if (diffInDays === 1) {
+    return "Tomorrow";
+  } else if (diffInDays > 1) {
+    return `${Math.ceil(diffInDays)} days to go`;
+  } else {
+    return "Match has passed";
+  }
+};
+
+// Function to format date and time for display
 const formatDateTime = (date, time) => {
   const options = {
     weekday: "long",
@@ -95,11 +113,11 @@ const formatDateTime = (date, time) => {
     day: "numeric",
   };
   const formattedDate = new Date(`${date}T${time}`).toLocaleDateString(
-    "en-GB",
+    undefined,
     options
-  );
+  ); // undefined for local time
   const formattedTime = new Date(`${date}T${time}`).toLocaleTimeString(
-    "en-GB",
+    undefined,
     {
       hour: "2-digit",
       minute: "2-digit",
@@ -109,12 +127,10 @@ const formatDateTime = (date, time) => {
 };
 
 const Schedule = () => {
-  const currentDateTime = new Date();
-
-  // Filter out matches that have already occurred
+  // Filter out matches that have already passed
   const upcomingMatches = matches.filter((match) => {
     const matchDateTime = new Date(`${match.date}T${match.time}`);
-    return matchDateTime > currentDateTime; // Keep matches that are in the future
+    return matchDateTime >= new Date(); // Only show future or ongoing matches
   });
 
   return (
@@ -124,7 +140,7 @@ const Schedule = () => {
           Upcoming Matches
         </h2>
         <h3 className="text-gray-500 text-lg text-center mb-6">
-          All times are in NPT
+          All times are in your local timezone
         </h3>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {upcomingMatches.length > 0 ? (
@@ -163,11 +179,17 @@ const Schedule = () => {
                   <p className="text-lg font-semibold text-gray-600">
                     {formatDateTime(match.date, match.time)}
                   </p>
+
                   <img
                     src={match.competitionLogo}
                     alt={`${match.competition} Logo`}
                     className="w-10 h-10 mx-auto my-4"
                   />
+                  <p className="text-gray-700 font-semibold mb-2">
+                    {calculateRelativeTime(
+                      new Date(`${match.date}T${match.time}`)
+                    )}
+                  </p>
                   <p className="text-xl font-bold text-[#0047AB]">
                     {match.competition}
                   </p>
