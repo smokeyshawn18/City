@@ -59,10 +59,11 @@ const matches = [
     homeTeam: "Man City",
     awayTeam: "United",
     scorers: { home: ["B. Silva 89'"], away: ["Garnacho 82'"] },
-    timestamp: "2024-09-22T21:15:00",
+    timestamp: "2024-08-10T19:45:00",
     time: "FT",
-    competition: "Champions League",
-    venue: "Etihad Stadium",
+    pen: "Pen 7-6",
+    competition: "Community Shield",
+    venue: "Wembley Stadium",
     competitionLogo: Sheld,
     manOfTheMatch: Bob,
     motm: "Oscar Bobb",
@@ -122,10 +123,24 @@ const matches = [
     competition: "Champions League",
     venue: "Etihad Stadium",
     competitionLogo: ChampionsLeague,
-    pen: "Pen 7-6",
+
     manOfTheMatch: Barella,
     motm: "Nicolo Barella",
   },
+  // {
+  //   id: 6,
+  //   homeTeam: "Man City",
+  //   awayTeam: "Arsenal",
+  //   scorers: { home: [], away: [] },
+  //   timestamp: "2024-09-22T21:15:00",
+  //   time: "FT",
+  //   competition: "Premier League",
+  //   venue: "Etihad Stadium",
+  //   competitionLogo: ChampionsLeague,
+
+  //   manOfTheMatch: Barella,
+  //   motm: "Nicolo Barella",
+  // },
 ];
 
 const formatDateTime = (dateTimeString) => {
@@ -177,6 +192,11 @@ const Results = () => {
                       <p className="text-3xl font-bold">
                         {homeScore} - {awayScore}
                       </p>
+                      {match.pen && (
+                        <p className="text-xl font-bold text-sky-800 mt-2">
+                          {match.pen}
+                        </p>
+                      )}
                       <p className="text-xl font-bold mt-3 text-gray-100">
                         {match.time}
                       </p>
