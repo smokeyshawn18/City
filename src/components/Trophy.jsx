@@ -97,7 +97,7 @@ const TrophyCabinet = () => {
   };
 
   return (
-    <section className="py-16 bg-gradient-to-b from-sky-100 to-sky-200">
+    <section className="py-16 bg-sky-100">
       <div className="container mx-auto">
         <h2 className="text-4xl text-sky-900 font-extrabold text-center mb-8 uppercase tracking-wider">
           Trophy Cabinet

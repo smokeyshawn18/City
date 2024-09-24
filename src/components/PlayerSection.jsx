@@ -131,7 +131,7 @@ const players = [
     seasonStats: {
       goals: 1,
       assists: 0,
-      appearances: 6,
+      appearances: 7,
     },
   },
   {
@@ -302,7 +302,7 @@ const players = [
 
 const PlayerSection = () => {
   return (
-    <div className="p-8 bg-sky-200">
+    <div className="p-8 bg-sky-100">
       <h1 className="text-4xl font-extrabold text-sky-700 mb-10 text-center uppercase tracking-wider ">
         Manchester City Player Stats
       </h1>

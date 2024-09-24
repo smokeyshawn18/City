@@ -8,7 +8,7 @@ import Goat from "../assets/images/pep.jpg"; // Example new image
 
 function History() {
   return (
-    <div className="w-full min-h-screen bg-sky-200  py-16 px-5 flex flex-col items-center">
+    <div className="w-full min-h-screen bg-sky-100  py-16 px-5 flex flex-col items-center">
       <h1 className="uppercase text-sky-900 text-4xl sm:text-4xl font-extrabold tracking-widest mb-8 text-center">
         Manchester City History
       </h1>
