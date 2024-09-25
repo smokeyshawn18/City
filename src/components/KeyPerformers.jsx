@@ -120,7 +120,7 @@ const KeyPerformers = () => {
       <h2 className="p-4 text-4xl font-extrabold mb-8 text-center text-[#1b3c42] uppercase tracking-widest">
         Key Performers this Season
       </h2>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 p-5">
         {playersData.map((player, index) => {
           const totalGoals =
             player.goals.premierLeague +

@@ -7,6 +7,7 @@ import {
   FaFlag,
   FaTrophy,
 } from "react-icons/fa";
+import { CiMedicalCross } from "react-icons/ci";
 import { useState, useEffect } from "react";
 
 const PlayerCard = ({ player }) => {
@@ -30,11 +31,11 @@ const PlayerCard = ({ player }) => {
           <img
             src={player.image}
             alt={player.name}
-            className="absolute inset-0 w-full h-full object-cover  origin-center"
+            className="absolute inset-0 w-full h-full object-cover origin-center"
           />
         </div>
 
-        <div className="p-6 bg-gradient-to-b from-[#ffffff] via-[#f9fafb] to-[#f0f4f8]">
+        <div className="p-6 bg-white">
           <h2 className="text-2xl sm:text-3xl md:text-3xl font-extrabold text-[#2ea9cb] mb-2 text-center uppercase tracking-widest">
             {player.name}
           </h2>
@@ -42,14 +43,32 @@ const PlayerCard = ({ player }) => {
           <p className="text-[#000000] mb-4 text-xl font-bold text-center">
             {player.position}
           </p>
+
           <img
             src={player.country}
             alt={player.country}
             className="w-10 h-8 mx-auto mb-4"
           />
+
           <p className="text-[#245664] mb-6 text-xl font-bold text-center uppercase">
             {player.age}
           </p>
+
+          {player.injured && ( // This will only render if player.injured is true
+            <div className="text-center mb-3 mt-[-1em]">
+              {" "}
+              {/* Conditionally adds margin only if rendered */}
+              <div className="inline-block bg-white text-red-600 p-2">
+                <CiMedicalCross className="text-4xl" />
+              </div>
+              <span className="block font-extrabold text-[#e11d48] text-lg mb-2">
+                {player.injuryDetails.type} / {player.injuryDetails.tm}
+              </span>
+              <p className="text-gray-700 font-bold">
+                Expected return: {player.injuryDetails.recoveryTime}
+              </p>
+            </div>
+          )}
 
           {/* Tab Navigation */}
           <div className="flex justify-center mb-4 space-x-2">
@@ -144,11 +163,17 @@ const PlayerCard = ({ player }) => {
 // Define PropTypes for validation
 PlayerCard.propTypes = {
   player: PropTypes.shape({
-    country: PropTypes.string.isRequired,
+    country: PropTypes.string.isRequired, // Assuming it's a string for country name or image path
+    injured: PropTypes.bool.isRequired,
+    injuryDetails: PropTypes.shape({
+      type: PropTypes.string.isRequired,
+      recoveryTime: PropTypes.string.isRequired,
+      tm: PropTypes.string.isRequired,
+    }),
     age: PropTypes.number.isRequired,
     name: PropTypes.string.isRequired,
     position: PropTypes.string.isRequired,
-    image: PropTypes.string.isRequired,
+    image: PropTypes.string.isRequired, // Assuming image is a URL
     number: PropTypes.number.isRequired,
     careerStats: PropTypes.shape({
       goals: PropTypes.number.isRequired,
@@ -160,6 +185,7 @@ PlayerCard.propTypes = {
       assists: PropTypes.number.isRequired,
       appearances: PropTypes.number.isRequired,
     }).isRequired,
+    injuryIcon: PropTypes.elementType, // For React icon component
   }).isRequired,
 };
 

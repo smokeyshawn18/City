@@ -22,6 +22,8 @@ import Croatia from "../assets/images/cro.png";
 import Spain from "../assets/images/spain.png";
 import Brazil from "../assets/images/brazil.png";
 import Stones from "../assets/images/stones.jpg";
+import { FaHospital } from "react-icons/fa"; // Import hospital icon
+
 // Sample player data
 const players = [
   {
@@ -59,6 +61,13 @@ const players = [
       assists: 1,
       appearances: 8,
     },
+    injured: true,
+    injuryDetails: {
+      tm: "Sept 18, 2024",
+      type: "Groin Injury",
+      recoveryTime: "Doubtful",
+    },
+    injuryIcon: FaHospital,
   },
   {
     name: "İlkay Gündoğan",
@@ -78,6 +87,7 @@ const players = [
       assists: 0,
       appearances: 5,
     },
+    injured: false,
   },
   {
     name: "Bernardo Silva",
@@ -96,6 +106,7 @@ const players = [
       assists: 2,
       appearances: 9,
     },
+    injured: false,
   },
 
   {
@@ -115,6 +126,7 @@ const players = [
       assists: 0,
       appearances: 4,
     },
+    injured: false,
   },
   {
     name: "Jack Grealish",
@@ -133,6 +145,7 @@ const players = [
       assists: 1,
       appearances: 8,
     },
+    injured: false,
   },
   {
     name: "Rodri",
@@ -141,6 +154,14 @@ const players = [
     age: 28,
     injury: "Torn ACL",
     country: Spain,
+    injured: true,
+    injuryDetails: {
+      type: "Cruciate Ligament Injury",
+      recoveryTime: "Out for a Season!",
+      tm: "Sept 22, 2024",
+    },
+    injuryIcon: FaHospital,
+    // Assign the React Icon component
     image: Rodrigo,
     careerStats: {
       goals: 35,
@@ -170,6 +191,7 @@ const players = [
       assists: 0,
       appearances: 8,
     },
+    injured: false,
   },
   {
     name: "Jeremy Doku",
@@ -188,6 +210,7 @@ const players = [
       assists: 1,
       appearances: 9,
     },
+    injured: false,
   },
 
   {
@@ -207,6 +230,7 @@ const players = [
       assists: 2,
       appearances: 7,
     },
+    injured: false,
   },
   {
     name: "Josko Gvardiol",
@@ -225,6 +249,7 @@ const players = [
       assists: 0,
       appearances: 10,
     },
+    injured: false,
   },
   {
     name: "Kyle Walker",
@@ -243,6 +268,7 @@ const players = [
       assists: 0,
       appearances: 4,
     },
+    injured: false,
   },
   {
     name: "John Stones",
@@ -261,6 +287,7 @@ const players = [
       assists: 0,
       appearances: 4,
     },
+    injured: false,
   },
   {
     name: "Rico Lewis",
@@ -279,6 +306,7 @@ const players = [
       assists: 2,
       appearances: 8,
     },
+    injured: false,
   },
   {
     name: "Ruben Dias",
@@ -297,6 +325,7 @@ const players = [
       assists: 0,
       appearances: 9,
     },
+    injured: false,
   },
   // Add more players here
 ];
