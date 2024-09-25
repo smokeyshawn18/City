@@ -113,7 +113,7 @@ const players = [
     seasonStats: {
       goals: 0,
       assists: 0,
-      appearances: 3,
+      appearances: 4,
     },
   },
   {
@@ -130,8 +130,8 @@ const players = [
     },
     seasonStats: {
       goals: 1,
-      assists: 0,
-      appearances: 7,
+      assists: 1,
+      appearances: 8,
     },
   },
   {
@@ -139,6 +139,7 @@ const players = [
     number: 16,
     position: "DM",
     age: 28,
+    injury: "Torn ACL",
     country: Spain,
     image: Rodrigo,
     careerStats: {
@@ -183,9 +184,9 @@ const players = [
       appearances: 204,
     },
     seasonStats: {
-      goals: 0,
+      goals: 1,
       assists: 1,
-      appearances: 8,
+      appearances: 9,
     },
   },
 
@@ -204,7 +205,7 @@ const players = [
     seasonStats: {
       goals: 0,
       assists: 2,
-      appearances: 6,
+      appearances: 7,
     },
   },
   {
@@ -222,7 +223,7 @@ const players = [
     seasonStats: {
       goals: 0,
       assists: 0,
-      appearances: 9,
+      appearances: 10,
     },
   },
   {
@@ -240,7 +241,7 @@ const players = [
     seasonStats: {
       goals: 0,
       assists: 0,
-      appearances: 3,
+      appearances: 4,
     },
   },
   {
@@ -258,7 +259,7 @@ const players = [
     seasonStats: {
       goals: 1,
       assists: 0,
-      appearances: 3,
+      appearances: 4,
     },
   },
   {
@@ -275,8 +276,8 @@ const players = [
     },
     seasonStats: {
       goals: 0,
-      assists: 1,
-      appearances: 7,
+      assists: 2,
+      appearances: 8,
     },
   },
   {

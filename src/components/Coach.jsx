@@ -4,11 +4,11 @@ import {
   FaTimesCircle,
   FaFutbol,
 } from "react-icons/fa";
-import Guardiola from "../assets/images/pepp.jpeg";
+import Guardiola from "../assets/images/pepg.webp";
 
 export default function CoachProfile() {
   // Define individual stats
-  const wins = 354; // Example value
+  const wins = 355; // Example value
   const draws = 59; // Example value
   const losses = 66; // Example value
   const totalTrophies = 18; // Example value
@@ -51,43 +51,43 @@ export default function CoachProfile() {
   ];
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen p-6 bg-gradient-to-r from-blue-50 via-gray-50 to-blue-50">
-      <div className="max-w-md w-full bg-white rounded-2xl shadow-lg p-8 transition-transform transform hover:scale-105 hover:shadow-2xl">
+    <div className="flex flex-col items-center justify-center min-h-screen p-6 bg-sky-100 rounded-xl">
+      <div className="max-w-lg w-full bg-white rounded-lg shadow-xl p-8 transition-transform transform hover:scale-105 hover:shadow-2xl">
         {/* Coach Image */}
         <div className="relative mb-6">
           <img
             src={Guardiola}
             alt="Pep Guardiola"
-            className="w-50 h-40 mx-auto rounded-xl border-4 border-blue-200 shadow-md transition-transform transform hover:scale-110"
+            className="w-full h-64 object-cover rounded-lg border-4 border-purple-200 shadow-lg transition-transform transform hover:scale-110"
           />
         </div>
 
         {/* Coach Name */}
-        <h2 className="text-3xl font-bold text-gray-800 mt-6 text-center">
+        <h2 className="text-4xl font-bold text-center text-gray-800 hover:text-purple-600 transition duration-300">
           Pep Guardiola
         </h2>
-        <h2 className="text-xl font-bold text-gray-800 mt-2 text-center">
+        <h3 className="text-lg font-semibold text-center text-gray-600 mt-1">
           2016 - Now
-        </h2>
+        </h3>
 
         {/* Coach Role */}
-        <p className="text-lg text-gray-800 mt-2 italic font-bold text-center">
+        <p className="text-lg text-center text-gray-600 italic mt-2">
           Head Coach of Manchester City
         </p>
 
         {/* Bio */}
-        <p className="mt-4 text-gray-900 leading-relaxed font-semibold text-center">
+        <p className="mt-4 text-gray-800 leading-relaxed font-medium text-center">
           Pep Guardiola has been the head coach of Manchester City since 2016.
           Under his leadership, the team has won multiple Premier League titles
-          and domestic trophies, known for his tactical brilliance and team
-          management.
+          and domestic trophies, showcasing his tactical brilliance and
+          leadership.
         </p>
 
         {/* Stats */}
         <div className="mt-6">
           {data.map((stat, index) => (
             <div key={index} className="flex items-center mb-4 space-x-4">
-              <div className="p-3">{stat.icon}</div>
+              <div className="p-3 text-purple-600">{stat.icon}</div>
               <p className="text-lg font-bold text-gray-700">
                 {stat.label}:{" "}
                 <span className="text-gray-800">{stat.value}</span>

@@ -32,7 +32,7 @@ const teamColors = {
 };
 
 const teamLogos = {
-  United: United,
+  "Man United": United,
   "Man City": ManCityLogo,
   Chelsea: ChelseaLogo,
   Liverpool: LiverpoolLogo,
