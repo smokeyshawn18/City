@@ -9,6 +9,9 @@ import Tottenham from "../assets/images/tottenham.webp";
 import Liverpool from "../assets/images/lfc.webp";
 import ManUtd from "../assets/images/united.png";
 import AstonVilla from "../assets/images/aston-villa.png";
+import Carabao from "../assets/images/carabao.png";
+import WestHamLogo from "../assets/images/westham.png";
+import Sporting from "../assets/images/sporting.png";
 
 // Full list of matches including additional teams
 const matches = [
@@ -30,44 +33,55 @@ const matches = [
     opponentLogo: NewCastle,
     competitionLogo: PremierLeagueLogo,
   },
+
   {
-    date: "2024-10-02",
-    opponent: "PSG",
-    time: "21:15",
-    venue: "Parc des Princes",
-    competition: "Champions League",
-    opponentLogo: ParisSaintGerman,
+    date: "2024-10-31",
+    opponent: "Tottenham",
+    time: "01:30",
+    venue: "Tottenham Hotspur Stadium",
+    competition: "Premier League",
+    opponentLogo: Tottenham,
+    competitionLogo: Carabao,
+  },
+  {
+    date: "2024-11-06",
+    opponent: "Sporting CP",
+    time: "01:45",
+    venue: "José Alvalade Stadium",
+    competition: "Premier League",
+    opponentLogo: Sporting,
     competitionLogo: ChampionsLeagueLogo,
   },
+
   {
-    date: "2024-10-22",
-    opponent: "Juventus",
-    time: "21:15",
-    venue: "Etihad Stadium",
-    competition: "Premier League",
-    opponentLogo: Juventus,
-    competitionLogo: PremierLeagueLogo,
-  },
-  {
-    date: "2024-11-05",
+    date: "2024-11-23",
     opponent: "Tottenham",
-    time: "18:30",
-    venue: "Tottenham Hotspur Stadium",
+    time: "23:15",
+    venue: "Etihad Stadium",
     competition: "Premier League",
     opponentLogo: Tottenham,
     competitionLogo: PremierLeagueLogo,
   },
   {
-    date: "2024-11-10",
+    date: "2024-12-01",
     opponent: "Liverpool",
-    time: "17:00",
+    time: "21:45",
     venue: "Anfield",
     competition: "Premier League",
     opponentLogo: Liverpool,
     competitionLogo: PremierLeagueLogo,
   },
   {
-    date: "2024-12-03",
+    date: "2024-12-12",
+    opponent: "Juventus",
+    time: "01:45",
+    venue: "Etihad Stadium",
+    competition: "Premier League",
+    opponentLogo: Juventus,
+    competitionLogo: ChampionsLeagueLogo,
+  },
+  {
+    date: "2024-12-14",
     opponent: "Man United",
     time: "20:00",
     venue: "Old Trafford",
@@ -76,13 +90,31 @@ const matches = [
     competitionLogo: PremierLeagueLogo,
   },
   {
-    date: "2024-12-15",
+    date: "2024-12-21",
     opponent: "Aston Villa",
-    time: "18:30",
+    time: "20:45",
     venue: "Villa Park",
     competition: "Premier League",
     opponentLogo: AstonVilla,
     competitionLogo: PremierLeagueLogo,
+  },
+  {
+    date: "2025-01-04",
+    opponent: "West Ham",
+    time: "20:45",
+    venue: "Etihad Stadium",
+    competition: "Premier League",
+    opponentLogo: WestHamLogo,
+    competitionLogo: PremierLeagueLogo,
+  },
+  {
+    date: "2025-01-23",
+    opponent: "PSG",
+    time: "01:45",
+    venue: "Parc des Princes",
+    competition: "Champions League",
+    opponentLogo: ParisSaintGerman,
+    competitionLogo: ChampionsLeagueLogo,
   },
 ];
 
@@ -139,9 +171,13 @@ const Schedule = () => {
         <h2 className="text-sky-900 text-4xl font-bold text-center mb-6 uppercase tracking-wider">
           Upcoming Matches
         </h2>
-        <h3 className="text-gray-500 text-lg text-center mb-6">
+        <h3 className="text-gray-800 font-semibold text-lg text-center mb-3">
+          Major Club matches only
+        </h3>
+        <h3 className="text-gray-600 font-semibold text-lg text-center mb-6">
           All times are in your local timezone
         </h3>
+
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {upcomingMatches.length > 0 ? (
             upcomingMatches.map((match, index) => (
