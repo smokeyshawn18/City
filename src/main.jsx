@@ -1,6 +1,6 @@
 import ReactDOM from "react-dom/client";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import "./index.css"; // Ensure you have Tailwind CSS imported
+import "./index.css";
 import Navbar from "./components/Navbar";
 import Home from "./components/Home";
 import Schedule from "./components/Schedule";

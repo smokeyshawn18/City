@@ -30,23 +30,23 @@ const App = () => {
     };
   }, []);
 
-  const handleInstall = async () => {
-    if (deferredPrompt.current) {
-      deferredPrompt.current.prompt();
-      const { outcome } = await deferredPrompt.current.userChoice;
-      if (outcome === "accepted") {
-        console.log("User accepted the A2HS prompt");
-      }
-      deferredPrompt.current = null;
-      const installButton = document.getElementById("install-button");
-      if (installButton) installButton.style.display = "none"; // Hide the button after installation
-    }
-  };
+  // const handleInstall = async () => {
+  //   if (deferredPrompt.current) {
+  //     deferredPrompt.current.prompt();
+  //     const { outcome } = await deferredPrompt.current.userChoice;
+  //     if (outcome === "accepted") {
+  //       console.log("User accepted the A2HS prompt");
+  //     }
+  //     deferredPrompt.current = null;
+  //     const installButton = document.getElementById("install-button");
+  //     if (installButton) installButton.style.display = "none"; // Hide the button after installation
+  //   }
+  // };
 
   return (
     <Router>
       <Navbar />
-      <div className="install-button-container">
+      {/* <div className="install-button-container">
         <button
           id="install-button"
           onClick={handleInstall}
@@ -55,7 +55,7 @@ const App = () => {
         >
           Install App
         </button>
-      </div>
+      </div> */}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/schedule" element={<Schedule />} />
