@@ -1,5 +1,3 @@
-import Arsenal from "../assets/images/arsenal.png";
-import NewCastle from "../assets/images/newcastle.png";
 import PremierLeagueLogo from "../assets/images/prem.webp";
 import ChampionsLeagueLogo from "../assets/images/champions.png";
 import ParisSaintGerman from "../assets/images/psg.png";
@@ -15,25 +13,6 @@ import Sporting from "../assets/images/sporting.png";
 
 // Full list of matches including additional teams
 const matches = [
-  {
-    date: "2024-09-22",
-    opponent: "Arsenal",
-    time: "21:15",
-    venue: "Etihad Stadium",
-    competition: "Premier League",
-    opponentLogo: Arsenal,
-    competitionLogo: PremierLeagueLogo,
-  },
-  {
-    date: "2024-09-28",
-    opponent: "NewCastle",
-    time: "17:15",
-    venue: "St James' Park",
-    competition: "Premier League",
-    opponentLogo: NewCastle,
-    competitionLogo: PremierLeagueLogo,
-  },
-
   {
     date: "2024-10-31",
     opponent: "Tottenham",

@@ -1,7 +1,7 @@
 import heroImage from "../assets/images/home.jpeg";
 
 import Opponent from "../assets/images/opponent.jpg";
-import premierLeagueLogo from "../assets/images/prem.webp";
+// import premierLeagueLogo from "../assets/images/prem.webp";
 // import championsLeagueLogo from "../assets/images/Champ.png";
 import { FaMapMarkerAlt, FaClock, FaTicketAlt } from "react-icons/fa";
 
@@ -9,19 +9,20 @@ import { useState, useMemo, useEffect, useCallback } from "react";
 import Kit from "./Kit";
 import CoachProfile from "./Coach";
 import KeyPerformers from "./KeyPerformers";
-import New from "../assets/images/newcastle.png";
+import Tottenham from "../assets/images/tottenham.webp";
+import Carabao from "../assets/images/carabao.png";
 
 const Home = () => {
   const matchDay = useMemo(
     () => [
       {
-        date: "2024-09-28",
-        opponent: "NewCastle",
-        time: "17:15", // Match time in user's local time format
-        venue: "St James' Park",
-        opponentLogo: New,
+        date: "2024-09-31",
+        opponent: "Tottenham",
+        time: "01:30", // Match time in user's local time format
+        venue: "Tottenham Hotspur Stadium",
+        opponentLogo: Tottenham,
         kick: "Starts in:",
-        competition: premierLeagueLogo,
+        competition: Carabao,
       },
     ],
     []
@@ -39,13 +40,15 @@ const Home = () => {
 
     const timeDifference = matchTime - now; // Difference between match time and current time
 
-    if (timeDifference <= 0) return { hours: 0, minutes: 0, seconds: 0 };
+    if (timeDifference <= 0) {
+      return { hours: 0, minutes: 0, seconds: 0, hasStarted: true };
+    }
 
     const hours = Math.floor((timeDifference / (1000 * 60 * 60)) % 24);
     const minutes = Math.floor((timeDifference / 1000 / 60) % 60);
     const seconds = Math.floor((timeDifference / 1000) % 60);
 
-    return { hours, minutes, seconds };
+    return { hours, minutes, seconds, hasStarted: false };
   };
 
   const [todayMatches, setTodayMatches] = useState([]);
@@ -72,22 +75,36 @@ const Home = () => {
     const timer = setInterval(() => {
       const newCountdowns = matchDay.reduce((acc, match) => {
         // Use dynamic local time for each match countdown
-        acc[match.opponent] = calculateCountdown(`${match.date}T${match.time}`);
+        const countdown = calculateCountdown(`${match.date}T${match.time}`);
+        acc[match.opponent] = countdown;
         return acc;
       }, {});
+
       setCountdowns(newCountdowns);
+
+      // Remove matches that have started from the today's matches state
+      const ongoingMatches = todayMatches.filter(
+        (match) => !newCountdowns[match.opponent]?.hasStarted
+      );
+
+      setTodayMatches(ongoingMatches);
+
+      // Clear the interval if all matches are done
+      if (ongoingMatches.length === 0) {
+        clearInterval(timer);
+      }
     }, 1000);
 
-    return () => clearInterval(timer);
-  }, [matchDay]);
+    return () => clearInterval(timer); // Clean up the interval when the component unmounts
+  }, [matchDay, todayMatches]);
 
   return (
     <section className="bg-[#f0f8ff] text-gray-800 py-12 lg:py-24">
       <div className="relative container mx-auto px-4 lg:px-8">
         {todayMatches.length > 0 && (
           <div className="bg-gray-100 py-8 px-4 sm:px-6 lg:px-8">
-            <h2 className="text-2xl sm:text-4xl font-bold text-center text-[#1b3c42] mb-8">
-              Match Day (All time are in Nepal Time.)
+            <h2 className="text-2xl sm:text-4xl font-bold text-center text-[#1b3c42] mb-8 uppercase tracking-wider">
+              Match Day
             </h2>
 
             <div className="flex flex-col items-center gap-8">

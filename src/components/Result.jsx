@@ -17,6 +17,8 @@ import Barella from "../assets/images/barella.webp";
 import Haaland from "../assets/images/haaland.jpg";
 import Bob from "../assets/images/bob.jpg";
 import Raya from "../assets/images/raya.jpg";
+import New from "../assets/images/newcastle.png";
+import JoskoGvardiol from "../assets/images/gv.jpg";
 
 const teamColors = {
   "Man City": "#6caddf",
@@ -42,6 +44,7 @@ const teamLogos = {
   Arsenal: ArsenalLogo,
   "Inter Milan": InterMilan,
   Brentford: Brent,
+  "New Castle": New,
 };
 
 const calculateScore = (scorers) => {
@@ -144,6 +147,23 @@ const matches = [
 
     manOfTheMatch: Raya,
     motm: "David Raya",
+  },
+  {
+    id: 7,
+    homeTeam: "Man City",
+    awayTeam: "New Castle",
+    scorers: {
+      home: ["Gvardiol 35'"],
+      away: ["Gordon 58' (Pen)"],
+    },
+    timestamp: "2024-09-28T17:15",
+    time: "FT",
+    competition: "Premier League",
+    venue: "St. James' Park",
+    competitionLogo: PremierLeagueLogo,
+
+    manOfTheMatch: JoskoGvardiol,
+    motm: "Josko Gvardiol",
   },
 ];
 
