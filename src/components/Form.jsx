@@ -15,7 +15,7 @@ const For = () => {
 
   const onSubmit = async (data) => {
     try {
-      let response = await fetch("https://city-rose.vercel.app/", {
+      let response = await fetch("https://city-rose.vercel.app/api", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -23,7 +23,7 @@ const For = () => {
         body: JSON.stringify(data),
       });
 
-      const responseData = await response.text(); // Get the response text
+      const responseData = await response.text();
 
       if (response.ok) {
         console.log("Form submitted successfully!");

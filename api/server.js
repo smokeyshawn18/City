@@ -9,7 +9,6 @@ dotenv.config();
 
 // Create Express app
 const app = express();
-const port = 3000;
 
 // Enable CORS
 app.use(
@@ -24,12 +23,9 @@ app.use(bodyParser.json());
 // MongoDB connection string from environment variable
 const mongoURI = process.env.MONGODB_URI;
 
-// Connect to MongoDB
+// Connect to MongoDB without deprecated options
 mongoose
-  .connect(mongoURI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
+  .connect(mongoURI)
   .then(() => {
     console.log("Connected to MongoDB");
   })
@@ -50,11 +46,6 @@ const formSchema = new mongoose.Schema({
 
 const Form = mongoose.model("Form", formSchema);
 
-// Handle GET request (optional)
-app.get("/", (req, res) => {
-  res.send("Hello World!");
-});
-
 // Handle POST request to save form data
 app.post("/", async (req, res) => {
   try {
@@ -67,7 +58,13 @@ app.post("/", async (req, res) => {
   }
 });
 
-// Start the server
-app.listen(port, () => {
-  console.log(`Server is running on http://localhost:${port}`);
-});
+// Export the Express app as a serverless function
+export default app;
+
+// Start the server (if running locally)
+if (process.env.NODE_ENV !== "production") {
+  const port = 3000;
+  app.listen(port, () => {
+    console.log(`Server is running on http://localhost:${port}`);
+  });
+}
