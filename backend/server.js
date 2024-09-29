@@ -2,6 +2,10 @@ import express from "express";
 import cors from "cors";
 import bodyParser from "body-parser";
 import mongoose from "mongoose";
+import dotenv from "dotenv";
+
+// Load environment variables from .env file
+dotenv.config();
 
 // Create Express app
 const app = express();
@@ -13,8 +17,8 @@ app.use(cors());
 // Parse JSON body data
 app.use(bodyParser.json());
 
-// MongoDB connection string (point to the "form" database)
-const mongoURI = "mongodb://localhost:27017/form"; // Update this URI to your MongoDB Atlas URI if needed
+// MongoDB connection string from environment variable
+const mongoURI = process.env.MONGODB_URI;
 
 // Connect to MongoDB
 mongoose
@@ -50,12 +54,8 @@ app.get("/", (req, res) => {
 // Handle POST request to save form data
 app.post("/", async (req, res) => {
   try {
-    // Create a new form entry
     const newForm = new Form(req.body);
-
-    // Save form data to MongoDB in the "form" database
     await newForm.save();
-
     res.status(201).send("Data saved to MongoDB successfully!");
   } catch (error) {
     console.error("Error saving data to MongoDB:", error);
