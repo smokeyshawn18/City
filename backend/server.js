@@ -12,7 +12,11 @@ const app = express();
 const port = 3000;
 
 // Enable CORS
-app.use(cors());
+app.use(
+  cors({
+    origin: "https://city-rose.vercel.app", // Allow your deployed front-end origin
+  })
+);
 
 // Parse JSON body data
 app.use(bodyParser.json());
