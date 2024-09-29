@@ -2,30 +2,26 @@ import express from "express";
 import cors from "cors";
 import bodyParser from "body-parser";
 import mongoose from "mongoose";
-import dotenv from "dotenv";
-
-// Load environment variables from .env file
-dotenv.config();
 
 // Create Express app
 const app = express();
+const port = 3000;
 
 // Enable CORS
-app.use(
-  cors({
-    origin: "https://city-rose.vercel.app", // Allow your deployed front-end origin
-  })
-);
+app.use(cors());
 
 // Parse JSON body data
 app.use(bodyParser.json());
 
-// MongoDB connection string from environment variable
-const mongoURI = process.env.MONGODB_URI;
+// MongoDB connection string (point to the "form" database)
+const mongoURI = "mongodb://localhost:27017/form"; // Update this URI to your MongoDB Atlas URI if needed
 
-// Connect to MongoDB without deprecated options
+// Connect to MongoDB
 mongoose
-  .connect(mongoURI)
+  .connect(mongoURI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
   .then(() => {
     console.log("Connected to MongoDB");
   })
@@ -46,11 +42,20 @@ const formSchema = new mongoose.Schema({
 
 const Form = mongoose.model("Form", formSchema);
 
+// Handle GET request (optional)
+app.get("/", (req, res) => {
+  res.send("Hello World!");
+});
+
 // Handle POST request to save form data
 app.post("/", async (req, res) => {
   try {
+    // Create a new form entry
     const newForm = new Form(req.body);
+
+    // Save form data to MongoDB in the "form" database
     await newForm.save();
+
     res.status(201).send("Data saved to MongoDB successfully!");
   } catch (error) {
     console.error("Error saving data to MongoDB:", error);
@@ -58,13 +63,7 @@ app.post("/", async (req, res) => {
   }
 });
 
-// Export the Express app as a serverless function
-export default app;
-
-// Start the server (if running locally)
-if (process.env.NODE_ENV !== "production") {
-  const port = 3000;
-  app.listen(port, () => {
-    console.log(`Server is running on http://localhost:${port}`);
-  });
-}
+// Start the server
+app.listen(port, () => {
+  console.log(`Server is running on http:localhost:${port}`);
+});
