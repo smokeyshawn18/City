@@ -13,8 +13,8 @@ app.use(cors());
 // Parse JSON body data
 app.use(bodyParser.json());
 
-// MongoDB connection string (point to the "cform" database)
-const mongoURI = "mongodb://localhost:27017/cform"; // Update this URI to your MongoDB Atlas URI if needed
+// MongoDB connection string (point to the "form" database)
+const mongoURI = "mongodb://localhost:27017/form"; // Update this URI to your MongoDB Atlas URI if needed
 
 // Connect to MongoDB
 mongoose
@@ -29,7 +29,7 @@ mongoose
     console.error("Failed to connect to MongoDB", err);
   });
 
-// Define a Schema and Model for storing form data in the "cmsg" collection
+// Define a Schema and Model for storing form data
 const formSchema = new mongoose.Schema({
   name: { type: String, required: true, minlength: 3 },
   email: {
@@ -40,8 +40,7 @@ const formSchema = new mongoose.Schema({
   message: { type: String, required: true, minlength: 5 },
 });
 
-// Use the "cmsg" collection in the "cform" database
-const Form = mongoose.model("cmsg", formSchema);
+const Form = mongoose.model("Form", formSchema);
 
 // Handle GET request (optional)
 app.get("/", (req, res) => {
@@ -49,13 +48,12 @@ app.get("/", (req, res) => {
 });
 
 // Handle POST request to save form data
-app.post("/cmsg", async (req, res) => {
-  // Update the route to "/cmsg"
+app.post("/", async (req, res) => {
   try {
     // Create a new form entry
     const newForm = new Form(req.body);
 
-    // Save form data to MongoDB in the "cmsg" collection
+    // Save form data to MongoDB in the "form" database
     await newForm.save();
 
     res.status(201).send("Data saved to MongoDB successfully!");
@@ -67,5 +65,5 @@ app.post("/cmsg", async (req, res) => {
 
 // Start the server
 app.listen(port, () => {
-  console.log(`Server is running on http://localhost:${port}`);
+  console.log(`Server is running on http:localhost:${port}`);
 });
