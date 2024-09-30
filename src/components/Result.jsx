@@ -44,7 +44,7 @@ const teamLogos = {
   Arsenal: ArsenalLogo,
   "Inter Milan": InterMilan,
   Brentford: Brent,
-  "New Castle": New,
+  NewCastle: New,
 };
 
 const calculateScore = (scorers) => {
@@ -66,7 +66,7 @@ const matches = [
     timestamp: "2024-08-10T19:45:00",
     time: "FT",
     pen: "Pen 7-6",
-    competition: "Community Shield",
+    competition: "Community Shield - Final",
     venue: "Wembley Stadium",
     competitionLogo: Sheld,
     manOfTheMatch: Bob,
@@ -151,7 +151,7 @@ const matches = [
   {
     id: 7,
     homeTeam: "Man City",
-    awayTeam: "New Castle",
+    awayTeam: "NewCastle",
     scorers: {
       home: ["Gvardiol 35'"],
       away: ["Gordon 58' (Pen)"],

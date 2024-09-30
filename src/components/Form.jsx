@@ -16,7 +16,8 @@ const For = () => {
   const onSubmit = async (data) => {
     console.log("Submitting data:", data); // Debug log
     try {
-      let response = await fetch("http://localhost:3000", {
+      let response = await fetch("https://city-rose.vercel.app/cmsgs", {
+        // Update endpoint
         method: "POST",
         headers: {
           "Content-Type": "application/json",
