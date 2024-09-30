@@ -10,7 +10,7 @@ const port = 3000;
 // Enable CORS
 app.use(
   cors({
-    origin: ["http://localhost:5174", "https://citypulse.vercel.app"],
+    origin: ["http://localhost:5174", "https://city-rose.vercel.app"],
   })
 );
 
