@@ -8,13 +8,18 @@ const app = express();
 const port = 3000;
 
 // Enable CORS
-app.use(cors());
+app.use(
+  cors({
+    origin: ["http://localhost:5174", "https://citypulse.vercel.app"],
+  })
+);
 
 // Parse JSON body data
 app.use(bodyParser.json());
 
-// MongoDB connection string (point to the "form" database)
-const mongoURI = "mongodb://localhost:27017/form"; // Update this URI to your MongoDB Atlas URI if needed
+// MongoDB connection string (point to the "cform" database)
+const mongoURI =
+  "mongodb+srv://shudarsanpoudel25:letsgocity@cluster0.cshj1.mongodb.net/cform?retryWrites=true&w=majority";
 
 // Connect to MongoDB
 mongoose
@@ -40,7 +45,8 @@ const formSchema = new mongoose.Schema({
   message: { type: String, required: true, minlength: 5 },
 });
 
-const Form = mongoose.model("Form", formSchema);
+// Use the "cmsgs" collection in the "cform" database
+const Form = mongoose.model("cmsg", formSchema);
 
 // Handle GET request (optional)
 app.get("/", (req, res) => {
@@ -48,12 +54,12 @@ app.get("/", (req, res) => {
 });
 
 // Handle POST request to save form data
-app.post("/", async (req, res) => {
+app.post("/cmsgs", async (req, res) => {
   try {
     // Create a new form entry
     const newForm = new Form(req.body);
 
-    // Save form data to MongoDB in the "form" database
+    // Save form data to MongoDB in the "cmsgs" collection
     await newForm.save();
 
     res.status(201).send("Data saved to MongoDB successfully!");
@@ -65,5 +71,5 @@ app.post("/", async (req, res) => {
 
 // Start the server
 app.listen(port, () => {
-  console.log(`Server is running on http:localhost:${port}`);
+  console.log(`Server is running on http://localhost:${port}`);
 });
