@@ -1,5 +1,6 @@
 import heroImage from "../assets/images/home.jpeg";
 
+import City from "../assets/images/logo.svg";
 import Opponent from "../assets/images/opponent.jpg";
 // import premierLeagueLogo from "../assets/images/prem.webp";
 // import championsLeagueLogo from "../assets/images/Champ.png";
@@ -9,7 +10,7 @@ import { useState, useMemo, useEffect, useCallback } from "react";
 import Kit from "./Kit";
 import CoachProfile from "./Coach";
 import KeyPerformers from "./KeyPerformers";
-import Tottenham from "../assets/images/tottenham.webp";
+import Fulham from "../assets/images/fulham.png";
 import Carabao from "../assets/images/carabao.png";
 
 import For from "./Form";
@@ -18,11 +19,11 @@ const Home = () => {
   const matchDay = useMemo(
     () => [
       {
-        date: "2024-09-31",
-        opponent: "Tottenham",
-        time: "01:30", // Match time in user's local time format
-        venue: "Tottenham Hotspur Stadium",
-        opponentLogo: Tottenham,
+        date: "2024-10-05",
+        opponent: "Fulham",
+        time: "19:45", // Match time in user's local time format
+        venue: "Etihad Stadium",
+        opponentLogo: Fulham,
         kick: "Starts in:",
         competition: Carabao,
       },
@@ -30,41 +31,39 @@ const Home = () => {
     []
   );
 
-  const formatDate = (dateString) => {
-    const date = new Date(dateString);
-    const options = { month: "short", day: "2-digit", year: "numeric" };
-    return date.toLocaleDateString("en-US", options); // This converts date based on the user's locale
+  // Function to create a valid local DateTime string
+  const getLocalDateTimeString = (date, time) => {
+    // Format the date string correctly with local time
+    const localTimeString = `${date}T${time}:00`; // Add ":00" for seconds
+    return new Date(localTimeString); // JavaScript will use the local time zone
   };
 
-  const calculateCountdown = (matchDate) => {
+  const calculateCountdown = (matchDateTime) => {
     const now = new Date();
-    const matchTime = new Date(matchDate); // No need to convert as it is in the user's local time
-
-    const timeDifference = matchTime - now; // Difference between match time and current time
+    const timeDifference = matchDateTime - now;
 
     if (timeDifference <= 0) {
-      return { hours: 0, minutes: 0, seconds: 0, hasStarted: true };
+      return { hours: 0, minutes: 0, seconds: 0, hasEnded: true }; // Match has ended
     }
 
     const hours = Math.floor((timeDifference / (1000 * 60 * 60)) % 24);
     const minutes = Math.floor((timeDifference / 1000 / 60) % 60);
     const seconds = Math.floor((timeDifference / 1000) % 60);
 
-    return { hours, minutes, seconds, hasStarted: false };
+    return { hours, minutes, seconds, hasEnded: false };
   };
 
   const [todayMatches, setTodayMatches] = useState([]);
   const [countdowns, setCountdowns] = useState({});
 
-  // Filter today's matches based on the user's local time
   const getTodayMatches = useCallback(() => {
     const today = new Date();
     return matchDay.filter((match) => {
-      const matchDate = new Date(match.date);
+      const matchDateTime = getLocalDateTimeString(match.date, match.time);
       return (
-        today.getFullYear() === matchDate.getFullYear() &&
-        today.getMonth() === matchDate.getMonth() &&
-        today.getDate() === matchDate.getDate()
+        today.getFullYear() === matchDateTime.getFullYear() &&
+        today.getMonth() === matchDateTime.getMonth() &&
+        today.getDate() === matchDateTime.getDate()
       );
     });
   }, [matchDay]);
@@ -76,112 +75,123 @@ const Home = () => {
   useEffect(() => {
     const timer = setInterval(() => {
       const newCountdowns = matchDay.reduce((acc, match) => {
-        // Use dynamic local time for each match countdown
-        const countdown = calculateCountdown(`${match.date}T${match.time}`);
+        const matchDateTime = getLocalDateTimeString(match.date, match.time);
+        const countdown = calculateCountdown(matchDateTime);
         acc[match.opponent] = countdown;
         return acc;
       }, {});
 
       setCountdowns(newCountdowns);
 
-      // Remove matches that have started from the today's matches state
-      const ongoingMatches = todayMatches.filter(
-        (match) => !newCountdowns[match.opponent]?.hasStarted
+      // Stop the countdown if all matches have ended
+      const ongoingMatches = matchDay.filter(
+        (match) => !newCountdowns[match.opponent]?.hasEnded
       );
 
-      setTodayMatches(ongoingMatches);
-
-      // Clear the interval if all matches are done
       if (ongoingMatches.length === 0) {
-        clearInterval(timer);
+        clearInterval(timer); // Clear the interval once the match has ended
       }
     }, 1000);
 
-    return () => clearInterval(timer); // Clean up the interval when the component unmounts
-  }, [matchDay, todayMatches]);
+    return () => clearInterval(timer);
+  }, [matchDay]);
 
   return (
     <section className="bg-[#f0f8ff] text-gray-800 py-12 lg:py-24">
       <div className="relative container mx-auto px-4 lg:px-8">
         {todayMatches.length > 0 && (
-          <div className="bg-gray-100 py-8 px-4 sm:px-6 lg:px-8">
-            <h2 className="text-2xl sm:text-4xl font-bold text-center text-[#1b3c42] mb-8 uppercase tracking-wider">
+          <div className="mb- rounded-xl py-1 px-6 sm:px-8 lg:px-12 text-white mb-10">
+            <h2 className="text-3xl text-gray-800 sm:text-5xl font-bold text-center uppercase mb-12 tracking-wider">
               Match Day
             </h2>
 
-            <div className="flex flex-col items-center gap-8">
+            <div className="flex flex-col items-center gap-12">
               {todayMatches.map((match, index) => (
                 <div
                   key={index}
-                  className="bg-white p-6 rounded-lg shadow-xl flex flex-col md:flex-row items-center justify-between max-w-4xl w-full"
+                  className="bg-white text-[#1b3c42] p-6 rounded-lg shadow-xl flex flex-col items-center max-w-md w-full relative"
                 >
-                  {/* Match Details */}
-                  <div className="flex flex-col items-center md:items-start md:flex-row gap-4 md:gap-8 w-full">
-                    <div className="flex items-center flex-col md:flex-row gap-4">
-                      <img
-                        src={match.opponentLogo}
-                        alt={`${match.opponent} Logo`}
-                        className="w-16 h-16 sm:w-20 sm:h-20 rounded-full border-2 border-gray-300"
-                      />
-                      <div className="text-center md:text-left">
-                        <h3 className="text-lg sm:text-xl font-bold text-blue-800 mb-1">
-                          {match.opponent}
-                        </h3>
-                        <p className="text-gray-600">
-                          {formatDate(match.date)}
-                        </p>
-                        <div className="flex items-center gap-2 text-gray-700 mt-2">
-                          <FaClock />
-                          <span>{match.time}</span>
-                        </div>
-                        <div className="flex items-center gap-2 text-gray-700 mt-1">
-                          <FaMapMarkerAlt />
-                          <span>{match.venue}</span>
-                        </div>
-                      </div>
+                  {/* Manchester City vs Opponent Logos */}
+                  <div className="flex items-center justify-between gap-4 w-full">
+                    {/* Manchester City Logo */}
+                    <img
+                      src={City}
+                      alt="Manchester City"
+                      className="h-16 w-16 sm:h-20 sm:w-20 object-contain"
+                    />
+
+                    {/* VS Text */}
+                    <div className="text-2xl sm:text-3xl font-extrabold text-gray-700">
+                      VS
                     </div>
 
-                    {/* Timer */}
-                    <div className="flex items-center justify-center mt-4 md:mt-0">
-                      <div className="bg-gray-200 p-4 rounded-lg shadow-md">
-                        <div className="grid grid-cols-3 gap-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3">
+                    {/* Opponent Team Logo */}
+                    <img
+                      src={match.opponentLogo}
+                      alt={match.opponent}
+                      className="h-16 w-16 sm:h-20 sm:w-20 object-contain"
+                    />
+                  </div>
+
+                  {/* Match Information */}
+                  <div className="mt-4 text-center space-y-2 sm:space-y-3">
+                    <p className="text-md sm:text-lg text-gray-600">
+                      {match.date}
+                    </p>
+                    <div className="flex justify-center items-center gap-1 text-gray-600">
+                      <FaClock className="text-gray-500" />
+                      <span>{match.time}</span>
+                    </div>
+                    <div className="flex justify-center items-center gap-1 text-gray-600">
+                      <FaMapMarkerAlt className="text-gray-500" />
+                      <span>{match.venue}</span>
+                    </div>
+                  </div>
+
+                  {/* Countdown Timer */}
+                  <div className="flex items-center justify-center mt-4">
+                    <div className="bg-gradient-to-r from-blue-400 to-blue-600 p-6 rounded-lg shadow-lg">
+                      {countdowns[match.opponent]?.hasEnded ? (
+                        <div className="text-center text-red-600 font-bold text-lg">
+                          Match has ended
+                        </div>
+                      ) : (
+                        <div className="grid grid-cols-3 gap-10 text-center">
                           {["hours", "minutes", "seconds"].map((unit, i) => (
-                            <div
-                              key={i}
-                              className="bg-white p-3 rounded-md text-center"
-                            >
-                              <div className="text-xl sm:text-2xl font-bold text-blue-900">
+                            <div key={i} className="flex flex-col items-center">
+                              <div className="text-4xl font-extrabold text-white">
                                 {countdowns[match.opponent]?.[unit] || "00"}
                               </div>
-                              <div className="text-xs text-gray-600 capitalize">
+                              <div className="text-sm text-gray-200 capitalize">
                                 {unit}
                               </div>
                             </div>
                           ))}
                         </div>
-                      </div>
+                      )}
                     </div>
                   </div>
 
-                  {/* Action and Competition */}
-                  <div className="flex flex-col items-center text-[#1b3c42] mt-4 md:mt-0">
+                  {/* Competition Info (Centered Under the Match Details) */}
+                  <div className="mt-6">
+                    <img
+                      src={match.competition}
+                      alt="Competition Logo"
+                      className="w-10 h-10 sm:w-12 sm:h-12 mx-auto"
+                    />
+                  </div>
+
+                  {/* Buy Tickets Button */}
+                  <div className="mt-6">
                     <a
                       href="https://www.mancity.com/tickets"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="bg-gradient-to-r from-red-600 to-orange-600 text-white text-lg px-4 py-2 rounded-full font-semibold shadow-lg hover:shadow-xl transition-shadow flex items-center gap-2"
+                      className="bg-gradient-to-r from-red-600 to-orange-600 text-white text-lg px-5 py-2 rounded-full font-semibold shadow-lg hover:shadow-xl transition-shadow flex items-center gap-2"
                     >
-                      <FaTicketAlt className="text-2xl" />
+                      <FaTicketAlt className="text-xl" />
                       <span>Buy Tickets</span>
                     </a>
-
-                    <div className="mt-6">
-                      <img
-                        src={match.competition}
-                        alt="Competition Logo"
-                        className="w-12 h-12 sm:w-16 sm:h-16"
-                      />
-                    </div>
                   </div>
                 </div>
               ))}

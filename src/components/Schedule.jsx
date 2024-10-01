@@ -10,9 +10,19 @@ import AstonVilla from "../assets/images/aston-villa.png";
 import Carabao from "../assets/images/carabao.png";
 import WestHamLogo from "../assets/images/westham.png";
 import Sporting from "../assets/images/sporting.png";
+import Fulham from "../assets/images/fulham.png";
 
 // Full list of matches including additional teams
 const matches = [
+  {
+    date: "2024-10-05",
+    opponent: "Fulham",
+    time: "19:45",
+    venue: "Etihad Stadium",
+    competition: "Premier League",
+    opponentLogo: Fulham,
+    competitionLogo: PremierLeagueLogo,
+  },
   {
     date: "2024-10-31",
     opponent: "Tottenham",

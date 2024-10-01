@@ -2,6 +2,8 @@ import express from "express";
 import cors from "cors";
 import bodyParser from "body-parser";
 import mongoose from "mongoose";
+import path from "path";
+const __dirname = path.resolve(); // For ES modules
 
 // Create Express app
 const app = express();
@@ -18,10 +20,7 @@ const mongoURI = "mongodb://localhost:27017/form"; // Update this URI to your Mo
 
 // Connect to MongoDB
 mongoose
-  .connect(mongoURI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
+  .connect(mongoURI)
   .then(() => {
     console.log("Connected to MongoDB");
   })
@@ -63,7 +62,15 @@ app.post("/", async (req, res) => {
   }
 });
 
+// Serve static files from the "dist" folder (Vite build output)
+app.use(express.static(path.join(__dirname, "dist")));
+
+// For any other route, serve the index.html file (Single Page Application support)
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "dist", "index.html"));
+});
+
 // Start the server
 app.listen(port, () => {
-  console.log(`Server is running on http:localhost:${port}`);
+  console.log(`Server is running on http://localhost:${port}`);
 });
