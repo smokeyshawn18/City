@@ -13,7 +13,7 @@ import KeyPerformers from "./KeyPerformers";
 import Fulham from "../assets/images/fulham.png";
 import Carabao from "../assets/images/carabao.png";
 
-import For from "./Form";
+// import For from "./Form";
 
 const Home = () => {
   const matchDay = useMemo(
@@ -215,7 +215,7 @@ const Home = () => {
           </div>
         </div>
 
-        <For />
+        {/* <For /> */}
 
         {/* Reduced margin for CoachProfile */}
         <CoachProfile className="mt-4" />

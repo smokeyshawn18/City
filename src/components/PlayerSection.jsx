@@ -39,9 +39,9 @@ const players = [
       appearances: 312,
     },
     seasonStats: {
-      goals: 11,
+      goals: 12,
       assists: 0,
-      appearances: 11,
+      appearances: 12,
     },
   },
   {
@@ -65,7 +65,7 @@ const players = [
     injuryDetails: {
       tm: "Sept 18, 2024",
       type: "Groin Injury",
-      recoveryTime: "Doubtful",
+      recoveryTime: "A Few Days",
     },
     injuryIcon: FaHospital,
   },
@@ -83,9 +83,9 @@ const players = [
       appearances: 647,
     },
     seasonStats: {
-      goals: 0,
+      goals: 1,
       assists: 0,
-      appearances: 6,
+      appearances: 7,
     },
     injured: false,
   },
@@ -111,7 +111,7 @@ const players = [
 
   {
     name: "Phil Foden",
-    position: "LW",
+    position: "AM",
     number: 47,
     age: 24,
     country: England,
@@ -122,9 +122,9 @@ const players = [
       appearances: 311,
     },
     seasonStats: {
-      goals: 0,
-      assists: 0,
-      appearances: 5,
+      goals: 1,
+      assists: 1,
+      appearances: 6,
     },
     injured: false,
   },
@@ -143,7 +143,7 @@ const players = [
     seasonStats: {
       goals: 1,
       assists: 2,
-      appearances: 9,
+      appearances: 10,
     },
     injured: false,
   },
@@ -161,7 +161,6 @@ const players = [
       tm: "Sept 22, 2024",
     },
     injuryIcon: FaHospital,
-    // Assign the React Icon component
     image: Rodrigo,
     careerStats: {
       goals: 35,
@@ -207,8 +206,8 @@ const players = [
     },
     seasonStats: {
       goals: 1,
-      assists: 1,
-      appearances: 10,
+      assists: 2,
+      appearances: 11,
     },
     injured: false,
   },
@@ -228,7 +227,7 @@ const players = [
     seasonStats: {
       goals: 0,
       assists: 2,
-      appearances: 8,
+      appearances: 9,
     },
     injured: false,
   },
@@ -247,7 +246,7 @@ const players = [
     seasonStats: {
       goals: 1,
       assists: 0,
-      appearances: 11,
+      appearances: 12,
     },
     injured: false,
   },
@@ -266,7 +265,7 @@ const players = [
     seasonStats: {
       goals: 0,
       assists: 0,
-      appearances: 5,
+      appearances: 6,
     },
     injured: false,
   },
@@ -285,7 +284,7 @@ const players = [
     seasonStats: {
       goals: 1,
       assists: 0,
-      appearances: 4,
+      appearances: 5,
     },
     injured: false,
   },
@@ -303,8 +302,8 @@ const players = [
     },
     seasonStats: {
       goals: 0,
-      assists: 2,
-      appearances: 9,
+      assists: 3,
+      appearances: 10,
     },
     injured: false,
   },
@@ -323,7 +322,7 @@ const players = [
     seasonStats: {
       goals: 0,
       assists: 0,
-      appearances: 10,
+      appearances: 11,
     },
     injured: false,
   },
