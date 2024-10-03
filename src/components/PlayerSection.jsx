@@ -22,6 +22,9 @@ import Croatia from "../assets/images/cro.png";
 import Spain from "../assets/images/spain.png";
 import Brazil from "../assets/images/brazil.png";
 import Stones from "../assets/images/stones.jpg";
+import Ederson from "../assets/images/ederson.webp";
+import Nunes from "../assets/images/nunes.jpg";
+import James from "../assets/images/james.webp";
 import { FaHospital } from "react-icons/fa"; // Import hospital icon
 
 // Sample player data
@@ -232,6 +235,25 @@ const players = [
     injured: false,
   },
   {
+    name: "James McAtee",
+    position: "AM",
+    number: 87,
+    age: 21,
+    country: England,
+    image: James,
+    careerStats: {
+      goals: 14,
+      assists: 7,
+      appearances: 82,
+    },
+    seasonStats: {
+      goals: 1,
+      assists: 1,
+      appearances: 4,
+    },
+    injured: false,
+  },
+  {
     name: "Josko Gvardiol",
     number: 24,
     position: "LB",
@@ -289,6 +311,26 @@ const players = [
     injured: false,
   },
   {
+    name: "Matheus Nunes",
+
+    position: "CM",
+    number: 27,
+    country: Portugal,
+    age: 26,
+    image: Nunes,
+    careerStats: {
+      goals: 11,
+      assists: 15,
+      appearances: 195,
+    },
+    seasonStats: {
+      goals: 1,
+      assists: 1,
+      appearances: 6,
+    },
+    injured: false,
+  },
+  {
     name: "Rico Lewis",
     number: 82,
     position: "RB",
@@ -323,6 +365,26 @@ const players = [
       goals: 0,
       assists: 0,
       appearances: 11,
+    },
+    injured: false,
+  },
+
+  {
+    name: "Ederson Moraes",
+    number: 3,
+    position: "GK",
+    age: 31,
+    country: Brazil,
+    image: Ederson,
+    careerStats: {
+      goalsConceded: 388,
+      cleanSheets: 220,
+      appearances: 479,
+    },
+    seasonStats: {
+      goalsConceded: 7,
+      cleanSheets: 2,
+      appearances: 8,
     },
     injured: false,
   },

@@ -19,6 +19,8 @@ import Bob from "../assets/images/bob.jpg";
 import Raya from "../assets/images/raya.jpg";
 import New from "../assets/images/newcastle.png";
 import JoskoGvardiol from "../assets/images/gv.jpg";
+import SLB from "../assets/images/slb.png";
+import PhilFoden from "../assets/images/pfoden.jpg";
 
 const teamColors = {
   "Man City": "#6caddf",
@@ -45,6 +47,7 @@ const teamLogos = {
   "Inter Milan": InterMilan,
   Brentford: Brent,
   NewCastle: New,
+  "S. Bratislava": SLB,
 };
 
 const calculateScore = (scorers) => {
@@ -165,6 +168,23 @@ const matches = [
     manOfTheMatch: JoskoGvardiol,
     motm: "Josko Gvardiol",
   },
+  {
+    id: 8,
+    homeTeam: "Man City",
+    awayTeam: "S. Bratislava",
+    scorers: {
+      home: ["Gundogan 8'", "Foden 15'", "Haaland 58'", "McAtee 74'"],
+      away: [],
+    },
+    timestamp: "2024-09-19T12:45:00",
+    time: "FT",
+    competition: "Champions League",
+    venue: "Stadion Tehelne pole, Slovakia",
+    competitionLogo: ChampionsLeague,
+
+    manOfTheMatch: PhilFoden,
+    motm: "Phil Foden",
+  },
 ];
 
 const formatDateTime = (dateTimeString) => {
@@ -184,11 +204,11 @@ const formatDateTime = (dateTimeString) => {
 
 const Results = () => {
   return (
-    <div className="min-h-screen bg-sky-100 p-8">
-      <h1 className="text-4xl font-bold text-center mb-8 text-sky-900 uppercase">
+    <div className="min-h-screen bg-sky-100 p-6 sm:p-8">
+      <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-center mb-6 sm:mb-8 text-sky-900 uppercase">
         Main Matches Results 24/25 Season
       </h1>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-10">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 sm:gap-10">
         {matches
           .sort((a, b) => b.id - a.id) // Sort by id in descending order
           .map((match) => {
@@ -201,27 +221,28 @@ const Results = () => {
                 className="bg-white text-sky-900 rounded-lg shadow-lg transition-transform transform hover:scale-105 hover:shadow-2xl p-4"
               >
                 <div className="relative">
-                  <div className="w-full h-40 bg-gradient-to-r from-sky-300 to-sky-500 flex items-center justify-between p-4">
+                  {/* Match Info */}
+                  <div className="w-full h-32 sm:h-40 bg-gradient-to-r from-sky-300 to-sky-500 flex items-center justify-between p-4">
                     <div className="flex flex-col items-center">
                       <img
                         src={teamLogos[match.homeTeam]}
                         alt={`${match.homeTeam} Logo`}
-                        className="w-20 h-20 rounded-full border-2 border-white"
+                        className="w-12 h-12 sm:w-16 sm:h-16 rounded-full border-2 border-white"
                       />
-                      <p className="mt-2 text-lg font-bold text-white">
+                      <p className="mt-2 text-sm sm:text-lg font-bold text-white">
                         {match.homeTeam}
                       </p>
                     </div>
                     <div className="text-center">
-                      <p className="text-3xl font-bold">
+                      <p className="text-lg sm:text-xl font-bold mx-auto">
                         {homeScore} - {awayScore}
                       </p>
                       {match.pen && (
-                        <p className="text-xl font-bold text-sky-800 mt-2">
+                        <p className="text-lg sm:text-xl font-bold text-sky-800 mt-2">
                           {match.pen}
                         </p>
                       )}
-                      <p className="text-xl font-bold mt-3 text-gray-100">
+                      <p className="text-md sm:text-xl font-bold mt-1 sm:mt-3 text-gray-100">
                         {match.time}
                       </p>
                     </div>
@@ -229,62 +250,60 @@ const Results = () => {
                       <img
                         src={teamLogos[match.awayTeam]}
                         alt={`${match.awayTeam} Logo`}
-                        className="w-20 h-20 rounded-full border-2 border-white"
+                        className="w-12 h-12 sm:w-14 sm:h-14 rounded-full border-2 border-white"
                       />
-                      <p className="mt-2 text-lg font-bold text-white">
+                      <p className="mt-2 text-sm sm:text-lg font-bold text-white">
                         {match.awayTeam}
                       </p>
                     </div>
                   </div>
 
+                  {/* Scorers and Player of the Match */}
                   <div className="p-4 bg-sky-50 rounded-md mt-4">
-                    <div className="flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0 md:space-x-10">
+                    <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0 md:space-x-6">
                       {/* Home Scorers */}
                       <div className="flex-1">
                         <h4
-                          className="text-lg font-bold mb-2"
+                          className="text-md sm:text-lg font-bold mb-2"
                           style={{ color: teamColors[match.homeTeam] }}
                         >
                           <img
                             src={teamLogos[match.homeTeam]}
-                            className="w-10 h-10 mx-auto"
+                            className="w-8 h-8 sm:w-10 sm:h-10 mx-auto"
                             alt={`${match.homeTeam} Logo`}
                           />
                         </h4>
                         {match.scorers.home.length > 0 ? (
-                          <ul className="list-disc pl-5 space-y-2">
+                          <ul className="list-disc pl-4 space-y-1">
                             {match.scorers.home.map((scorer, index) => (
                               <li
                                 key={index}
-                                className="font-semibold text-gray-800"
+                                className="text-sm sm:text-base font-semibold text-gray-800"
                               >
                                 {scorer}
-                                {scorer.includes("Assist:") && (
-                                  <span className="text-sm block text-gray-600 ml-4">
-                                    {scorer.match(/Assist: (.+)/)[1]}
-                                  </span>
-                                )}
                               </li>
                             ))}
                           </ul>
                         ) : (
-                          <p className="text-gray-500">No goals scored.</p>
+                          <p className="text-sm sm:text-base text-gray-500">
+                            No goals scored.
+                          </p>
                         )}
                       </div>
 
                       {/* Player of the Match */}
-                      <div className="flex flex-col items-center bg-sky-200 p-4 rounded-lg shadow-md">
-                        <p className="text-base font-medium text-sky-700 mb-3">
+                      <div className="flex flex-col items-center bg-sky-200 p-3 sm:p-4 rounded-lg shadow-md">
+                        <p className="text-sm sm:text-base font-medium text-sky-700 mb-2">
                           Player of the Match
                         </p>
-                        <div className="w-20 h-20 rounded-full overflow-hidden">
+                        <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full overflow-hidden">
                           <img
                             src={match.manOfTheMatch}
                             alt="Player of the Match"
                             className="w-full h-full object-cover"
                           />
                         </div>
-                        <p className="mt-2 text-lg font-bold text-sky-700">
+                        <p className="mt-2 text-sm sm:text-lg font-bold text-sky-700">
                           {match.motm}
                         </p>
                       </div>
@@ -292,51 +311,54 @@ const Results = () => {
                       {/* Away Scorers */}
                       <div className="flex-1">
                         <h4
-                          className="text-lg font-bold mb-2"
+                          className="text-md sm:text-lg font-bold mb-2"
                           style={{ color: teamColors[match.awayTeam] }}
                         >
                           <img
                             src={teamLogos[match.awayTeam]}
-                            className="w-10 h-10 mx-auto"
+                            className="w-8 h-8 sm:w-10 sm:h-10 mx-auto"
                             alt={`${match.awayTeam} Logo`}
                           />
                         </h4>
                         {match.scorers.away.length > 0 ? (
-                          <ul className="list-disc pl-5 space-y-2">
+                          <ul className="list-disc pl-4 space-y-1">
                             {match.scorers.away.map((scorer, index) => (
                               <li
                                 key={index}
-                                className="font-semibold text-gray-800"
+                                className="text-sm sm:text-base font-semibold text-gray-800"
                               >
                                 {scorer}
                               </li>
                             ))}
                           </ul>
                         ) : (
-                          <p className="text-gray-500">No goals scored.</p>
+                          <p className="text-sm sm:text-base text-gray-500">
+                            No goals scored.
+                          </p>
                         )}
                       </div>
                     </div>
                   </div>
 
+                  {/* Additional Info */}
                   <div className="p-4 text-center">
-                    <FaCalendarAlt className="text-sky-500 text-2xl mb-2 mx-auto" />
-                    <p className="text-xl font-semibold text-sky-700">
+                    <FaCalendarAlt className="text-sky-500 text-2xl mb-1 mx-auto" />
+                    <p className="text-md sm:text-xl font-semibold text-sky-700">
                       {formatDateTime(match.timestamp)}
                     </p>
                     <img
                       src={match.competitionLogo}
-                      className="w-14 h-14 mx-auto mt-3 mb-3"
+                      className="w-10 sm:w-14 h-10 sm:h-14 mx-auto mt-3 mb-2 rounded-xl"
                       alt={`${match.competition} Logo`}
                     />
-                    <p className="text-xl font-bold text-sky-600">
+                    <p className="text-lg sm:text-xl font-bold text-sky-600">
                       {match.competition}
                     </p>
                     <MdOutlineStadium className="text-sky-500 text-2xl mb-2 mt-4 mx-auto" />
-                    <p className="text-md font-semibold text-gray-600 mt-4">
+                    <p className="text-sm sm:text-md font-semibold text-gray-600 mt-2">
                       {match.venue}
                     </p>
-                    <button className="bg-sky-600 hover:bg-sky-700 text-white font-bold py-2 px-4 rounded-full mt-4">
+                    <button className="bg-sky-600 hover:bg-sky-700 text-white font-bold py-2 px-4 rounded-full mt-4 text-sm sm:text-base">
                       Enjoy The Game
                     </button>
                   </div>
