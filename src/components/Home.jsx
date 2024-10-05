@@ -10,23 +10,23 @@ import { useState, useMemo, useEffect, useCallback } from "react";
 import Kit from "./Kit";
 import CoachProfile from "./Coach";
 import KeyPerformers from "./KeyPerformers";
-import Fulham from "../assets/images/fulham.png";
-import Carabao from "../assets/images/carabao.png";
+
+// import Carabao from "../assets/images/carabao.png";
 
 // import For from "./Form";
 
 const Home = () => {
   const matchDay = useMemo(
     () => [
-      {
-        date: "2024-10-05",
-        opponent: "Fulham",
-        time: "19:45", // Match time in user's local time format
-        venue: "Etihad Stadium",
-        opponentLogo: Fulham,
-        kick: "Starts in:",
-        competition: Carabao,
-      },
+      // {
+      //   date: "2024-10-05",
+      //   opponent: "Fulham",
+      //   time: "19:45", // Match time in user's local time format
+      //   venue: "Etihad Stadium",
+      //   opponentLogo: Fulham,
+      //   kick: "Starts in:",
+      //   competition: Carabao,
+      // },
     ],
     []
   );
@@ -150,9 +150,9 @@ const Home = () => {
 
                   {/* Countdown Timer */}
                   <div className="flex items-center justify-center mt-4">
-                    <div className="bg-gradient-to-r from-blue-400 to-blue-600 p-6 rounded-lg shadow-lg">
+                    <div className="bg-gradient-to-r from-blue-400 to-blue-200 p-6 rounded-lg shadow-lg">
                       {countdowns[match.opponent]?.hasEnded ? (
-                        <div className="text-center text-red-600 font-bold text-lg">
+                        <div className="text-center text-red-700 font-bold text-lg">
                           Match has ended
                         </div>
                       ) : (
@@ -218,7 +218,6 @@ const Home = () => {
         {/* <For /> */}
 
         {/* Reduced margin for CoachProfile */}
-        <CoachProfile className="mt-4" />
 
         {/* Reduced margin for UCL Opponents */}
         <div className="bg-white p-6 rounded-3xl shadow-lg mb-8 mt-6">
@@ -236,6 +235,7 @@ const Home = () => {
         </div>
       </div>
 
+      <CoachProfile className="mt-4" />
       <KeyPerformers />
       <Kit />
     </section>

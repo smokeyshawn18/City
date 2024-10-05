@@ -21,6 +21,8 @@ import New from "../assets/images/newcastle.png";
 import JoskoGvardiol from "../assets/images/gv.jpg";
 import SLB from "../assets/images/slb.png";
 import PhilFoden from "../assets/images/pfoden.jpg";
+import Fulham from "../assets/images/fulham.png";
+import Kovacic from "../assets/images/kovacic.webp";
 
 const teamColors = {
   "Man City": "#6caddf",
@@ -48,6 +50,7 @@ const teamLogos = {
   Brentford: Brent,
   NewCastle: New,
   "S. Bratislava": SLB,
+  Fulham: Fulham,
 };
 
 const calculateScore = (scorers) => {
@@ -185,6 +188,23 @@ const matches = [
     manOfTheMatch: PhilFoden,
     motm: "Phil Foden",
   },
+  {
+    id: 9,
+    homeTeam: "Man City",
+    awayTeam: "Fulham",
+    scorers: {
+      home: ["Kovacic 32', 47'", "Doku 82'"],
+      away: ["Pereira 26'", "Muniz 88'"],
+    },
+    timestamp: "2024-09-28T17:15",
+    time: "FT",
+    competition: "Premier League",
+    venue: "St. James' Park",
+    competitionLogo: PremierLeagueLogo,
+
+    manOfTheMatch: Kovacic,
+    motm: "Mateo Kovacic",
+  },
 ];
 
 const formatDateTime = (dateTimeString) => {
@@ -234,7 +254,7 @@ const Results = () => {
                       </p>
                     </div>
                     <div className="text-center">
-                      <p className="text-lg sm:text-xl font-bold mx-auto">
+                      <p className="text-3xl sm:text-3xl font-bold mx-auto text-black">
                         {homeScore} - {awayScore}
                       </p>
                       {match.pen && (

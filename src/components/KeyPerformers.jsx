@@ -22,7 +22,7 @@ const playersData = [
   {
     name: "Erling Haaland",
     matches: {
-      premierLeague: 6,
+      premierLeague: 7,
       championsLeague: 2,
       other: 1,
       Carabao: 0,
@@ -80,7 +80,7 @@ const playersData = [
   {
     name: "Bernardo Silva",
     matches: {
-      premierLeague: 6,
+      premierLeague: 7,
       championsLeague: 1,
       other: 1,
       Carabao: 0,
@@ -94,7 +94,7 @@ const playersData = [
       nationalStats: 0,
     },
     assists: {
-      premierLeague: 2,
+      premierLeague: 3,
       championsLeague: 0,
       other: 0,
       Carabao: 0,
