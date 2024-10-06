@@ -7,6 +7,7 @@ import TrophyCabinet from "./components/Trophy.jsx";
 import PlayerSection from "./components/PlayerSection.jsx";
 import Footer from "./components/Footer.jsx";
 import History from "./components/History.jsx";
+import News from "./components/News.jsx";
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
 
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/news" element={<News />} />
         <Route path="/schedule" element={<Schedule />} />
         <Route path="/results" element={<Results />} />
         <Route path="/trophy-cabinet" element={<TrophyCabinet />} />

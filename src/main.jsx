@@ -9,6 +9,7 @@ import TrophyCabinet from "./components/Trophy";
 import PlayerSection from "./components/PlayerSection";
 import Footer from "./components/Footer";
 import History from "./components/History";
+import News from "./components/News";
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/news" element={<News />} />
         <Route path="/schedule" element={<Schedule />} />
         <Route path="/results" element={<Results />} />
         <Route path="/trophy-cabinet" element={<TrophyCabinet />} />
