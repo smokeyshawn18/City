@@ -6,7 +6,7 @@ import { v4 as uuidv4 } from "uuid";
 import Win50 from "../assets/images/50.jpg";
 import ACL from "../assets/images/acl.jpg";
 import Win30 from "../assets/images/30.jpg";
-import Plnews from "../assets/images/Plnews.jpg";
+import Plnews from "../assets/images/plnews.jpg";
 
 // News data with static time
 const newsData = [
