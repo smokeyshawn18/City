@@ -16,7 +16,7 @@ const For = () => {
   const onSubmit = async (data) => {
     console.log("Submitting data:", data); // Debug log
     try {
-      let response = await fetch("/api/submit.js", {
+      let response = await fetch("http://localhost:5000/api/submit.js", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

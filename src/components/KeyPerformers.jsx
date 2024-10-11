@@ -1,4 +1,3 @@
-import PropTypes from "prop-types";
 import {
   FaCalendarAlt,
   FaHandsHelping,
@@ -16,6 +15,7 @@ import premierLeagueLogo from "../assets/images/prem.webp";
 import championsLeagueLogo from "../assets/images/Champ.png";
 import Carabao from "../assets/images/carabao.png";
 import otherIcon from "../assets/images/sheld.png";
+// Placeholder for national team icon
 import { useState } from "react";
 
 const playersData = [
@@ -26,14 +26,14 @@ const playersData = [
       championsLeague: 2,
       other: 1,
       Carabao: 0,
-      nationalStats: 2,
+      nationalStats: 3,
     },
     goals: {
       premierLeague: 10,
       championsLeague: 1,
       other: 0,
       Carabao: 0,
-      nationalStats: 1,
+      nationalStats: 3,
     },
     assists: {
       premierLeague: 0,
@@ -42,7 +42,6 @@ const playersData = [
       Carabao: 0,
       nationalStats: 0,
     },
-    nationalStats: { matches: 2, goals: 1, assists: 0 },
     age: 24,
     position: "ST",
     image: player1Image,
@@ -71,7 +70,6 @@ const playersData = [
       Carabao: 0,
       nationalStats: 0,
     },
-    nationalStats: { matches: 2, goals: 2, assists: 0 },
     nimg: Belgium,
     age: 33,
     position: "AM",
@@ -100,7 +98,6 @@ const playersData = [
       Carabao: 0,
       nationalStats: 0,
     },
-    nationalStats: { matches: 2, goals: 0, assists: 0 },
     age: 30,
     position: "AM",
     nimg: Portugal,
@@ -162,7 +159,7 @@ const KeyPerformers = () => {
                   </h3>
                   <img
                     src={player.nimg}
-                    alt=""
+                    alt="national flag"
                     className="w-10 h-8 mx-auto mb-5 mt-3"
                   />
                   <p className="text-lg font-semibold text-[#182d33]">
@@ -229,6 +226,7 @@ const KeyPerformers = () => {
 
               {isExpanded && (
                 <div className="mt-6">
+                  {/* League Stats */}
                   <div className="bg-gray-50 p-4 rounded-xl mb-4">
                     <div className="flex items-center mb-2">
                       <img
@@ -265,7 +263,44 @@ const KeyPerformers = () => {
                       </span>
                     </div>
                   </div>
-
+                  {/* National Stats */}
+                  <div className="bg-gray-50 p-4 rounded-xl mb-4">
+                    <div className="flex items-center mb-2">
+                      <img
+                        src={player.nimg}
+                        alt="National Team"
+                        className="w-8 h-8 mr-2"
+                      />
+                      <span className="text-[#3D195B] font-semibold">
+                        National Stats
+                      </span>
+                    </div>
+                    <div className="flex justify-between mb-2">
+                      <span className="text-gray-600 font-semibold">
+                        Matches:
+                      </span>
+                      <span className="text-gray-900 font-semibold">
+                        {player.matches.nationalStats}
+                      </span>
+                    </div>
+                    <div className="flex justify-between mb-2">
+                      <span className="text-gray-600 font-semibold">
+                        Goals:
+                      </span>
+                      <span className="text-gray-900 font-semibold">
+                        {player.goals.nationalStats}
+                      </span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-gray-600 font-semibold">
+                        Assists:
+                      </span>
+                      <span className="text-gray-900 font-semibold">
+                        {player.assists.nationalStats}
+                      </span>
+                    </div>
+                  </div>
+                  {/* Champions League Stats */}
                   <div className="bg-gray-50 p-4 rounded-xl mb-4">
                     <div className="flex items-center mb-2">
                       <img
@@ -302,7 +337,7 @@ const KeyPerformers = () => {
                       </span>
                     </div>
                   </div>
-
+                  {/* Carabao Cup Stats */}
                   <div className="bg-gray-50 p-4 rounded-xl mb-4">
                     <div className="flex items-center mb-2">
                       <img
@@ -339,52 +374,16 @@ const KeyPerformers = () => {
                       </span>
                     </div>
                   </div>
-                  <div className="bg-gray-50 p-4 rounded-xl mb-4">
-                    <div className="flex items-center mb-2">
-                      <img
-                        src={player.nimg}
-                        alt="National Stats"
-                        className="w-8 h-8 mr-2"
-                      />
-                      <span className="text-[#3D195B] font-semibold">
-                        National Stats
-                      </span>
-                    </div>
-                    <div className="flex justify-between mb-2">
-                      <span className="text-gray-600 font-semibold">
-                        Matches:
-                      </span>
-                      <span className="text-gray-900 font-semibold">
-                        {player.nationalStats.matches}
-                      </span>
-                    </div>
-                    <div className="flex justify-between mb-2">
-                      <span className="text-gray-600 font-semibold">
-                        Goals:
-                      </span>
-                      <span className="text-gray-900 font-semibold">
-                        {player.nationalStats.goals}
-                      </span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-gray-600 font-semibold">
-                        Assists:
-                      </span>
-                      <span className="text-gray-900 font-semibold">
-                        {player.nationalStats.assists}
-                      </span>
-                    </div>
-                  </div>
-
+                  {/* Other Stats */}
                   <div className="bg-gray-50 p-4 rounded-xl mb-4">
                     <div className="flex items-center mb-2">
                       <img
                         src={otherIcon}
-                        alt="Community Shield"
+                        alt="Other"
                         className="w-8 h-8 mr-2"
                       />
                       <span className="text-[#3D195B] font-semibold">
-                        Community Shield
+                        Other
                       </span>
                     </div>
                     <div className="flex justify-between mb-2">
@@ -420,44 +419,6 @@ const KeyPerformers = () => {
       </div>
     </div>
   );
-};
-
-KeyPerformers.propTypes = {
-  players: PropTypes.arrayOf(
-    PropTypes.shape({
-      name: PropTypes.string.isRequired,
-      matches: PropTypes.shape({
-        premierLeague: PropTypes.number.isRequired,
-        championsLeague: PropTypes.number.isRequired,
-        other: PropTypes.number.isRequired,
-        Carabao: PropTypes.number.isRequired,
-        nationalStats: PropTypes.number.isRequired,
-      }).isRequired,
-      goals: PropTypes.shape({
-        premierLeague: PropTypes.number.isRequired,
-        championsLeague: PropTypes.number.isRequired,
-        other: PropTypes.number.isRequired,
-        Carabao: PropTypes.number.isRequired,
-        nationalStats: PropTypes.number.isRequired,
-      }).isRequired,
-      assists: PropTypes.shape({
-        premierLeague: PropTypes.number.isRequired,
-        championsLeague: PropTypes.number.isRequired,
-        other: PropTypes.number.isRequired,
-        Carabao: PropTypes.number.isRequired,
-        nationalStats: PropTypes.number.isRequired,
-      }).isRequired,
-      nationalStats: PropTypes.shape({
-        matches: PropTypes.number.isRequired,
-        goals: PropTypes.number.isRequired,
-        assists: PropTypes.number.isRequired,
-      }).isRequired,
-      age: PropTypes.number.isRequired,
-      position: PropTypes.string.isRequired,
-      image: PropTypes.string.isRequired,
-      nimg: PropTypes.string.isRequired,
-    })
-  ).isRequired,
 };
 
 export default KeyPerformers;
