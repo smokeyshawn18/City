@@ -82,14 +82,14 @@ const playersData = [
       championsLeague: 1,
       other: 1,
       Carabao: 0,
-      nationalStats: 2,
+      nationalStats: 3,
     },
     goals: {
       premierLeague: 0,
       championsLeague: 0,
       other: 1,
       Carabao: 0,
-      nationalStats: 0,
+      nationalStats: 1,
     },
     assists: {
       premierLeague: 3,
