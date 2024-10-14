@@ -26,7 +26,7 @@ const playersData = [
       championsLeague: 2,
       other: 1,
       Carabao: 0,
-      nationalStats: 3,
+      nationalStats: 4,
     },
     goals: {
       premierLeague: 10,

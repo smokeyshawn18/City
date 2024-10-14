@@ -44,7 +44,7 @@ const players = [
     seasonStats: {
       goals: 14,
       assists: 0,
-      appearances: 13,
+      appearances: 14,
     },
   },
   {
@@ -127,7 +127,7 @@ const players = [
     seasonStats: {
       goals: 1,
       assists: 1,
-      appearances: 8,
+      appearances: 9,
     },
     injured: false,
   },
@@ -135,7 +135,7 @@ const players = [
     name: "Jack Grealish",
     position: "LW",
     number: 10,
-    age: 28,
+    age: 29,
     country: England,
     image: JackGrealish,
     careerStats: {
@@ -144,9 +144,9 @@ const players = [
       appearances: 412,
     },
     seasonStats: {
-      goals: 1,
+      goals: 2,
       assists: 2,
-      appearances: 11,
+      appearances: 12,
     },
     injured: false,
   },
@@ -287,7 +287,7 @@ const players = [
     seasonStats: {
       goals: 0,
       assists: 0,
-      appearances: 7,
+      appearances: 8,
     },
     injured: false,
   },
@@ -306,7 +306,7 @@ const players = [
     seasonStats: {
       goals: 1,
       assists: 0,
-      appearances: 7,
+      appearances: 8,
     },
     injured: false,
   },
@@ -345,7 +345,7 @@ const players = [
     seasonStats: {
       goals: 0,
       assists: 4,
-      appearances: 12,
+      appearances: 13,
     },
     injured: false,
   },

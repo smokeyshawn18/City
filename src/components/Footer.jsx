@@ -75,7 +75,7 @@ function Footer() {
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
             {[
               { path: "/", label: "Home" },
-              // { path: "/News", label: "News" },
+              { path: "/News", label: "News" },
               { path: "/Schedule", label: "Schedule" },
               { path: "/Results", label: "Results" },
               { path: "/Trophy-Cabinet", label: "Trophy Cabinet" },
