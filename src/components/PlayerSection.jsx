@@ -107,7 +107,7 @@ const players = [
     seasonStats: {
       goals: 2,
       assists: 3,
-      appearances: 12,
+      appearances: 13,
     },
     injured: false,
   },
@@ -117,6 +117,7 @@ const players = [
     position: "AM",
     number: 47,
     age: 24,
+    // fotmobRating: 7.2,
     country: England,
     image: PhilFoden,
     careerStats: {
@@ -210,7 +211,7 @@ const players = [
     seasonStats: {
       goals: 2,
       assists: 2,
-      appearances: 13,
+      appearances: 14,
     },
     injured: false,
   },
@@ -230,7 +231,7 @@ const players = [
     seasonStats: {
       goals: 0,
       assists: 3,
-      appearances: 10,
+      appearances: 11,
     },
     injured: false,
   },
@@ -268,7 +269,7 @@ const players = [
     seasonStats: {
       goals: 1,
       assists: 0,
-      appearances: 14,
+      appearances: 15,
     },
     injured: false,
   },
@@ -364,7 +365,7 @@ const players = [
     seasonStats: {
       goals: 0,
       assists: 0,
-      appearances: 13,
+      appearances: 14,
     },
     injured: false,
   },
@@ -383,8 +384,8 @@ const players = [
     },
     seasonStats: {
       goalsConceded: 10,
-      cleanSheets: 2,
-      appearances: 10,
+      cleanSheets: 3,
+      appearances: 11,
     },
     injured: false,
   },

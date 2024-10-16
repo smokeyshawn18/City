@@ -55,14 +55,26 @@ const PlayerCard = ({ player }) => {
         <h2 className="text-2xl sm:text-3xl md:text-3xl font-extrabold text-[#2ea9cb] mb-2 text-center uppercase tracking-widest">
           {player.name}
         </h2>
+
+        {/* Player Rating */}
+        {player.fotmobRating && (
+          <div className="text-center mb-2">
+            <span className="inline-block bg-[#31f448] text-white text-base font-bold py-1 px-3 rounded-full shadow-lg">
+              Fotmob Rating: {player.fotmobRating}
+            </span>
+          </div>
+        )}
+
         <p className="text-[#000000] mb-4 text-xl font-bold text-center">
           {player.position}
         </p>
+
         <img
           src={player.country}
           alt={player.country}
           className="w-10 h-8 mx-auto mb-4"
         />
+
         <p className="text-[#245664] mb-6 text-xl font-bold text-center uppercase">
           {player.age}
         </p>
@@ -213,6 +225,7 @@ PlayerCard.propTypes = {
   player: PropTypes.shape({
     name: PropTypes.string.isRequired,
     image: PropTypes.string.isRequired,
+    fotmobRating: PropTypes.number.isRequired,
     position: PropTypes.string.isRequired,
     country: PropTypes.string.isRequired,
     age: PropTypes.number.isRequired,
