@@ -28,7 +28,7 @@ const Navbar = () => {
         <div className="hidden lg:flex space-x-8">
           {[
             { path: "/", label: "Home" },
-            { path: "/News", label: "News" },
+            // { path: "/News", label: "News" },
             { path: "/Schedule", label: "Schedule" },
             { path: "/Results", label: "Results" },
             { path: "/Trophy-Cabinet", label: "Trophy Cabinet" },
@@ -89,7 +89,7 @@ const Navbar = () => {
           <div className="flex flex-col space-y-3 bg-sky-200 p-4 rounded-lg shadow-md">
             {[
               { path: "/", label: "Home" },
-              { path: "/News", label: "News" },
+              // { path: "/News", label: "News" },
               { path: "/Schedule", label: "Schedule" },
               { path: "/Results", label: "Results" },
               { path: "/Trophy-Cabinet", label: "Trophy Cabinet" },
