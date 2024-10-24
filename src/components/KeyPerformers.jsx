@@ -10,7 +10,8 @@ import Belgium from "../assets/images/belgium.png";
 import Portugal from "../assets/images/portugal.webp";
 import player1Image from "../assets/images/haaland.jpg";
 import player2Image from "../assets/images/kdb.jpg";
-import player3Image from "../assets/images/silva.jpg";
+// import player3Image from "../assets/images/silva.jpg";
+import Nunes from "../assets/images/nunes.jpg";
 import premierLeagueLogo from "../assets/images/prem.webp";
 import championsLeagueLogo from "../assets/images/Champ.png";
 import Carabao from "../assets/images/carabao.png";
@@ -76,32 +77,32 @@ const playersData = [
     image: player2Image,
   },
   {
-    name: "Bernardo Silva",
+    name: "Matheus Nunes",
     matches: {
-      premierLeague: 8,
+      premierLeague: 5,
       championsLeague: 2,
       other: 1,
-      Carabao: 0,
-      nationalStats: 4,
+      Carabao: 1,
+      nationalStats: 0,
     },
     goals: {
       premierLeague: 0,
-      championsLeague: 0,
-      other: 1,
-      Carabao: 0,
-      nationalStats: 1,
+      championsLeague: 1,
+      other: 0,
+      Carabao: 1,
+      nationalStats: 0,
     },
     assists: {
-      premierLeague: 3,
-      championsLeague: 0,
+      premierLeague: 1,
+      championsLeague: 2,
       other: 0,
       Carabao: 0,
       nationalStats: 0,
     },
-    age: 30,
+    age: 26,
     position: "AM",
     nimg: Portugal,
-    image: player3Image,
+    image: Nunes,
   },
 ];
 
