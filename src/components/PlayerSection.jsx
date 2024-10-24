@@ -42,9 +42,9 @@ const players = [
       appearances: 312,
     },
     seasonStats: {
-      goals: 14,
+      goals: 16,
       assists: 0,
-      appearances: 15,
+      appearances: 16,
     },
   },
 
@@ -89,7 +89,7 @@ const players = [
     seasonStats: {
       goals: 1,
       assists: 0,
-      appearances: 9,
+      appearances: 10,
     },
     injured: false,
   },
@@ -108,7 +108,7 @@ const players = [
     seasonStats: {
       goals: 2,
       assists: 3,
-      appearances: 14,
+      appearances: 15,
     },
     injured: false,
   },
@@ -127,9 +127,9 @@ const players = [
       appearances: 311,
     },
     seasonStats: {
-      goals: 1,
+      goals: 2,
       assists: 2,
-      appearances: 10,
+      appearances: 11,
     },
     injured: false,
   },
@@ -193,7 +193,7 @@ const players = [
     seasonStats: {
       goals: 3,
       assists: 0,
-      appearances: 11,
+      appearances: 12,
     },
     injured: false,
   },
@@ -231,8 +231,8 @@ const players = [
     },
     seasonStats: {
       goals: 0,
-      assists: 3,
-      appearances: 12,
+      assists: 4,
+      appearances: 13,
     },
     injured: false,
   },
@@ -251,7 +251,7 @@ const players = [
     seasonStats: {
       goals: 1,
       assists: 1,
-      appearances: 4,
+      appearances: 5,
     },
     injured: false,
   },
@@ -270,7 +270,7 @@ const players = [
     seasonStats: {
       goals: 2,
       assists: 0,
-      appearances: 16,
+      appearances: 17,
     },
     injured: false,
   },
@@ -306,15 +306,14 @@ const players = [
       appearances: 461,
     },
     seasonStats: {
-      goals: 2,
+      goals: 3,
       assists: 0,
-      appearances: 9,
+      appearances: 10,
     },
     injured: false,
   },
   {
     name: "Matheus Nunes",
-
     position: "CM",
     number: 27,
     country: Portugal,
@@ -326,9 +325,9 @@ const players = [
       appearances: 195,
     },
     seasonStats: {
-      goals: 1,
-      assists: 1,
-      appearances: 8,
+      goals: 2,
+      assists: 3,
+      appearances: 9,
     },
     injured: false,
   },
@@ -347,7 +346,7 @@ const players = [
     seasonStats: {
       goals: 0,
       assists: 4,
-      appearances: 14,
+      appearances: 15,
     },
     injured: false,
   },
@@ -366,7 +365,7 @@ const players = [
     seasonStats: {
       goals: 0,
       assists: 0,
-      appearances: 15,
+      appearances: 16,
     },
     injured: false,
   },
