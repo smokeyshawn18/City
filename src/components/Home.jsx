@@ -10,7 +10,6 @@ import { useState, useMemo, useEffect, useCallback } from "react";
 import Kit from "./Kit";
 import CoachProfile from "./Coach";
 import KeyPerformers from "./KeyPerformers";
-import Mth from "../assets/images/match.jpg";
 
 // import Carabao from "../assets/images/carabao.png";
 
@@ -223,17 +222,6 @@ const Home = () => {
         {/* Reduced margin for UCL Opponents */}
 
         <div className="bg-white p-8 rounded-3xl shadow-lg mb-8 mt-6">
-          <div className="flex flex-col items-center mb-12">
-            <h2 className="text-3xl sm:text-4xl  font-extrabold text-[#1b3c42] mb-10 text-center uppercase tracking-wider">
-              Next Match - Premier League - Round 9
-            </h2>
-            <img
-              src={Mth}
-              alt="Opponents"
-              className="w-full max-w-2xl rounded-lg shadow-md transition-transform duration-300 hover:scale-105"
-            />
-          </div>
-
           <div className="flex flex-col items-center">
             <h2 className="text-3xl sm:text-4xl font-extrabold text-[#1b3c42] mb-10 text-center uppercase tracking-wider">
               UCL Opponents - 2024/25
