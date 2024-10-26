@@ -73,26 +73,7 @@ const players = [
     },
     injuryIcon: FaHospital,
   },
-  {
-    name: "İlkay Gündoğan",
-    number: 19,
-    position: "CM",
-    age: 33,
-    country: Germany,
-    image: IlkayGundogan,
 
-    careerStats: {
-      goals: 112,
-      assists: 86,
-      appearances: 647,
-    },
-    seasonStats: {
-      goals: 1,
-      assists: 0,
-      appearances: 10,
-    },
-    injured: false,
-  },
   {
     name: "Bernardo Silva",
     position: "AM",
@@ -109,6 +90,26 @@ const players = [
       goals: 2,
       assists: 3,
       appearances: 15,
+    },
+    injured: false,
+  },
+  {
+    name: "İlkay Gündoğan",
+    number: 19,
+    position: "CM",
+    age: 33,
+    country: Germany,
+    image: IlkayGundogan,
+
+    careerStats: {
+      goals: 107,
+      assists: 86,
+      appearances: 647,
+    },
+    seasonStats: {
+      goals: 1,
+      assists: 0,
+      appearances: 10,
     },
     injured: false,
   },

@@ -235,6 +235,9 @@ const Results = () => {
             const homeScore = calculateScore(match.scorers.home);
             const awayScore = calculateScore(match.scorers.away);
 
+            // Determine if the venue is "Etihad Stadium"
+            const isEtihadStadium = match.venue === "Etihad Stadium";
+
             return (
               <div
                 key={match.id}
@@ -243,39 +246,80 @@ const Results = () => {
                 <div className="relative">
                   {/* Match Info */}
                   <div className="w-full h-32 sm:h-40 bg-gradient-to-r from-sky-300 to-sky-500 flex items-center justify-between p-4">
-                    <div className="flex flex-col items-center">
-                      <img
-                        src={teamLogos[match.homeTeam]}
-                        alt={`${match.homeTeam} Logo`}
-                        className="w-12 h-12 sm:w-16 sm:h-16 rounded-full border-2 border-white"
-                      />
-                      <p className="mt-2 text-sm sm:text-lg font-bold text-white">
-                        {match.homeTeam}
-                      </p>
-                    </div>
-                    <div className="text-center">
-                      <p className="text-3xl sm:text-3xl font-bold mx-auto text-black">
-                        {homeScore} - {awayScore}
-                      </p>
-                      {match.pen && (
-                        <p className="text-lg sm:text-xl font-bold text-sky-800 mt-2">
-                          {match.pen}
-                        </p>
-                      )}
-                      <p className="text-md sm:text-xl font-bold mt-1 sm:mt-3 text-gray-100">
-                        {match.time}
-                      </p>
-                    </div>
-                    <div className="flex flex-col items-center">
-                      <img
-                        src={teamLogos[match.awayTeam]}
-                        alt={`${match.awayTeam} Logo`}
-                        className="w-12 h-12 sm:w-14 sm:h-14 rounded-full border-2 border-white"
-                      />
-                      <p className="mt-2 text-sm sm:text-lg font-bold text-white">
-                        {match.awayTeam}
-                      </p>
-                    </div>
+                    {/* Conditionally render away team on left if not at Etihad Stadium */}
+                    {isEtihadStadium ? (
+                      <>
+                        <div className="flex flex-col items-center">
+                          <img
+                            src={teamLogos[match.homeTeam]}
+                            alt={`${match.homeTeam} Logo`}
+                            className="w-12 h-12 sm:w-16 sm:h-16 rounded-full border-2 border-white"
+                          />
+                          <p className="mt-2 text-sm sm:text-lg font-bold text-white">
+                            {match.homeTeam}
+                          </p>
+                        </div>
+                        <div className="text-center">
+                          <p className="text-3xl sm:text-3xl font-bold mx-auto text-black">
+                            {homeScore} - {awayScore}
+                          </p>
+                          {match.pen && (
+                            <p className="text-lg sm:text-xl font-bold text-sky-800 mt-2">
+                              {match.pen}
+                            </p>
+                          )}
+                          <p className="text-md sm:text-xl font-bold mt-1 sm:mt-3 text-gray-100">
+                            {match.time}
+                          </p>
+                        </div>
+                        <div className="flex flex-col items-center">
+                          <img
+                            src={teamLogos[match.awayTeam]}
+                            alt={`${match.awayTeam} Logo`}
+                            className="w-12 h-12 sm:w-14 sm:h-14 rounded-full border-2 border-white"
+                          />
+                          <p className="mt-2 text-sm sm:text-lg font-bold text-white">
+                            {match.awayTeam}
+                          </p>
+                        </div>
+                      </>
+                    ) : (
+                      <>
+                        <div className="flex flex-col items-center">
+                          <img
+                            src={teamLogos[match.awayTeam]}
+                            alt={`${match.awayTeam} Logo`}
+                            className="w-12 h-12 sm:w-14 sm:h-14 rounded-full border-2 border-white"
+                          />
+                          <p className="mt-2 text-sm sm:text-lg font-bold text-white">
+                            {match.awayTeam}
+                          </p>
+                        </div>
+                        <div className="text-center">
+                          <p className="text-3xl sm:text-3xl font-bold mx-auto text-black">
+                            {awayScore} - {homeScore}
+                          </p>
+                          {match.pen && (
+                            <p className="text-lg sm:text-xl font-bold text-sky-800 mt-2">
+                              {match.pen}
+                            </p>
+                          )}
+                          <p className="text-md sm:text-xl font-bold mt-1 sm:mt-3 text-gray-100">
+                            {match.time}
+                          </p>
+                        </div>
+                        <div className="flex flex-col items-center">
+                          <img
+                            src={teamLogos[match.homeTeam]}
+                            alt={`${match.homeTeam} Logo`}
+                            className="w-12 h-12 sm:w-16 sm:h-16 rounded-full border-2 border-white"
+                          />
+                          <p className="mt-2 text-sm sm:text-lg font-bold text-white">
+                            {match.homeTeam}
+                          </p>
+                        </div>
+                      </>
+                    )}
                   </div>
 
                   {/* Scorers and Player of the Match */}
