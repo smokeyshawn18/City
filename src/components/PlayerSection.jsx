@@ -25,6 +25,11 @@ import Stones from "../assets/images/stones.jpg";
 import Ederson from "../assets/images/ederson.webp";
 import Nunes from "../assets/images/nunes.jpg";
 import James from "../assets/images/james.webp";
+import Netherlands from "../assets/images/ned.png";
+import Ake from "../assets/images/ake.webp";
+import Akanji from "../assets/images/akanji.jpg";
+import Swi from "../assets/images/swi.png";
+import Stefan from "../assets/images/ortega.webp";
 import { FaHospital } from "react-icons/fa"; // Import hospital icon
 
 // Sample player data
@@ -333,20 +338,39 @@ const players = [
     injured: false,
   },
   {
-    name: "Rico Lewis",
-    number: 82,
-    position: "RB",
-    age: 19,
-    country: England,
-    image: Rico,
+    name: "Nathan Ake",
+    number: 6,
+    position: "CB",
+    age: 29,
+    country: Netherlands,
+    image: Ake,
     careerStats: {
-      goals: 3,
-      assists: 5,
-      appearances: 51,
+      goals: 27,
+      assists: 13,
+      appearances: 347,
     },
     seasonStats: {
       goals: 0,
-      assists: 4,
+      assists: 0,
+      appearances: 5,
+    },
+    injured: false,
+  },
+  {
+    name: "Manuel Akanji",
+    number: 25,
+    position: "CB",
+    age: 29,
+    country: Swi,
+    image: Akanji,
+    careerStats: {
+      goals: 20,
+      assists: 8,
+      appearances: 414,
+    },
+    seasonStats: {
+      goals: 0,
+      assists: 1,
       appearances: 16,
     },
     injured: false,
@@ -370,6 +394,25 @@ const players = [
     },
     injured: false,
   },
+  {
+    name: "Rico Lewis",
+    number: 82,
+    position: "RB",
+    age: 19,
+    country: England,
+    image: Rico,
+    careerStats: {
+      goals: 3,
+      assists: 5,
+      appearances: 51,
+    },
+    seasonStats: {
+      goals: 0,
+      assists: 4,
+      appearances: 16,
+    },
+    injured: false,
+  },
 
   {
     name: "Ederson Moraes",
@@ -387,6 +430,25 @@ const players = [
       goalsConceded: 11,
       cleanSheets: 4,
       appearances: 13,
+    },
+    injured: false,
+  },
+  {
+    name: "Stefan Ortega",
+    number: 18,
+    position: "GK",
+    age: 31,
+    country: Germany,
+    image: Stefan,
+    careerStats: {
+      goalsConceded: 414,
+      cleanSheets: 92,
+      appearances: 318,
+    },
+    seasonStats: {
+      goalsConceded: 1,
+      cleanSheets: 2,
+      appearances: 3,
     },
     injured: false,
   },
