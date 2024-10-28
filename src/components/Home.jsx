@@ -1,7 +1,7 @@
 import heroImage from "../assets/images/home.jpeg";
 
 import City from "../assets/images/logo.svg";
-import Opponent from "../assets/images/opponent.jpg";
+
 // import premierLeagueLogo from "../assets/images/prem.webp";
 // import championsLeagueLogo from "../assets/images/Champ.png";
 import { FaMapMarkerAlt, FaClock, FaTicketAlt } from "react-icons/fa";
@@ -10,6 +10,7 @@ import { useState, useMemo, useEffect, useCallback } from "react";
 import Kit from "./Kit";
 import CoachProfile from "./Coach";
 import KeyPerformers from "./KeyPerformers";
+import Happening from "./Happening";
 
 // import Carabao from "../assets/images/carabao.png";
 
@@ -214,25 +215,7 @@ const Home = () => {
             </p>
           </div>
         </div>
-
-        {/* <For /> */}
-
-        {/* Reduced margin for CoachProfile */}
-
-        {/* Reduced margin for UCL Opponents */}
-
-        <div className="bg-white p-8 rounded-3xl shadow-lg mb-8 mt-6">
-          <div className="flex flex-col items-center">
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#1b3c42] mb-10 text-center uppercase tracking-wider">
-              UCL Opponents - 2024/25
-            </h2>
-            <img
-              src={Opponent}
-              alt="Opponents"
-              className="w-full max-w-3xl rounded-lg shadow-md transition-transform duration-300 hover:scale-105"
-            />
-          </div>
-        </div>
+        <Happening />
       </div>
 
       <KeyPerformers />

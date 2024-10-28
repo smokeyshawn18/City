@@ -4,7 +4,7 @@ import {
   FaTimesCircle,
   FaFutbol,
 } from "react-icons/fa";
-import Guardiola from "../assets/images/pepg.webp";
+import Guardiola from "../assets/images/pepp.jpg";
 
 export default function CoachProfile() {
   // Define individual stats
@@ -58,7 +58,7 @@ export default function CoachProfile() {
           <img
             src={Guardiola}
             alt="Pep Guardiola"
-            className="w-full h-64 object-cover rounded-lg border-4 border-purple-200 shadow-lg transition-transform transform hover:scale-110"
+            className="w-full h-68 object-cover rounded-lg border-4 border-purple-200 shadow-lg transition-transform transform hover:scale-10"
           />
         </div>
 
