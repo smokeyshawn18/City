@@ -1,5 +1,5 @@
 import PlayerCard from "./PlayerCard.jsx";
-import PhilFoden from "../assets/images/foden.jpg";
+import PhilFoden from "../assets/images/fode.jpg";
 import ErlingHaaland from "../assets/images/haaland.jpg";
 import KevinDeBruyne from "../assets/images/kdb.jpg";
 import Rodrigo from "../assets/images/rodrigo.jpg";
@@ -11,7 +11,7 @@ import JeremyDoku from "../assets/images/doku.jpg";
 import JoskoGvardiol from "../assets/images/gv.jpg";
 import KyleWalker from "../assets/images/walker.jpg";
 import MateoKovacic from "../assets/images/kovacic.webp";
-import Rico from "../assets/images/rico.jpg";
+import Rico from "../assets/images/ricol.jpg";
 import Ruben from "../assets/images/ruben.jpg";
 import Norway from "../assets/images/norway.webp";
 import Belgium from "../assets/images/belgium.png";
@@ -156,7 +156,13 @@ const players = [
       assists: 2,
       appearances: 13,
     },
-    injured: false,
+    injured: true,
+    injuryDetails: {
+      tm: "Oct 24, 2024",
+      type: "Knock",
+      recoveryTime: "Early November 2024",
+    },
+    injuryIcon: FaHospital,
   },
   {
     name: "Rodri",
@@ -220,7 +226,13 @@ const players = [
       assists: 3,
       appearances: 15,
     },
-    injured: false,
+    injured: true,
+    injuryDetails: {
+      tm: "Oct 23, 2024",
+      type: "Physical Discomfort",
+      recoveryTime: "Early November 2024",
+    },
+    injuryIcon: FaHospital,
   },
 
   {
@@ -297,7 +309,13 @@ const players = [
       assists: 0,
       appearances: 8,
     },
-    injured: false,
+    injured: true,
+    injuryDetails: {
+      tm: "Oct 20, 2024",
+      type: "Thigh Injury",
+      recoveryTime: "Mid November 2024",
+    },
+    injuryIcon: FaHospital,
   },
   {
     name: "John Stones",
