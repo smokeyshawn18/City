@@ -1,57 +1,62 @@
 import heroImage from "../assets/images/home.jpeg";
-
+import Tot from "../assets/images/tottenham.webp";
 import City from "../assets/images/logo.svg";
 
-// import premierLeagueLogo from "../assets/images/prem.webp";
-// import championsLeagueLogo from "../assets/images/Champ.png";
 import { FaMapMarkerAlt, FaClock, FaTicketAlt } from "react-icons/fa";
-
 import { useState, useMemo, useEffect, useCallback } from "react";
 import Kit from "./Kit";
 import CoachProfile from "./Coach";
 import KeyPerformers from "./KeyPerformers";
 import Happening from "./Happening";
-
-// import Carabao from "../assets/images/carabao.png";
-
-// import For from "./Form";
+import Carabao from "../assets/images/carabao.png";
 
 const Home = () => {
   const matchDay = useMemo(
     () => [
-      // {
-      //   date: "2024-10-05",
-      //   opponent: "Fulham",
-      //   time: "19:45", // Match time in user's local time format
-      //   venue: "Etihad Stadium",
-      //   opponentLogo: Fulham,
-      //   kick: "Starts in:",
-      //   competition: Carabao,
-      // },
+      {
+        date: "2024-10-31",
+        opponent: "Fulham",
+        time: "02:00", // Match time in user's local time format
+        venue: "Tottenham Hotspur Stadium",
+        opponentLogo: Tot,
+        kick: "Starts in:",
+        competition: Carabao,
+      },
     ],
     []
   );
 
   // Function to create a valid local DateTime string
   const getLocalDateTimeString = (date, time) => {
-    // Format the date string correctly with local time
-    const localTimeString = `${date}T${time}:00`; // Add ":00" for seconds
-    return new Date(localTimeString); // JavaScript will use the local time zone
+    const localTimeString = `${date}T${time}:00`;
+    return new Date(localTimeString);
   };
 
+  // Modified countdown function to start only within 10 hours before the match
   const calculateCountdown = (matchDateTime) => {
     const now = new Date();
     const timeDifference = matchDateTime - now;
+    const tenHoursInMs = 10 * 60 * 60 * 1000;
+
+    if (timeDifference > tenHoursInMs) {
+      return { hours: "00", minutes: "00", seconds: "00", hasStarted: false };
+    }
 
     if (timeDifference <= 0) {
-      return { hours: 0, minutes: 0, seconds: 0, hasEnded: true }; // Match has ended
+      return {
+        hours: 0,
+        minutes: 0,
+        seconds: 0,
+        hasEnded: true,
+        hasStarted: true,
+      };
     }
 
     const hours = Math.floor((timeDifference / (1000 * 60 * 60)) % 24);
     const minutes = Math.floor((timeDifference / 1000 / 60) % 60);
     const seconds = Math.floor((timeDifference / 1000) % 60);
 
-    return { hours, minutes, seconds, hasEnded: false };
+    return { hours, minutes, seconds, hasEnded: false, hasStarted: true };
   };
 
   const [todayMatches, setTodayMatches] = useState([]);
@@ -84,13 +89,15 @@ const Home = () => {
 
       setCountdowns(newCountdowns);
 
-      // Stop the countdown if all matches have ended
+      // Stop the countdown if all matches have ended or not yet started
       const ongoingMatches = matchDay.filter(
-        (match) => !newCountdowns[match.opponent]?.hasEnded
+        (match) =>
+          newCountdowns[match.opponent]?.hasStarted &&
+          !newCountdowns[match.opponent]?.hasEnded
       );
 
       if (ongoingMatches.length === 0) {
-        clearInterval(timer); // Clear the interval once the match has ended
+        clearInterval(timer); // Clear the interval if no matches are ongoing
       }
     }, 1000);
 
@@ -114,19 +121,14 @@ const Home = () => {
                 >
                   {/* Manchester City vs Opponent Logos */}
                   <div className="flex items-center justify-between gap-4 w-full">
-                    {/* Manchester City Logo */}
                     <img
                       src={City}
                       alt="Manchester City"
                       className="h-16 w-16 sm:h-20 sm:w-20 object-contain"
                     />
-
-                    {/* VS Text */}
                     <div className="text-2xl sm:text-3xl font-extrabold text-gray-700">
                       VS
                     </div>
-
-                    {/* Opponent Team Logo */}
                     <img
                       src={match.opponentLogo}
                       alt={match.opponent}
@@ -150,30 +152,35 @@ const Home = () => {
                   </div>
 
                   {/* Countdown Timer */}
-                  <div className="flex items-center justify-center mt-4">
-                    <div className="bg-gradient-to-r from-blue-400 to-blue-200 p-6 rounded-lg shadow-lg">
-                      {countdowns[match.opponent]?.hasEnded ? (
-                        <div className="text-center text-red-700 font-bold text-lg">
-                          Match has ended
-                        </div>
-                      ) : (
-                        <div className="grid grid-cols-3 gap-10 text-center">
-                          {["hours", "minutes", "seconds"].map((unit, i) => (
-                            <div key={i} className="flex flex-col items-center">
-                              <div className="text-4xl font-extrabold text-white">
-                                {countdowns[match.opponent]?.[unit] || "00"}
+                  {countdowns[match.opponent]?.hasStarted && (
+                    <div className="flex items-center justify-center mt-4">
+                      <div className="bg-gradient-to-r from-sky-600 to-blue-600 p-6 rounded-lg shadow-lg">
+                        {countdowns[match.opponent]?.hasEnded ? (
+                          <div className="text-center text-red-700 font-bold text-lg">
+                            Match has ended
+                          </div>
+                        ) : (
+                          <div className="grid grid-cols-3 gap-10 text-center">
+                            {["hours", "minutes", "seconds"].map((unit, i) => (
+                              <div
+                                key={i}
+                                className="flex flex-col items-center"
+                              >
+                                <div className="text-4xl font-extrabold text-white">
+                                  {countdowns[match.opponent]?.[unit] || "00"}
+                                </div>
+                                <div className="text-sm text-gray-200 capitalize">
+                                  {unit}
+                                </div>
                               </div>
-                              <div className="text-sm text-gray-200 capitalize">
-                                {unit}
-                              </div>
-                            </div>
-                          ))}
-                        </div>
-                      )}
+                            ))}
+                          </div>
+                        )}
+                      </div>
                     </div>
-                  </div>
+                  )}
 
-                  {/* Competition Info (Centered Under the Match Details) */}
+                  {/* Competition Info */}
                   <div className="mt-6">
                     <img
                       src={match.competition}
@@ -219,9 +226,7 @@ const Home = () => {
       </div>
 
       <KeyPerformers />
-
       <CoachProfile className="mt-4" />
-
       <Kit />
     </section>
   );
