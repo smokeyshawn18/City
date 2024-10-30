@@ -14,9 +14,9 @@ const Home = () => {
   const matchDay = useMemo(
     () => [
       {
-        date: "2024-10-31",
-        opponent: "Fulham",
-        time: "02:00", // Match time in user's local time format
+        date: "2024-10-30",
+        opponent: "Tottenham",
+        time: "23:59", // Match time in user's local time format
         venue: "Tottenham Hotspur Stadium",
         opponentLogo: Tot,
         kick: "Starts in:",
@@ -150,7 +150,7 @@ const Home = () => {
                       <span>{match.venue}</span>
                     </div>
                   </div>
-
+                  <h2 className="mt-4 font-bold text-xl">Kick off in:</h2>
                   {/* Countdown Timer */}
                   {countdowns[match.opponent]?.hasStarted && (
                     <div className="flex items-center justify-center mt-4">

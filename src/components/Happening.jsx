@@ -1,5 +1,5 @@
 import Opponent from "../assets/images/opponent.jpg";
-import Dor from "../assets/images/dor.jpg";
+import Dor from "../assets/images/rodriedit.png";
 
 function Happening() {
   // Define your items in reverse order (newest first)

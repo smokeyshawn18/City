@@ -2,7 +2,7 @@ import PlayerCard from "./PlayerCard.jsx";
 import PhilFoden from "../assets/images/fode.jpg";
 import ErlingHaaland from "../assets/images/haaland.jpg";
 import KevinDeBruyne from "../assets/images/kdb.jpg";
-import Rodrigo from "../assets/images/rodrigo.jpg";
+import Rodrigo from "../assets/images/rodriedit.png";
 import BernardoSilva from "../assets/images/silva.jpg";
 import Savinho from "../assets/images/savio.png";
 import JackGrealish from "../assets/images/jack.jpg";
@@ -29,7 +29,7 @@ import Netherlands from "../assets/images/ned.png";
 import Ake from "../assets/images/ake.webp";
 import Akanji from "../assets/images/akanji.jpg";
 import Swi from "../assets/images/swi.png";
-import Stefan from "../assets/images/ortega.webp";
+import Stefan from "../assets/images/ortega.jpg";
 import { FaHospital } from "react-icons/fa";
 import Bob from "../assets/images/bob.jpg";
 
