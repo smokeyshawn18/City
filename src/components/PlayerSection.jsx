@@ -30,7 +30,8 @@ import Ake from "../assets/images/ake.webp";
 import Akanji from "../assets/images/akanji.jpg";
 import Swi from "../assets/images/swi.png";
 import Stefan from "../assets/images/ortega.webp";
-import { FaHospital } from "react-icons/fa"; // Import hospital icon
+import { FaHospital } from "react-icons/fa";
+import Bob from "../assets/images/bob.jpg";
 
 // Sample player data
 const players = [
@@ -431,7 +432,31 @@ const players = [
     },
     injured: false,
   },
-
+  {
+    name: "Oscar Bobb",
+    position: "RW",
+    number: 52,
+    country: Norway,
+    age: 21,
+    image: Bob,
+    careerStats: {
+      goals: 4,
+      assists: 3,
+      appearances: 34,
+    },
+    seasonStats: {
+      goals: 0,
+      assists: 1,
+      appearances: 1,
+    },
+    injured: true,
+    injuryDetails: {
+      tm: "Aug 14, 2024",
+      type: "Broken Leg",
+      recoveryTime: "Early January 2025",
+    },
+    injuryIcon: FaHospital,
+  },
   {
     name: "Ederson Moraes",
     number: 3,
