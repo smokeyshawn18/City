@@ -23,6 +23,9 @@ import SLB from "../assets/images/slb.png";
 import PhilFoden from "../assets/images/pfoden.jpg";
 import Fulham from "../assets/images/fulham.png";
 import Kovacic from "../assets/images/kovacic.webp";
+import Tottenham from "../assets/images/tottenham.webp";
+import Carabao from "../assets/images/carabao.png";
+import Kul from "../assets/images/kul.jpg";
 
 const teamColors = {
   "Man City": "#6caddf",
@@ -47,6 +50,7 @@ const teamLogos = {
   "Real Madrid": RealMadridLogo,
   Arsenal: ArsenalLogo,
   "Inter Milan": InterMilan,
+  Tottenham: Tottenham,
   Brentford: Brent,
   NewCastle: New,
   "S. Bratislava": SLB,
@@ -204,6 +208,23 @@ const matches = [
 
     manOfTheMatch: Kovacic,
     motm: "Mateo Kovacic",
+  },
+  {
+    id: 10,
+    homeTeam: "Man City",
+    awayTeam: "Tottenham",
+    scorers: {
+      home: ["Nunes 45+4'"],
+      away: ["Werner 5'", "Sarr 25'"],
+    },
+    timestamp: "2024-10-31T02:00",
+    time: "FT",
+    competition: "Carabao Cup",
+    venue: "Tottenham Hotspur Stadium",
+    competitionLogo: Carabao,
+
+    manOfTheMatch: Kul,
+    motm: "Dejan Kulusevski",
   },
 ];
 
