@@ -48,34 +48,7 @@ const playersData = [
     image: player1Image,
     nimg: Norway,
   },
-  {
-    name: "Kevin De Bruyne",
-    matches: {
-      premierLeague: 4,
-      championsLeague: 1,
-      other: 1,
-      Carabao: 0,
-      nationalStats: 2,
-    },
-    goals: {
-      premierLeague: 1,
-      championsLeague: 0,
-      other: 0,
-      Carabao: 0,
-      nationalStats: 2,
-    },
-    assists: {
-      premierLeague: 1,
-      championsLeague: 0,
-      other: 0,
-      Carabao: 0,
-      nationalStats: 0,
-    },
-    nimg: Belgium,
-    age: 33,
-    position: "AM",
-    image: player2Image,
-  },
+
   {
     name: "Matheus Nunes",
     matches: {
@@ -103,6 +76,34 @@ const playersData = [
     position: "AM",
     nimg: Portugal,
     image: Nunes,
+  },
+  {
+    name: "Kevin De Bruyne",
+    matches: {
+      premierLeague: 4,
+      championsLeague: 1,
+      other: 1,
+      Carabao: 0,
+      nationalStats: 2,
+    },
+    goals: {
+      premierLeague: 1,
+      championsLeague: 0,
+      other: 0,
+      Carabao: 0,
+      nationalStats: 2,
+    },
+    assists: {
+      premierLeague: 1,
+      championsLeague: 0,
+      other: 0,
+      Carabao: 0,
+      nationalStats: 0,
+    },
+    nimg: Belgium,
+    age: 33,
+    position: "AM",
+    image: player2Image,
   },
 ];
 

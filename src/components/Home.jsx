@@ -1,26 +1,27 @@
 import heroImage from "../assets/images/home.jpeg";
-import Tot from "../assets/images/tottenham.webp";
+// import Tot from "../assets/images/tottenham.webp";
+import Bournemouth from "../assets/images/bour.jpg";
 import City from "../assets/images/logo.svg";
-
 import { FaMapMarkerAlt, FaClock, FaTicketAlt } from "react-icons/fa";
 import { useState, useMemo, useEffect, useCallback } from "react";
 import Kit from "./Kit";
 import CoachProfile from "./Coach";
 import KeyPerformers from "./KeyPerformers";
 import Happening from "./Happening";
-import Carabao from "../assets/images/carabao.png";
+// import Carabao from "../assets/images/carabao.png";
+import PremierLeagueLogo from "../assets/images/prem.webp";
 
 const Home = () => {
   const matchDay = useMemo(
     () => [
       {
-        date: "2024-10-30",
-        opponent: "Tottenham",
-        time: "23:59", // Match time in user's local time format
-        venue: "Tottenham Hotspur Stadium",
-        opponentLogo: Tot,
+        date: "2024-11-02",
+        opponent: "Bournemouth",
+        time: "20:45", // Match time in user's local time format
+        venue: "Vitality Stadium",
+        opponentLogo: Bournemouth,
         kick: "Starts in:",
-        competition: Carabao,
+        competition: PremierLeagueLogo,
       },
     ],
     []
@@ -138,16 +139,20 @@ const Home = () => {
 
                   {/* Match Information */}
                   <div className="mt-4 text-center space-y-2 sm:space-y-3">
-                    <p className="text-md sm:text-lg text-gray-600">
+                    <p className="text-md sm:text-lg text-blue-900 font-bold">
                       {match.date}
                     </p>
                     <div className="flex justify-center items-center gap-1 text-gray-600">
-                      <FaClock className="text-gray-500" />
-                      <span>{match.time}</span>
+                      <FaClock className="text-sky-500" />
+                      <span className="font-bold text-sky-500 text-xl">
+                        {match.time}
+                      </span>
                     </div>
                     <div className="flex justify-center items-center gap-1 text-gray-600">
-                      <FaMapMarkerAlt className="text-gray-500" />
-                      <span>{match.venue}</span>
+                      <FaMapMarkerAlt className="text-blue-500" />
+                      <span className="font-bold text-xl text-blue-500">
+                        {match.venue}
+                      </span>
                     </div>
                   </div>
                   <h2 className="mt-4 font-bold text-xl">Kick off in:</h2>
