@@ -23,7 +23,7 @@ const playersData = [
   {
     name: "Erling Haaland",
     matches: {
-      premierLeague: 9,
+      premierLeague: 10,
       championsLeague: 3,
       other: 1,
       Carabao: 0,
@@ -52,7 +52,7 @@ const playersData = [
   {
     name: "Matheus Nunes",
     matches: {
-      premierLeague: 6,
+      premierLeague: 7,
       championsLeague: 2,
       other: 1,
       Carabao: 2,
