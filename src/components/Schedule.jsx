@@ -7,31 +7,13 @@ import Tottenham from "../assets/images/tottenham.webp";
 import Liverpool from "../assets/images/lfc.webp";
 import ManUtd from "../assets/images/united.png";
 import AstonVilla from "../assets/images/aston-villa.png";
-import Carabao from "../assets/images/carabao.png";
+// import Carabao from "../assets/images/carabao.png";
 import WestHamLogo from "../assets/images/westham.png";
 import Sporting from "../assets/images/sporting.png";
-import Fulham from "../assets/images/wolves.png";
+import ChelseaLogo from "../assets/images/Chelsea.webp";
 
 // Full list of matches including additional teams
 const matches = [
-  {
-    date: "2024-10-20",
-    opponent: "Wolves",
-    time: "18:45",
-    venue: "Molineux Stadium",
-    competition: "Premier League",
-    opponentLogo: Fulham,
-    competitionLogo: PremierLeagueLogo,
-  },
-  {
-    date: "2024-10-31",
-    opponent: "Tottenham",
-    time: "01:30",
-    venue: "Tottenham Hotspur Stadium",
-    competition: "Premier League",
-    opponentLogo: Tottenham,
-    competitionLogo: Carabao,
-  },
   {
     date: "2024-11-06",
     opponent: "Sporting CP",
@@ -70,10 +52,10 @@ const matches = [
     competitionLogo: ChampionsLeagueLogo,
   },
   {
-    date: "2024-12-14",
+    date: "2024-12-15",
     opponent: "Man United",
-    time: "20:00",
-    venue: "Old Trafford",
+    time: "22:15",
+    venue: "Etihad Stadium",
     competition: "Premier League",
     opponentLogo: ManUtd,
     competitionLogo: PremierLeagueLogo,
@@ -81,7 +63,7 @@ const matches = [
   {
     date: "2024-12-21",
     opponent: "Aston Villa",
-    time: "20:45",
+    time: "18:15",
     venue: "Villa Park",
     competition: "Premier League",
     opponentLogo: AstonVilla,
@@ -104,6 +86,15 @@ const matches = [
     competition: "Champions League",
     opponentLogo: ParisSaintGerman,
     competitionLogo: ChampionsLeagueLogo,
+  },
+  {
+    date: "2025-01-25",
+    opponent: "Chelsea",
+    time: "23:15",
+    venue: "Etihad Stadium",
+    competition: "Premier League",
+    opponentLogo: ChelseaLogo,
+    competitionLogo: PremierLeagueLogo,
   },
 ];
 
@@ -175,29 +166,56 @@ const Schedule = () => {
                 className="bg-[#E6F1FA] rounded-lg shadow-md hover:shadow-lg transition-all"
               >
                 <div className="flex items-center justify-between p-4 bg-gradient-to-r from-sky-300 to-sky-500 rounded-t-lg">
-                  <div className="flex flex-col items-center">
-                    <img
-                      src={ManCityLogo}
-                      alt="Manchester City"
-                      className="w-20 h-20 rounded-full border-2 border-white"
-                    />
-                    <p className="mt-2 text-lg font-semibold text-[#ffffff]">
-                      Man City
-                    </p>
-                  </div>
-
-                  <p className="text-2xl font-bold text-white">VS</p>
-
-                  <div className="flex flex-col items-center">
-                    <img
-                      src={match.opponentLogo}
-                      alt={match.opponent}
-                      className="w-20 h-20 rounded-full border-2 border-white"
-                    />
-                    <p className="mt-2 text-lg font-semibold text-[#ffffff]">
-                      {match.opponent}
-                    </p>
-                  </div>
+                  {/* Conditional logo placement */}
+                  {match.venue === "Etihad Stadium" ? (
+                    <>
+                      <div className="flex flex-col items-center">
+                        <img
+                          src={ManCityLogo}
+                          alt="Manchester City"
+                          className="w-20 h-20 rounded-full border-2 border-white"
+                        />
+                        <p className="mt-2 text-lg font-semibold text-[#ffffff]">
+                          Man City
+                        </p>
+                      </div>
+                      <p className="text-2xl font-bold text-white">VS</p>
+                      <div className="flex flex-col items-center">
+                        <img
+                          src={match.opponentLogo}
+                          alt={match.opponent}
+                          className="w-20 h-20 rounded-full border-2 border-white"
+                        />
+                        <p className="mt-2 text-lg font-semibold text-[#ffffff]">
+                          {match.opponent}
+                        </p>
+                      </div>
+                    </>
+                  ) : (
+                    <>
+                      <div className="flex flex-col items-center">
+                        <img
+                          src={match.opponentLogo}
+                          alt={match.opponent}
+                          className="w-20 h-20 rounded-full border-2 border-white"
+                        />
+                        <p className="mt-2 text-lg font-semibold text-[#ffffff]">
+                          {match.opponent}
+                        </p>
+                      </div>
+                      <p className="text-2xl font-bold text-white">VS</p>
+                      <div className="flex flex-col items-center">
+                        <img
+                          src={ManCityLogo}
+                          alt="Manchester City (Home)"
+                          className="w-20 h-20 rounded-full border-2 border-white"
+                        />
+                        <p className="mt-2 text-lg font-semibold text-[#ffffff]">
+                          Man City
+                        </p>
+                      </div>
+                    </>
+                  )}
                 </div>
 
                 <div className="p-6 text-center">
