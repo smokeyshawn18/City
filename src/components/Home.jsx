@@ -1,6 +1,6 @@
 import heroImage from "../assets/images/home.jpeg";
 // import Tot from "../assets/images/tottenham.webp";
-import Bournemouth from "../assets/images/bour.jpg";
+import Bournemouth from "../assets/images/sporting.png";
 import City from "../assets/images/logo.svg";
 import { FaMapMarkerAlt, FaClock, FaTicketAlt } from "react-icons/fa";
 import { useState, useMemo, useEffect, useCallback } from "react";
@@ -8,20 +8,21 @@ import Kit from "./Kit";
 import CoachProfile from "./Coach";
 import KeyPerformers from "./KeyPerformers";
 import Happening from "./Happening";
-// import Carabao from "../assets/images/carabao.png";
-import PremierLeagueLogo from "../assets/images/prem.webp";
+
+import ChampionsLeagueLogo from "../assets/images/champions.png";
+// import PremierLeagueLogo from "../assets/images/prem.webp";
 
 const Home = () => {
   const matchDay = useMemo(
     () => [
       {
-        date: "2024-11-02",
-        opponent: "Bournemouth",
-        time: "20:45", // Match time in user's local time format
-        venue: "Vitality Stadium",
+        date: "2024-11-05",
+        opponent: "Sporting CP",
+        time: "23:59", // Match time in user's local time format
+        venue: "José Alvalade Stadium",
         opponentLogo: Bournemouth,
         kick: "Starts in:",
-        competition: PremierLeagueLogo,
+        competition: ChampionsLeagueLogo,
       },
     ],
     []
