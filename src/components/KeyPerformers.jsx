@@ -5,17 +5,19 @@ import {
   FaAngleUp,
 } from "react-icons/fa";
 import { GoGoal } from "react-icons/go";
+import England from "../assets/images/eng.png";
 import Norway from "../assets/images/norway.webp";
-import Belgium from "../assets/images/belgium.png";
+// import Belgium from "../assets/images/belgium.png";
 import Portugal from "../assets/images/portugal.webp";
 import player1Image from "../assets/images/haaland.jpg";
-import player2Image from "../assets/images/kdb.jpg";
+// import player2Image from "../assets/images/kdb.jpg";
 // import player3Image from "../assets/images/silva.jpg";
 import Nunes from "../assets/images/nunes.jpg";
 import premierLeagueLogo from "../assets/images/prem.webp";
 import championsLeagueLogo from "../assets/images/Champ.png";
 import Carabao from "../assets/images/carabao.png";
 import otherIcon from "../assets/images/sheld.png";
+import PhilFoden from "../assets/images/fode.jpg";
 // Placeholder for national team icon
 import { useState } from "react";
 
@@ -24,7 +26,7 @@ const playersData = [
     name: "Erling Haaland",
     matches: {
       premierLeague: 10,
-      championsLeague: 3,
+      championsLeague: 4,
       other: 1,
       Carabao: 0,
       nationalStats: 4,
@@ -53,7 +55,7 @@ const playersData = [
     name: "Matheus Nunes",
     matches: {
       premierLeague: 7,
-      championsLeague: 2,
+      championsLeague: 3,
       other: 1,
       Carabao: 2,
       nationalStats: 0,
@@ -78,33 +80,61 @@ const playersData = [
     image: Nunes,
   },
   {
-    name: "Kevin De Bruyne",
+    name: "Phil Foden",
     matches: {
-      premierLeague: 4,
-      championsLeague: 1,
-      other: 1,
-      Carabao: 0,
+      premierLeague: 7,
+      championsLeague: 4,
+      other: 0,
+      Carabao: 2,
       nationalStats: 2,
     },
     goals: {
-      premierLeague: 1,
-      championsLeague: 0,
-      other: 0,
-      Carabao: 0,
-      nationalStats: 2,
-    },
-    assists: {
-      premierLeague: 1,
-      championsLeague: 0,
+      premierLeague: 0,
+      championsLeague: 3,
       other: 0,
       Carabao: 0,
       nationalStats: 0,
     },
-    nimg: Belgium,
-    age: 33,
+    assists: {
+      premierLeague: 1,
+      championsLeague: 1,
+      other: 0,
+      Carabao: 0,
+      nationalStats: 0,
+    },
+    age: 24,
     position: "AM",
-    image: player2Image,
+    nimg: England,
+    image: PhilFoden,
   },
+  // {
+  //   name: "Kevin De Bruyne",
+  //   matches: {
+  //     premierLeague: 4,
+  //     championsLeague: 2,
+  //     other: 1,
+  //     Carabao: 0,
+  //     nationalStats: 2,
+  //   },
+  //   goals: {
+  //     premierLeague: 1,
+  //     championsLeague: 0,
+  //     other: 0,
+  //     Carabao: 0,
+  //     nationalStats: 2,
+  //   },
+  //   assists: {
+  //     premierLeague: 1,
+  //     championsLeague: 0,
+  //     other: 0,
+  //     Carabao: 0,
+  //     nationalStats: 0,
+  //   },
+  //   nimg: Belgium,
+  //   age: 33,
+  //   position: "AM",
+  //   image: player2Image,
+  // },
 ];
 
 const KeyPerformers = () => {
