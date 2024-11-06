@@ -26,6 +26,8 @@ import Kovacic from "../assets/images/kovacic.webp";
 import Tottenham from "../assets/images/tottenham.webp";
 import Carabao from "../assets/images/carabao.png";
 import Kul from "../assets/images/kul.jpg";
+import Sporting from "../assets/images/sporting.png";
+import Victor from "../assets/images/gyokeres.webp";
 
 const teamColors = {
   "Man City": "#6caddf",
@@ -54,6 +56,7 @@ const teamLogos = {
   Brentford: Brent,
   NewCastle: New,
   "S. Bratislava": SLB,
+  "Sporting CP": Sporting,
   Fulham: Fulham,
 };
 
@@ -225,6 +228,23 @@ const matches = [
 
     manOfTheMatch: Kul,
     motm: "Dejan Kulusevski",
+  },
+  {
+    id: 11,
+    homeTeam: "Man City",
+    awayTeam: "Sporting CP",
+    scorers: {
+      home: ["Foden 4'"],
+      away: ["Gyokeres 38', 49' (Pen), 80' (Pen)", "Araujo 46'"],
+    },
+    timestamp: "2024-11-06T01:45:00",
+    time: "FT",
+    competition: "Champions League",
+    venue: "José Alvalade Stadium",
+    competitionLogo: ChampionsLeague,
+
+    manOfTheMatch: Victor,
+    motm: "Victor Gyokeres",
   },
 ];
 
