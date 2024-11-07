@@ -9,19 +9,19 @@ import ManUtd from "../assets/images/united.png";
 import AstonVilla from "../assets/images/aston-villa.png";
 // import Carabao from "../assets/images/carabao.png";
 import WestHamLogo from "../assets/images/westham.png";
-import Sporting from "../assets/images/sporting.png";
+import Sporting from "../assets/images/brigton.png";
 import ChelseaLogo from "../assets/images/Chelsea.webp";
 
 // Full list of matches including additional teams
 const matches = [
   {
-    date: "2024-11-06",
-    opponent: "Sporting CP",
-    time: "01:45",
-    venue: "José Alvalade Stadium",
+    date: "2024-11-09",
+    opponent: "Brighton",
+    time: "23:15",
+    venue: "Falmer Stadium",
     competition: "Premier League",
     opponentLogo: Sporting,
-    competitionLogo: ChampionsLeagueLogo,
+    competitionLogo: PremierLeagueLogo,
   },
 
   {

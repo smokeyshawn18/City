@@ -295,43 +295,7 @@ const KeyPerformers = () => {
                       </span>
                     </div>
                   </div>
-                  {/* National Stats */}
-                  <div className="bg-gray-50 p-4 rounded-xl mb-4">
-                    <div className="flex items-center mb-2">
-                      <img
-                        src={player.nimg}
-                        alt="National Team"
-                        className="w-8 h-8 mr-2"
-                      />
-                      <span className="text-[#3D195B] font-semibold">
-                        National Stats
-                      </span>
-                    </div>
-                    <div className="flex justify-between mb-2">
-                      <span className="text-gray-600 font-semibold">
-                        Matches:
-                      </span>
-                      <span className="text-gray-900 font-semibold">
-                        {player.matches.nationalStats}
-                      </span>
-                    </div>
-                    <div className="flex justify-between mb-2">
-                      <span className="text-gray-600 font-semibold">
-                        Goals:
-                      </span>
-                      <span className="text-gray-900 font-semibold">
-                        {player.goals.nationalStats}
-                      </span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-gray-600 font-semibold">
-                        Assists:
-                      </span>
-                      <span className="text-gray-900 font-semibold">
-                        {player.assists.nationalStats}
-                      </span>
-                    </div>
-                  </div>
+
                   {/* Champions League Stats */}
                   <div className="bg-gray-50 p-4 rounded-xl mb-4">
                     <div className="flex items-center mb-2">
@@ -366,6 +330,43 @@ const KeyPerformers = () => {
                       </span>
                       <span className="text-gray-900 font-semibold">
                         {player.assists.championsLeague}
+                      </span>
+                    </div>
+                  </div>
+                  {/* National Stats */}
+                  <div className="bg-gray-50 p-4 rounded-xl mb-4">
+                    <div className="flex items-center mb-2">
+                      <img
+                        src={player.nimg}
+                        alt="National Team"
+                        className="w-8 h-8 mr-2"
+                      />
+                      <span className="text-[#3D195B] font-semibold">
+                        National Stats
+                      </span>
+                    </div>
+                    <div className="flex justify-between mb-2">
+                      <span className="text-gray-600 font-semibold">
+                        Matches:
+                      </span>
+                      <span className="text-gray-900 font-semibold">
+                        {player.matches.nationalStats}
+                      </span>
+                    </div>
+                    <div className="flex justify-between mb-2">
+                      <span className="text-gray-600 font-semibold">
+                        Goals:
+                      </span>
+                      <span className="text-gray-900 font-semibold">
+                        {player.goals.nationalStats}
+                      </span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-gray-600 font-semibold">
+                        Assists:
+                      </span>
+                      <span className="text-gray-900 font-semibold">
+                        {player.assists.nationalStats}
                       </span>
                     </div>
                   </div>
