@@ -29,6 +29,7 @@ import Kul from "../assets/images/kul.jpg";
 import Sporting from "../assets/images/sporting.png";
 import Victor from "../assets/images/gyokeres.webp";
 import Brighton from "../assets/images/brigton.png";
+import Pedro from "../assets/images/pedro.jpg";
 
 const teamColors = {
   "Man City": "#6caddf",
@@ -248,23 +249,23 @@ const matches = [
     manOfTheMatch: Victor,
     motm: "Victor Gyokeres",
   },
-  // {
-  //   id: 12,
-  //   homeTeam: "Man City",
-  //   awayTeam: "Brighton",
-  //   scorers: {
-  //     home: ["Kovacic 32', 47'", "Doku 82'"],
-  //     away: ["Pereira 26'", "Muniz 88'"],
-  //   },
-  //   timestamp: "2024-11-09T23:15",
-  //   time: "FT",
-  //   competition: "Premier League",
-  //   venue: "Falmer Stadium",
-  //   competitionLogo: PremierLeagueLogo,
+  {
+    id: 12,
+    homeTeam: "Man City",
+    awayTeam: "Brighton",
+    scorers: {
+      home: ["Haaland 23'"],
+      away: ["Pedro 78'", "O'Riley 83'"],
+    },
+    timestamp: "2024-11-09T23:15",
+    time: "FT",
+    competition: "Premier League",
+    venue: "Falmer Stadium",
+    competitionLogo: PremierLeagueLogo,
 
-  //   manOfTheMatch: Kovacic,
-  //   motm: "Mateo Kovacic",
-  // },
+    manOfTheMatch: Pedro,
+    motm: "Joao Pedro",
+  },
 ];
 
 const formatDateTime = (dateTimeString) => {

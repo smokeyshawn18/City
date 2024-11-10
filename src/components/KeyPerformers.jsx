@@ -25,14 +25,14 @@ const playersData = [
   {
     name: "Erling Haaland",
     matches: {
-      premierLeague: 10,
+      premierLeague: 11,
       championsLeague: 4,
       other: 1,
       Carabao: 0,
       nationalStats: 4,
     },
     goals: {
-      premierLeague: 11,
+      premierLeague: 12,
       championsLeague: 3,
       other: 0,
       Carabao: 0,
@@ -54,7 +54,7 @@ const playersData = [
   {
     name: "Matheus Nunes",
     matches: {
-      premierLeague: 7,
+      premierLeague: 8,
       championsLeague: 3,
       other: 1,
       Carabao: 2,
@@ -82,7 +82,7 @@ const playersData = [
   {
     name: "Phil Foden",
     matches: {
-      premierLeague: 7,
+      premierLeague: 8,
       championsLeague: 4,
       other: 0,
       Carabao: 2,
