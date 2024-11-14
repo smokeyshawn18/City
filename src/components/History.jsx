@@ -6,6 +6,7 @@ import stadiumImg from "../assets/images/etihad.jpg";
 import leagueCupImg from "../assets/images/league.png";
 import Goat from "../assets/images/pep.jpg";
 import Evolution from "../assets/images/logoevo.jpg";
+import TopScorers from "./TopScorers";
 
 const timelineData = [
   {
@@ -72,41 +73,46 @@ const timelineData = [
 
 function History() {
   return (
-    <div className="w-full min-h-screen bg-sky-100 py-16 px-5 flex flex-col items-center">
-      <h1 className="uppercase text-sky-900 text-4xl sm:text-5xl font-extrabold tracking-widest mb-8 text-center">
-        Manchester City History
-      </h1>
-      <h2 className="text-xl sm:text-2xl text-sky-800 font-bold tracking-wide mb-4 text-center">
-        Number one Club in the World (According to{" "}
-        <strong className="text-[#6CABDD] font-extrabold">UEFA Rankings</strong>
-        ).
-      </h2>
+    <>
+      <div className="w-full min-h-screen bg-sky-100 py-16 px-5 flex flex-col items-center">
+        <h1 className="uppercase text-sky-900 text-4xl sm:text-5xl font-extrabold tracking-widest mb-8 text-center">
+          Manchester City History
+        </h1>
+        <h2 className="text-xl sm:text-2xl text-sky-800 font-bold tracking-wide mb-4 text-center">
+          Number one Club in the World (According to{" "}
+          <strong className="text-[#6CABDD] font-extrabold">
+            UEFA Rankings
+          </strong>
+          ).
+        </h2>
 
-      <div className="w-full max-w-7xl py-10">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
-          {/* Timeline Cards */}
-          {timelineData.map((item, index) => (
-            <div
-              key={index}
-              className="bg-white text-[#004C8C] border border-[#004C8C] rounded-2xl shadow-lg p-8 transition duration-300 transform hover:scale-105 hover:shadow-2xl"
-            >
-              <img
-                src={item.image}
-                alt={item.title}
-                className="w-full h-72 object-cover rounded-2xl mb-4"
-              />
-              <h3 className="text-2xl font-extrabold mb-2 text-[#1C2C5B] text-center">
-                {item.year}
-              </h3>
-              <p className="text-lg font-semibold text-center">
-                <strong className="uppercase">{item.title}-</strong>{" "}
-                {item.description}
-              </p>
-            </div>
-          ))}
+        <div className="w-full max-w-7xl py-10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+            {/* Timeline Cards */}
+            {timelineData.map((item, index) => (
+              <div
+                key={index}
+                className="bg-white text-[#004C8C] border border-[#004C8C] rounded-2xl shadow-lg p-8 transition duration-300 transform hover:scale-105 hover:shadow-2xl"
+              >
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  className="w-full h-72 object-cover rounded-2xl mb-4"
+                />
+                <h3 className="text-2xl font-extrabold mb-2 text-[#1C2C5B] text-center">
+                  {item.year}
+                </h3>
+                <p className="text-lg font-semibold text-center">
+                  <strong className="uppercase">{item.title}-</strong>{" "}
+                  {item.description}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
-    </div>
+      <TopScorers />
+    </>
   );
 }
 
