@@ -11,6 +11,7 @@ import AstonVilla from "../assets/images/aston-villa.png";
 import WestHamLogo from "../assets/images/westham.png";
 import Sporting from "../assets/images/brigton.png";
 import ChelseaLogo from "../assets/images/Chelsea.webp";
+import ArsenalLogo from "../assets/images/arsenal.png";
 
 // Full list of matches including additional teams
 const matches = [
@@ -94,6 +95,15 @@ const matches = [
     venue: "Etihad Stadium",
     competition: "Premier League",
     opponentLogo: ChelseaLogo,
+    competitionLogo: PremierLeagueLogo,
+  },
+  {
+    date: "2025-02-01",
+    opponent: "Arsenal",
+    time: "20:45",
+    venue: "Emirates Stadium",
+    competition: "Premier League",
+    opponentLogo: ArsenalLogo,
     competitionLogo: PremierLeagueLogo,
   },
 ];
