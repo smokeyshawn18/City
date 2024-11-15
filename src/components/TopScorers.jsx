@@ -17,6 +17,10 @@ import Gab from "../assets/images/gab.webp";
 import PhilFoden from "../assets/images/fode.jpg";
 import Ya from "../assets/images/yaya.avif";
 import Riyad from "../assets/images/mahrez.jpg";
+import SilvaD from "../assets/images/dsilva.jpg";
+import Tevez from "../assets/images/tevez.jpg";
+import Dzeko from "../assets/images/dzeko.webp";
+import SilvaB from "../assets/images/silvab.jpg";
 
 const playersData = [
   {
@@ -24,6 +28,7 @@ const playersData = [
     image: Ag,
     position: "ST",
     age: "35",
+    year: "2011-2021",
     status: "Retired",
     competitions: {
       premierLeague: {
@@ -65,6 +70,7 @@ const playersData = [
     image: Raheem,
     position: "LW",
     age: "29",
+    year: "2015-2022",
     status: "Active - Arsenal",
     competitions: {
       premierLeague: {
@@ -107,6 +113,7 @@ const playersData = [
     position: "ST",
     age: "24",
     status: "Active",
+    year: "2022-Present",
     competitions: {
       premierLeague: {
         matches: 77,
@@ -153,6 +160,7 @@ const playersData = [
     image: KDB,
     position: "AM",
     age: "33",
+    year: "2015-Present",
     status: "Active",
     competitions: {
       premierLeague: {
@@ -198,6 +206,7 @@ const playersData = [
   {
     name: "Gabriel Jesus",
     image: Gab,
+    year: "2017-2022",
     position: "ST",
     age: "27",
     status: "Active - Arsenal",
@@ -240,6 +249,7 @@ const playersData = [
     name: "Phil Foden",
     position: "AM",
     age: "24",
+    year: "2016-Present",
     image: PhilFoden,
     status: "Active",
     competitions: {
@@ -287,6 +297,7 @@ const playersData = [
     name: "Yaya Toure",
     image: Ya,
     position: "CM",
+    year: "2010-2018",
     age: "41",
     status: "Retired",
     competitions: {
@@ -327,6 +338,7 @@ const playersData = [
   {
     name: "Riyad Mahrez",
     image: Riyad,
+    year: "2018-2023",
     position: "RW",
     age: "33",
     status: "Active - Al-Ahli",
@@ -357,6 +369,174 @@ const playersData = [
         logo: clubWorldCupLogo,
       },
       carabaoCup: { matches: 19, goals: 8, assists: 5, logo: carabaoCupLogo },
+      europaLeague: {
+        matches: 0,
+        goals: 0,
+        assists: 0,
+        logo: europaLeagueLogo,
+      },
+    },
+  },
+  {
+    name: "David Silva",
+    image: SilvaD,
+    year: "2010-2020",
+    position: "AM",
+    age: "38",
+    status: "Retired",
+    competitions: {
+      premierLeague: {
+        matches: 309,
+        goals: 60,
+        assists: 93,
+        logo: premierLeagueLogo,
+      },
+      championsLeague: {
+        matches: 56,
+        goals: 9,
+        assists: 14,
+        logo: championsLeagueLogo,
+      },
+      faCup: { matches: 34, goals: 5, assists: 14, logo: faCupLogo },
+      communityShield: {
+        matches: 4,
+        goals: 0,
+        assists: 2,
+        logo: communityShieldLogo,
+      },
+      clubWorldCup: {
+        matches: 0,
+        goals: 0,
+        assists: 0,
+        logo: clubWorldCupLogo,
+      },
+      carabaoCup: { matches: 21, goals: 1, assists: 5, logo: carabaoCupLogo },
+      europaLeague: {
+        matches: 12,
+        goals: 2,
+        assists: 3,
+        logo: europaLeagueLogo,
+      },
+    },
+  },
+  {
+    name: "Carlos Tevez",
+    image: Tevez,
+    year: "2010-2013",
+    position: "ST",
+    age: "40",
+    status: "Retired",
+    competitions: {
+      premierLeague: {
+        matches: 110,
+        goals: 56,
+        assists: 23,
+        logo: premierLeagueLogo,
+      },
+      championsLeague: {
+        matches: 6,
+        goals: 0,
+        assists: 0,
+        logo: championsLeagueLogo,
+      },
+      faCup: { matches: 12, goals: 7, assists: 5, logo: faCupLogo },
+      communityShield: {
+        matches: 1,
+        goals: 1,
+        assists: 0,
+        logo: communityShieldLogo,
+      },
+      clubWorldCup: {
+        matches: 0,
+        goals: 0,
+        assists: 0,
+        logo: clubWorldCupLogo,
+      },
+      carabaoCup: { matches: 13, goals: 9, assists: 2, logo: carabaoCupLogo },
+      europaLeague: {
+        matches: 6,
+        goals: 0,
+        assists: 2,
+        logo: europaLeagueLogo,
+      },
+    },
+  },
+  {
+    name: "Eden Dzeko",
+    image: Dzeko,
+    year: "2010-2015",
+    position: "ST",
+    age: "38",
+    status: "Retired",
+    competitions: {
+      premierLeague: {
+        matches: 130,
+        goals: 50,
+        assists: 13,
+        logo: premierLeagueLogo,
+      },
+      championsLeague: {
+        matches: 24,
+        goals: 5,
+        assists: 5,
+        logo: championsLeagueLogo,
+      },
+      faCup: { matches: 13, goals: 4, assists: 7, logo: faCupLogo },
+      communityShield: {
+        matches: 3,
+        goals: 1,
+        assists: 0,
+        logo: communityShieldLogo,
+      },
+      clubWorldCup: {
+        matches: 0,
+        goals: 0,
+        assists: 0,
+        logo: clubWorldCupLogo,
+      },
+      carabaoCup: { matches: 13, goals: 9, assists: 2, logo: carabaoCupLogo },
+      europaLeague: {
+        matches: 6,
+        goals: 3,
+        assists: 1,
+        logo: europaLeagueLogo,
+      },
+    },
+  },
+  {
+    name: "Bernardo Silva",
+    image: SilvaB,
+    year: "2017-Present",
+    position: "RW",
+    age: "30",
+    status: "Active",
+    competitions: {
+      premierLeague: {
+        matches: 244,
+        goals: 39,
+        assists: 45,
+        logo: premierLeagueLogo,
+      },
+      championsLeague: {
+        matches: 72,
+        goals: 14,
+        assists: 10,
+        logo: championsLeagueLogo,
+      },
+      faCup: { matches: 27, goals: 10, assists: 7, logo: faCupLogo },
+      communityShield: {
+        matches: 6,
+        goals: 1,
+        assists: 1,
+        logo: communityShieldLogo,
+      },
+      clubWorldCup: {
+        matches: 2,
+        goals: 1,
+        assists: 0,
+        logo: clubWorldCupLogo,
+      },
+      carabaoCup: { matches: 20, goals: 2, assists: 5, logo: carabaoCupLogo },
       europaLeague: {
         matches: 0,
         goals: 0,
@@ -397,7 +577,7 @@ function TopScorers({ players }) {
   return (
     <section className="bg-gradient-to-b from-[#6CABDD] to-[#003A70] py-12 px-6 sm:px-8 md:px-12 mb-5">
       <h2 className="text-center text-3xl sm:text-4xl font-extrabold text-white mb-8 sm:mb-12 tracking-wider">
-        Manchester City Top Scorers of the 21st Century
+        Manchester City Top Scorers of the 21st Century - Top 12
       </h2>
 
       <div className="grid gap-6 sm:gap-8 md:gap-10 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
@@ -422,11 +602,15 @@ function TopScorers({ players }) {
               <span className="font-extrabold text-base xl:text-xl tracking-wide mb-3 uppercase text-sky-900">
                 {player.name}
               </span>
+
               <p className="font-bold text-lg sm:text-xl mt-4 mx-1 mb-3 sm:mb-5">
                 Age: {player.age}
               </p>
               <p className="font-bold text-lg sm:text-xl mx-1 mb-3 sm:mb-5">
                 Position: {player.position}
+              </p>
+              <p className="font-bold text-lg sm:text-xl mx-1 mb-3 sm:mb-5">
+                {player.year}
               </p>
 
               <div className="flex justify-around text-base sm:text-lg font-semibold text-[#003A70]">
