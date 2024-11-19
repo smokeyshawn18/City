@@ -5,7 +5,7 @@ import {
   FaAngleUp,
 } from "react-icons/fa";
 import { GoGoal } from "react-icons/go";
-import England from "../assets/images/eng.png";
+import England from "../assets/images/cro.png";
 import Norway from "../assets/images/norway.webp";
 // import Belgium from "../assets/images/belgium.png";
 import Portugal from "../assets/images/portugal.webp";
@@ -17,7 +17,7 @@ import premierLeagueLogo from "../assets/images/prem.webp";
 import championsLeagueLogo from "../assets/images/Champ.png";
 import Carabao from "../assets/images/carabao.png";
 import otherIcon from "../assets/images/sheld.png";
-import PhilFoden from "../assets/images/fode.jpg";
+import PhilFoden from "../assets/images/gv.jpg";
 // Placeholder for national team icon
 import { useState } from "react";
 
@@ -51,6 +51,62 @@ const playersData = [
     nimg: Norway,
   },
 
+  // {
+  //   name: "Phil Foden",
+  //   matches: {
+  //     premierLeague: 8,
+  //     championsLeague: 4,
+  //     other: 0,
+  //     Carabao: 2,
+  //     nationalStats: 2,
+  //   },
+  //   goals: {
+  //     premierLeague: 0,
+  //     championsLeague: 3,
+  //     other: 0,
+  //     Carabao: 0,
+  //     nationalStats: 0,
+  //   },
+  //   assists: {
+  //     premierLeague: 1,
+  //     championsLeague: 1,
+  //     other: 0,
+  //     Carabao: 0,
+  //     nationalStats: 0,
+  //   },
+  //   age: 24,
+  //   position: "AM",
+  //   nimg: England,
+  //   image: PhilFoden,
+  // },
+  {
+    name: "Josko Gvardiol",
+    matches: {
+      premierLeague: 11,
+      championsLeague: 4,
+      other: 1,
+      Carabao: 2,
+      nationalStats: 6,
+    },
+    goals: {
+      premierLeague: 3,
+      championsLeague: 0,
+      other: 0,
+      Carabao: 0,
+      nationalStats: 1,
+    },
+    assists: {
+      premierLeague: 0,
+      championsLeague: 0,
+      other: 0,
+      Carabao: 0,
+      nationalStats: 0,
+    },
+    age: 24,
+    position: "LB",
+    nimg: England,
+    image: PhilFoden,
+  },
   {
     name: "Matheus Nunes",
     matches: {
@@ -78,34 +134,6 @@ const playersData = [
     position: "AM",
     nimg: Portugal,
     image: Nunes,
-  },
-  {
-    name: "Phil Foden",
-    matches: {
-      premierLeague: 8,
-      championsLeague: 4,
-      other: 0,
-      Carabao: 2,
-      nationalStats: 2,
-    },
-    goals: {
-      premierLeague: 0,
-      championsLeague: 3,
-      other: 0,
-      Carabao: 0,
-      nationalStats: 0,
-    },
-    assists: {
-      premierLeague: 1,
-      championsLeague: 1,
-      other: 0,
-      Carabao: 0,
-      nationalStats: 0,
-    },
-    age: 24,
-    position: "AM",
-    nimg: England,
-    image: PhilFoden,
   },
   // {
   //   name: "Kevin De Bruyne",

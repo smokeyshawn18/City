@@ -157,7 +157,7 @@ const players = [
       assists: 2,
       appearances: 13,
     },
-    injured: true,
+    injured: false,
     injuryDetails: {
       tm: "Oct 24, 2024",
       type: "Knock",
@@ -180,7 +180,7 @@ const players = [
     seasonStats: {
       goals: 3,
       assists: 0,
-      appearances: 18,
+      appearances: 19,
     },
     injured: false,
   },
@@ -320,9 +320,9 @@ const players = [
       appearances: 214,
     },
     seasonStats: {
-      goals: 3,
+      goals: 4,
       assists: 0,
-      appearances: 23,
+      appearances: 24,
     },
     injured: false,
   },
