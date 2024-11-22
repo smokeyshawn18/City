@@ -1,6 +1,6 @@
 import heroImage from "../assets/images/home.jpeg";
-// import Tot from "../assets/images/tottenham.webp";
-import Bournemouth from "../assets/images/brigton.png";
+import Tot from "../assets/images/tottenham.webp";
+
 import City from "../assets/images/logo.svg";
 import { FaMapMarkerAlt, FaClock, FaTicketAlt } from "react-icons/fa";
 import { useState, useMemo, useEffect, useCallback } from "react";
@@ -16,11 +16,11 @@ const Home = () => {
   const matchDay = useMemo(
     () => [
       {
-        date: "2024-11-09",
-        opponent: "Brighton",
+        date: "2024-11-23",
+        opponent: "Tottenham",
         time: "23:15", // Match time in user's local time format
-        venue: "Falmer Stadium",
-        opponentLogo: Bournemouth,
+        venue: "Etihad Stadium",
+        opponentLogo: Tot,
         kick: "Starts in:",
         competition: PremierLeagueLogo,
       },
@@ -128,6 +128,7 @@ const Home = () => {
                       alt="Manchester City"
                       className="h-16 w-16 sm:h-20 sm:w-20 object-contain"
                     />
+
                     <div className="text-2xl sm:text-3xl font-extrabold text-gray-700">
                       VS
                     </div>
@@ -140,7 +141,7 @@ const Home = () => {
 
                   {/* Match Information */}
                   <div className="mt-4 text-center space-y-2 sm:space-y-3">
-                    <p className="text-md sm:text-lg text-blue-900 font-bold">
+                    <p className="text-xl sm:text-xl text-sky-700 font-bold">
                       {match.date}
                     </p>
                     <div className="flex justify-center items-center gap-1 text-gray-600">
