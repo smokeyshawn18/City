@@ -341,7 +341,7 @@ const players = [
     seasonStats: {
       goals: 0,
       assists: 5,
-      appearances: 18,
+      appearances: 19,
     },
     injured: false,
   },
@@ -466,9 +466,9 @@ const players = [
       appearances: 479,
     },
     seasonStats: {
-      goalsConceded: 20,
+      goalsConceded: 21,
       cleanSheets: 4,
-      appearances: 17,
+      appearances: 18,
     },
     injured: false,
   },

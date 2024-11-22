@@ -10,11 +10,13 @@ import PlayerSection from "./components/PlayerSection";
 import Footer from "./components/Footer";
 import History from "./components/History";
 import News from "./components/News";
+import ScrollToTop from "./components/ScrollToTop";
 
 const App = () => {
   return (
     <Router>
       <Navbar />
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/news" element={<News />} />

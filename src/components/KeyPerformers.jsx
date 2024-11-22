@@ -173,7 +173,7 @@ const KeyPerformers = () => {
   };
 
   return (
-    <div className="mb-12">
+    <div className="mb-10 mt-5">
       <h2 className="p-4 text-4xl font-extrabold mb-8 text-center text-[#1b3c42] uppercase tracking-widest">
         Key Performers this Season
       </h2>

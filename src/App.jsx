@@ -8,12 +8,13 @@ import PlayerSection from "./components/PlayerSection.jsx";
 import Footer from "./components/Footer.jsx";
 import History from "./components/History.jsx";
 import News from "./components/News.jsx";
+import ScrollToTop from "./components/ScrollToTop.jsx";
 
 const App = () => {
   return (
     <Router>
       <Navbar />
-
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/news" element={<News />} />
@@ -23,6 +24,7 @@ const App = () => {
         <Route path="/Player-Card" element={<PlayerSection />} />
         <Route path="/History" element={<History />} />
       </Routes>
+
       <Footer />
     </Router>
   );
