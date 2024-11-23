@@ -8,8 +8,6 @@ import Kit from "./Kit";
 import CoachProfile from "./Coach";
 import KeyPerformers from "./KeyPerformers";
 import Happening from "./Happening";
-
-// import ChampionsLeagueLogo from "../assets/images/champions.png";
 import PremierLeagueLogo from "../assets/images/prem.webp";
 
 const Home = () => {
@@ -18,47 +16,44 @@ const Home = () => {
       {
         date: "2024-11-23",
         opponent: "Tottenham",
-        time: "23:15", // Match time in user's local time format
+        time: "23:15", // Match time in local format
         venue: "Etihad Stadium",
         opponentLogo: Tot,
-        kick: "Starts in:",
         competition: PremierLeagueLogo,
       },
     ],
     []
   );
 
-  // Function to create a valid local DateTime string
-  const getLocalDateTimeString = (date, time) => {
-    const localTimeString = `${date}T${time}:00`;
-    return new Date(localTimeString);
+  const getLocalDateTime = (date, time) => {
+    return new Date(`${date}T${time}:00`);
   };
 
-  // Modified countdown function to start only within 10 hours before the match
   const calculateCountdown = (matchDateTime) => {
     const now = new Date();
     const timeDifference = matchDateTime - now;
-    const tenHoursInMs = 10 * 60 * 60 * 1000;
-
-    if (timeDifference > tenHoursInMs) {
-      return { hours: "00", minutes: "00", seconds: "00", hasStarted: false };
-    }
 
     if (timeDifference <= 0) {
       return {
-        hours: 0,
-        minutes: 0,
-        seconds: 0,
+        hours: "00",
+        minutes: "00",
+        seconds: "00",
         hasEnded: true,
-        hasStarted: true,
+        hasStarted: false,
       };
     }
 
-    const hours = Math.floor((timeDifference / (1000 * 60 * 60)) % 24);
-    const minutes = Math.floor((timeDifference / 1000 / 60) % 60);
+    const hours = Math.floor(timeDifference / (1000 * 60 * 60));
+    const minutes = Math.floor((timeDifference / (1000 * 60)) % 60);
     const seconds = Math.floor((timeDifference / 1000) % 60);
 
-    return { hours, minutes, seconds, hasEnded: false, hasStarted: true };
+    return {
+      hours: String(hours).padStart(2, "0"),
+      minutes: String(minutes).padStart(2, "0"),
+      seconds: String(seconds).padStart(2, "0"),
+      hasEnded: false,
+      hasStarted: true,
+    };
   };
 
   const [todayMatches, setTodayMatches] = useState([]);
@@ -67,11 +62,9 @@ const Home = () => {
   const getTodayMatches = useCallback(() => {
     const today = new Date();
     return matchDay.filter((match) => {
-      const matchDateTime = getLocalDateTimeString(match.date, match.time);
+      const matchDateTime = getLocalDateTime(match.date, match.time);
       return (
-        today.getFullYear() === matchDateTime.getFullYear() &&
-        today.getMonth() === matchDateTime.getMonth() &&
-        today.getDate() === matchDateTime.getDate()
+        today.toDateString() === matchDateTime.toDateString() // Matches only today
       );
     });
   }, [matchDay]);
@@ -81,36 +74,34 @@ const Home = () => {
   }, [getTodayMatches]);
 
   useEffect(() => {
+    if (todayMatches.length === 0) return;
+
     const timer = setInterval(() => {
-      const newCountdowns = matchDay.reduce((acc, match) => {
-        const matchDateTime = getLocalDateTimeString(match.date, match.time);
-        const countdown = calculateCountdown(matchDateTime);
-        acc[match.opponent] = countdown;
+      const updatedCountdowns = todayMatches.reduce((acc, match) => {
+        const matchDateTime = getLocalDateTime(match.date, match.time);
+        acc[match.opponent] = calculateCountdown(matchDateTime);
         return acc;
       }, {});
 
-      setCountdowns(newCountdowns);
+      setCountdowns(updatedCountdowns);
 
-      // Stop the countdown if all matches have ended or not yet started
-      const ongoingMatches = matchDay.filter(
-        (match) =>
-          newCountdowns[match.opponent]?.hasStarted &&
-          !newCountdowns[match.opponent]?.hasEnded
+      const allMatchesEnded = todayMatches.every(
+        (match) => updatedCountdowns[match.opponent]?.hasEnded
       );
 
-      if (ongoingMatches.length === 0) {
-        clearInterval(timer); // Clear the interval if no matches are ongoing
+      if (allMatchesEnded) {
+        clearInterval(timer);
       }
     }, 1000);
 
     return () => clearInterval(timer);
-  }, [matchDay]);
+  }, [todayMatches]);
 
   return (
     <section className="bg-[#f0f8ff] text-gray-800 py-12 lg:py-24">
       <div className="relative container mx-auto px-4 lg:px-8">
         {todayMatches.length > 0 && (
-          <div className="mb- rounded-xl py-1 px-6 sm:px-8 lg:px-12 text-white mb-10">
+          <div className="mb-10 rounded-xl py-1 px-6 sm:px-8 lg:px-12 text-white">
             <h2 className="text-3xl text-gray-800 sm:text-5xl font-bold text-center uppercase mb-12 tracking-wider">
               Match Day
             </h2>
@@ -121,14 +112,12 @@ const Home = () => {
                   key={index}
                   className="bg-white text-[#1b3c42] p-6 rounded-lg shadow-xl flex flex-col items-center max-w-md w-full relative"
                 >
-                  {/* Manchester City vs Opponent Logos */}
                   <div className="flex items-center justify-between gap-4 w-full">
                     <img
                       src={City}
                       alt="Manchester City"
                       className="h-16 w-16 sm:h-20 sm:w-20 object-contain"
                     />
-
                     <div className="text-2xl sm:text-3xl font-extrabold text-gray-700">
                       VS
                     </div>
@@ -139,7 +128,6 @@ const Home = () => {
                     />
                   </div>
 
-                  {/* Match Information */}
                   <div className="mt-4 text-center space-y-2 sm:space-y-3">
                     <p className="text-xl sm:text-xl text-sky-700 font-bold">
                       {match.date}
@@ -158,8 +146,8 @@ const Home = () => {
                     </div>
                   </div>
                   <h2 className="mt-4 font-bold text-xl">Kick off in:</h2>
-                  {/* Countdown Timer */}
-                  {countdowns[match.opponent]?.hasStarted && (
+
+                  {countdowns[match.opponent] && (
                     <div className="flex items-center justify-center mt-4">
                       <div className="bg-gradient-to-r from-sky-600 to-blue-600 p-6 rounded-lg shadow-lg">
                         {countdowns[match.opponent]?.hasEnded ? (
@@ -187,7 +175,6 @@ const Home = () => {
                     </div>
                   )}
 
-                  {/* Competition Info */}
                   <div className="mt-6">
                     <img
                       src={match.competition}
@@ -196,7 +183,6 @@ const Home = () => {
                     />
                   </div>
 
-                  {/* Buy Tickets Button */}
                   <div className="mt-6">
                     <a
                       href="https://www.mancity.com/tickets"
@@ -214,7 +200,6 @@ const Home = () => {
           </div>
         )}
 
-        {/* Hero Image */}
         <div className="relative h-80 sm:h-96 mb-4">
           <img
             src={heroImage}
