@@ -30,6 +30,7 @@ import Sporting from "../assets/images/sporting.png";
 import Victor from "../assets/images/gyokeres.webp";
 import Brighton from "../assets/images/brigton.png";
 import Pedro from "../assets/images/pedro.jpg";
+import Mad from "../assets/images/mad.webp";
 
 const teamColors = {
   "Man City": "#6caddf",
@@ -265,6 +266,23 @@ const matches = [
 
     manOfTheMatch: Pedro,
     motm: "Joao Pedro",
+  },
+  {
+    id: 13,
+    homeTeam: "Man City",
+    awayTeam: "Tottenham",
+    scorers: {
+      home: [],
+      away: ["Maddison 13', 20'", "Porro 52'", "Johnson 90+3'"],
+    },
+    timestamp: "2024-11-23T23:15",
+    time: "FT",
+    competition: "Premier League",
+    venue: "Etihad Stadium",
+    competitionLogo: PremierLeagueLogo,
+
+    manOfTheMatch: Mad,
+    motm: "James Maddison",
   },
 ];
 
