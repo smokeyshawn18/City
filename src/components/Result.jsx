@@ -31,6 +31,7 @@ import Victor from "../assets/images/gyokeres.webp";
 import Brighton from "../assets/images/brigton.png";
 import Pedro from "../assets/images/pedro.jpg";
 import Mad from "../assets/images/mad.webp";
+import Salah from "../assets/images/salah.webp";
 
 const teamColors = {
   "Man City": "#6caddf",
@@ -283,6 +284,23 @@ const matches = [
 
     manOfTheMatch: Mad,
     motm: "James Maddison",
+  },
+  {
+    id: 14,
+    homeTeam: "Man City",
+    awayTeam: "Liverpool",
+    scorers: {
+      home: [],
+      away: ["Gakpo 12'", "Salah 78'(Pen)"],
+    },
+    timestamp: "2024-12-01T21:45",
+    time: "FT",
+    competition: "Premier League",
+    venue: "Anfield",
+    competitionLogo: PremierLeagueLogo,
+
+    manOfTheMatch: Salah,
+    motm: "Mohammad Salah",
   },
 ];
 

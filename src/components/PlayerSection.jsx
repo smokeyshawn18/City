@@ -50,7 +50,7 @@ const players = [
     seasonStats: {
       goals: 24,
       assists: 1,
-      appearances: 24,
+      appearances: 25,
     },
   },
 
@@ -69,7 +69,7 @@ const players = [
     seasonStats: {
       goals: 3,
       assists: 1,
-      appearances: 12,
+      appearances: 13,
     },
     injured: false,
     injuryDetails: {
@@ -95,7 +95,7 @@ const players = [
     seasonStats: {
       goals: 2,
       assists: 3,
-      appearances: 23,
+      appearances: 24,
     },
     injured: false,
   },
@@ -115,7 +115,7 @@ const players = [
     seasonStats: {
       goals: 2,
       assists: 1,
-      appearances: 17,
+      appearances: 18,
     },
     injured: false,
   },
@@ -136,7 +136,7 @@ const players = [
     seasonStats: {
       goals: 3,
       assists: 2,
-      appearances: 18,
+      appearances: 19,
     },
     injured: false,
   },
@@ -155,7 +155,7 @@ const players = [
     seasonStats: {
       goals: 2,
       assists: 2,
-      appearances: 15,
+      appearances: 16,
     },
     injured: false,
     injuryDetails: {
@@ -226,7 +226,7 @@ const players = [
     seasonStats: {
       goals: 2,
       assists: 3,
-      appearances: 17,
+      appearances: 18,
     },
     injured: false,
   },
@@ -245,7 +245,7 @@ const players = [
     seasonStats: {
       goals: 0,
       assists: 0,
-      appearances: 9,
+      appearances: 10,
     },
     injured: false,
   },
@@ -284,7 +284,7 @@ const players = [
     seasonStats: {
       goals: 0,
       assists: 1,
-      appearances: 20,
+      appearances: 21,
     },
     injured: false,
   },
@@ -303,7 +303,7 @@ const players = [
     seasonStats: {
       goals: 0,
       assists: 0,
-      appearances: 18,
+      appearances: 19,
     },
     injured: false,
   },
@@ -341,7 +341,7 @@ const players = [
     seasonStats: {
       goals: 0,
       assists: 5,
-      appearances: 20,
+      appearances: 21,
     },
     injured: false,
   },
@@ -379,7 +379,7 @@ const players = [
     seasonStats: {
       goals: 3,
       assists: 5,
-      appearances: 15,
+      appearances: 16,
     },
     injured: false,
   },
@@ -398,7 +398,7 @@ const players = [
     seasonStats: {
       goals: 0,
       assists: 0,
-      appearances: 13,
+      appearances: 14,
     },
     injured: false,
     injuryDetails: {
@@ -437,7 +437,7 @@ const players = [
     name: "Rico Lewis",
     number: 82,
     position: "RB",
-    age: 19,
+    age: 20,
     country: England,
     image: Rico,
     careerStats: {
@@ -448,7 +448,7 @@ const players = [
     seasonStats: {
       goals: 0,
       assists: 4,
-      appearances: 23,
+      appearances: 24,
     },
     injured: false,
   },
@@ -485,9 +485,9 @@ const players = [
       appearances: 318,
     },
     seasonStats: {
-      goalsConceded: 3,
+      goalsConceded: 5,
       cleanSheets: 2,
-      appearances: 4,
+      appearances: 5,
     },
     injured: false,
   },

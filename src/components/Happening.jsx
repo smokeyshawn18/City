@@ -1,4 +1,4 @@
-import Opponent from "../assets/images/gb.jpg";
+// import Opponent from "../assets/images/gb.jpg";
 import Dor from "../assets/images/rodriedit.png";
 import Pep from "../assets/images/pepsign.jpg";
 
@@ -10,11 +10,7 @@ function Happening() {
       image: Pep,
       addedTime: new Date("2024-11-21T10:24:00"),
     },
-    {
-      title: "Haaland Leading the PL Golden Boot",
-      image: Opponent,
-      addedTime: new Date("2024-11-19T21:00:00"),
-    },
+
     {
       title: "Congratulation's Rodri for Ballon d'Or",
       image: Dor,

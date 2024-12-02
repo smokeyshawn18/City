@@ -3,46 +3,18 @@ import ChampionsLeagueLogo from "../assets/images/champions.png";
 import ParisSaintGerman from "../assets/images/psg.png";
 import Juventus from "../assets/images/juv.jpg";
 import ManCityLogo from "../assets/images/logo.svg";
-import Tottenham from "../assets/images/tottenham.webp";
-import Liverpool from "../assets/images/lfc.webp";
+// import Tottenham from "../assets/images/tottenham.webp";
+// import Liverpool from "../assets/images/lfc.webp";
 import ManUtd from "../assets/images/united.png";
 import AstonVilla from "../assets/images/aston-villa.png";
 // import Carabao from "../assets/images/carabao.png";
 import WestHamLogo from "../assets/images/westham.png";
-import Sporting from "../assets/images/brigton.png";
+
 import ChelseaLogo from "../assets/images/Chelsea.webp";
 import ArsenalLogo from "../assets/images/arsenal.png";
 
 // Full list of matches including additional teams
 const matches = [
-  {
-    date: "2024-11-09",
-    opponent: "Brighton",
-    time: "23:15",
-    venue: "Falmer Stadium",
-    competition: "Premier League",
-    opponentLogo: Sporting,
-    competitionLogo: PremierLeagueLogo,
-  },
-
-  {
-    date: "2024-11-23",
-    opponent: "Tottenham",
-    time: "23:15",
-    venue: "Etihad Stadium",
-    competition: "Premier League",
-    opponentLogo: Tottenham,
-    competitionLogo: PremierLeagueLogo,
-  },
-  {
-    date: "2024-12-01",
-    opponent: "Liverpool",
-    time: "21:45",
-    venue: "Anfield",
-    competition: "Premier League",
-    opponentLogo: Liverpool,
-    competitionLogo: PremierLeagueLogo,
-  },
   {
     date: "2024-12-12",
     opponent: "Juventus",
