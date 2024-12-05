@@ -7,12 +7,12 @@ import {
 import { GoGoal } from "react-icons/go";
 import England from "../assets/images/cro.png";
 import Norway from "../assets/images/norway.webp";
-// import Belgium from "../assets/images/belgium.png";
-import Portugal from "../assets/images/portugal.webp";
+import Belgium from "../assets/images/belgium.png";
+// import Portugal from "../assets/images/portugal.webp";
 import player1Image from "../assets/images/haaland.jpg";
-// import player2Image from "../assets/images/kdb.jpg";
+import player2Image from "../assets/images/kdb.jpg";
 // import player3Image from "../assets/images/silva.jpg";
-import Nunes from "../assets/images/nunes.jpg";
+// import Nunes from "../assets/images/nunes.jpg";
 import premierLeagueLogo from "../assets/images/prem.webp";
 import championsLeagueLogo from "../assets/images/Champ.png";
 import Carabao from "../assets/images/carabao.png";
@@ -25,7 +25,7 @@ const playersData = [
   {
     name: "Erling Haaland",
     matches: {
-      premierLeague: 13,
+      premierLeague: 14,
       championsLeague: 5,
       other: 1,
       Carabao: 0,
@@ -39,7 +39,7 @@ const playersData = [
       nationalStats: 7,
     },
     assists: {
-      premierLeague: 0,
+      premierLeague: 1,
       championsLeague: 0,
       other: 0,
       Carabao: 0,
@@ -79,10 +79,39 @@ const playersData = [
   //   nimg: England,
   //   image: PhilFoden,
   // },
+
+  {
+    name: "Kevin De Bruyne",
+    matches: {
+      premierLeague: 8,
+      championsLeague: 3,
+      other: 1,
+      Carabao: 0,
+      nationalStats: 2,
+    },
+    goals: {
+      premierLeague: 2,
+      championsLeague: 0,
+      other: 0,
+      Carabao: 0,
+      nationalStats: 2,
+    },
+    assists: {
+      premierLeague: 2,
+      championsLeague: 0,
+      other: 0,
+      Carabao: 0,
+      nationalStats: 0,
+    },
+    nimg: Belgium,
+    age: 33,
+    position: "AM",
+    image: player2Image,
+  },
   {
     name: "Josko Gvardiol",
     matches: {
-      premierLeague: 12,
+      premierLeague: 13,
       championsLeague: 5,
       other: 1,
       Carabao: 2,
@@ -107,61 +136,33 @@ const playersData = [
     nimg: England,
     image: PhilFoden,
   },
-  {
-    name: "Matheus Nunes",
-    matches: {
-      premierLeague: 9,
-      championsLeague: 4,
-      other: 1,
-      Carabao: 2,
-      nationalStats: 0,
-    },
-    goals: {
-      premierLeague: 0,
-      championsLeague: 1,
-      other: 0,
-      Carabao: 2,
-      nationalStats: 0,
-    },
-    assists: {
-      premierLeague: 2,
-      championsLeague: 3,
-      other: 0,
-      Carabao: 0,
-      nationalStats: 0,
-    },
-    age: 26,
-    position: "AM",
-    nimg: Portugal,
-    image: Nunes,
-  },
   // {
-  //   name: "Kevin De Bruyne",
+  //   name: "Matheus Nunes",
   //   matches: {
-  //     premierLeague: 5,
-  //     championsLeague: 2,
+  //     premierLeague: 10,
+  //     championsLeague: 4,
   //     other: 1,
-  //     Carabao: 0,
-  //     nationalStats: 2,
+  //     Carabao: 2,
+  //     nationalStats: 0,
   //   },
   //   goals: {
-  //     premierLeague: 1,
+  //     premierLeague: 0,
   //     championsLeague: 1,
   //     other: 0,
-  //     Carabao: 0,
-  //     nationalStats: 2,
+  //     Carabao: 2,
+  //     nationalStats: 0,
   //   },
   //   assists: {
-  //     premierLeague: 1,
-  //     championsLeague: 0,
+  //     premierLeague: 2,
+  //     championsLeague: 3,
   //     other: 0,
   //     Carabao: 0,
   //     nationalStats: 0,
   //   },
-  //   nimg: Belgium,
-  //   age: 33,
+  //   age: 26,
   //   position: "AM",
-  //   image: player2Image,
+  //   nimg: Portugal,
+  //   image: Nunes,
   // },
 ];
 
