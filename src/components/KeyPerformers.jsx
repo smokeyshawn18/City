@@ -25,14 +25,14 @@ const playersData = [
   {
     name: "Erling Haaland",
     matches: {
-      premierLeague: 14,
+      premierLeague: 15,
       championsLeague: 5,
       other: 1,
       Carabao: 0,
       nationalStats: 6,
     },
     goals: {
-      premierLeague: 12,
+      premierLeague: 13,
       championsLeague: 5,
       other: 0,
       Carabao: 0,
@@ -83,7 +83,7 @@ const playersData = [
   {
     name: "Kevin De Bruyne",
     matches: {
-      premierLeague: 8,
+      premierLeague: 9,
       championsLeague: 3,
       other: 1,
       Carabao: 0,
@@ -111,7 +111,7 @@ const playersData = [
   {
     name: "Josko Gvardiol",
     matches: {
-      premierLeague: 13,
+      premierLeague: 14,
       championsLeague: 5,
       other: 1,
       Carabao: 2,
@@ -139,7 +139,7 @@ const playersData = [
   // {
   //   name: "Matheus Nunes",
   //   matches: {
-  //     premierLeague: 10,
+  //     premierLeague: 11,
   //     championsLeague: 4,
   //     other: 1,
   //     Carabao: 2,
@@ -153,7 +153,7 @@ const playersData = [
   //     nationalStats: 0,
   //   },
   //   assists: {
-  //     premierLeague: 2,
+  //     premierLeague: 3,
   //     championsLeague: 3,
   //     other: 0,
   //     Carabao: 0,
