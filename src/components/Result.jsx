@@ -32,6 +32,8 @@ import Brighton from "../assets/images/brigton.png";
 import Pedro from "../assets/images/pedro.jpg";
 import Mad from "../assets/images/mad.webp";
 import Salah from "../assets/images/salah.webp";
+import Juventus from "../assets/images/juv.jpg";
+import Vla from "../assets/images/vla.jpg";
 
 const teamColors = {
   "Man City": "#6caddf",
@@ -63,6 +65,7 @@ const teamLogos = {
   "Sporting CP": Sporting,
   Fulham: Fulham,
   Brighton: Brighton,
+  Juventus: Juventus,
 };
 
 const calculateScore = (scorers) => {
@@ -302,6 +305,23 @@ const matches = [
     manOfTheMatch: Salah,
     motm: "Mohammad Salah",
   },
+  {
+    id: 15,
+    homeTeam: "Man City",
+    awayTeam: "Juventus",
+    scorers: {
+      home: [],
+      away: ["Vlahovic 53'", "McKennie 75'"],
+    },
+    timestamp: "2024-12-12T01:45:00",
+    time: "FT",
+    competition: "Champions League",
+    venue: "Juventus Stadium",
+    competitionLogo: ChampionsLeague,
+
+    manOfTheMatch: Vla,
+    motm: "Dusan Vlahovic",
+  },
 ];
 
 const formatDateTime = (dateTimeString) => {
@@ -422,82 +442,165 @@ const Results = () => {
                   {/* Scorers and Player of the Match */}
                   <div className="p-4 bg-sky-50 rounded-md mt-4">
                     <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0 md:space-x-6">
-                      {/* Home Scorers */}
-                      <div className="flex-1">
-                        <h4
-                          className="text-md sm:text-lg font-bold mb-2"
-                          style={{ color: teamColors[match.homeTeam] }}
-                        >
-                          <img
-                            src={teamLogos[match.homeTeam]}
-                            className="w-8 h-8 sm:w-10 sm:h-10 mx-auto"
-                            alt={`${match.homeTeam} Logo`}
-                          />
-                        </h4>
-                        {match.scorers.home.length > 0 ? (
-                          <ul className="list-disc pl-4 space-y-1">
-                            {match.scorers.home.map((scorer, index) => (
-                              <li
-                                key={index}
-                                className="text-sm sm:text-base font-semibold text-gray-800"
-                              >
-                                {scorer}
-                              </li>
-                            ))}
-                          </ul>
-                        ) : (
-                          <p className="text-sm sm:text-base text-gray-500">
-                            No goals scored.
-                          </p>
-                        )}
-                      </div>
+                      {isEtihadStadium ? (
+                        <>
+                          {/* Home Scorers */}
+                          <div className="flex-1">
+                            <h4
+                              className="text-md sm:text-lg font-bold mb-2"
+                              style={{ color: teamColors[match.homeTeam] }}
+                            >
+                              <img
+                                src={teamLogos[match.homeTeam]}
+                                className="w-8 h-8 sm:w-10 sm:h-10 mx-auto"
+                                alt={`${match.homeTeam} Logo`}
+                              />
+                            </h4>
+                            {match.scorers.home.length > 0 ? (
+                              <ul className="list-disc pl-4 space-y-1">
+                                {match.scorers.home.map((scorer, index) => (
+                                  <li
+                                    key={index}
+                                    className="text-sm sm:text-base font-semibold text-gray-800"
+                                  >
+                                    {scorer}
+                                  </li>
+                                ))}
+                              </ul>
+                            ) : (
+                              <p className="text-sm sm:text-base text-gray-500">
+                                No goals scored.
+                              </p>
+                            )}
+                          </div>
 
-                      {/* Player of the Match */}
-                      <div className="flex flex-col items-center bg-sky-200 p-3 sm:p-4 rounded-lg shadow-md">
-                        <p className="text-sm sm:text-base font-medium text-sky-700 mb-2">
-                          Player of the Match
-                        </p>
-                        <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full overflow-hidden">
-                          <img
-                            src={match.manOfTheMatch}
-                            alt="Player of the Match"
-                            className="w-full h-full object-cover"
-                          />
-                        </div>
-                        <p className="mt-2 text-sm sm:text-lg font-bold text-sky-700">
-                          {match.motm}
-                        </p>
-                      </div>
+                          {/* Player of the Match */}
+                          <div className="flex flex-col items-center bg-sky-200 p-3 sm:p-4 rounded-lg shadow-md">
+                            <p className="text-sm sm:text-base font-medium text-sky-700 mb-2">
+                              Player of the Match
+                            </p>
+                            <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full overflow-hidden">
+                              <img
+                                src={match.manOfTheMatch}
+                                alt="Player of the Match"
+                                className="w-full h-full object-cover"
+                              />
+                            </div>
+                            <p className="mt-2 text-sm sm:text-lg font-bold text-sky-700">
+                              {match.motm}
+                            </p>
+                          </div>
 
-                      {/* Away Scorers */}
-                      <div className="flex-1">
-                        <h4
-                          className="text-md sm:text-lg font-bold mb-2"
-                          style={{ color: teamColors[match.awayTeam] }}
-                        >
-                          <img
-                            src={teamLogos[match.awayTeam]}
-                            className="w-8 h-8 sm:w-10 sm:h-10 mx-auto"
-                            alt={`${match.awayTeam} Logo`}
-                          />
-                        </h4>
-                        {match.scorers.away.length > 0 ? (
-                          <ul className="list-disc pl-4 space-y-1">
-                            {match.scorers.away.map((scorer, index) => (
-                              <li
-                                key={index}
-                                className="text-sm sm:text-base font-semibold text-gray-800"
-                              >
-                                {scorer}
-                              </li>
-                            ))}
-                          </ul>
-                        ) : (
-                          <p className="text-sm sm:text-base text-gray-500">
-                            No goals scored.
-                          </p>
-                        )}
-                      </div>
+                          {/* Away Scorers */}
+                          <div className="flex-1">
+                            <h4
+                              className="text-md sm:text-lg font-bold mb-2"
+                              style={{ color: teamColors[match.awayTeam] }}
+                            >
+                              <img
+                                src={teamLogos[match.awayTeam]}
+                                className="w-8 h-8 sm:w-10 sm:h-10 mx-auto"
+                                alt={`${match.awayTeam} Logo`}
+                              />
+                            </h4>
+                            {match.scorers.away.length > 0 ? (
+                              <ul className="list-disc pl-4 space-y-1">
+                                {match.scorers.away.map((scorer, index) => (
+                                  <li
+                                    key={index}
+                                    className="text-sm sm:text-base font-semibold text-gray-800"
+                                  >
+                                    {scorer}
+                                  </li>
+                                ))}
+                              </ul>
+                            ) : (
+                              <p className="text-sm sm:text-base text-gray-500">
+                                No goals scored.
+                              </p>
+                            )}
+                          </div>
+                        </>
+                      ) : (
+                        <>
+                          {/* Away Scorers */}
+                          <div className="flex-1">
+                            <h4
+                              className="text-md sm:text-lg font-bold mb-2"
+                              style={{ color: teamColors[match.awayTeam] }}
+                            >
+                              <img
+                                src={teamLogos[match.awayTeam]}
+                                className="w-8 h-8 sm:w-10 sm:h-10 mx-auto"
+                                alt={`${match.awayTeam} Logo`}
+                              />
+                            </h4>
+                            {match.scorers.away.length > 0 ? (
+                              <ul className="list-disc pl-4 space-y-1">
+                                {match.scorers.away.map((scorer, index) => (
+                                  <li
+                                    key={index}
+                                    className="text-sm sm:text-base font-semibold text-gray-800"
+                                  >
+                                    {scorer}
+                                  </li>
+                                ))}
+                              </ul>
+                            ) : (
+                              <p className="text-sm sm:text-base text-gray-500">
+                                No goals scored.
+                              </p>
+                            )}
+                          </div>
+
+                          {/* Player of the Match */}
+                          <div className="flex flex-col items-center bg-sky-200 p-3 sm:p-4 rounded-lg shadow-md">
+                            <p className="text-sm sm:text-base font-medium text-sky-700 mb-2">
+                              Player of the Match
+                            </p>
+                            <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full overflow-hidden">
+                              <img
+                                src={match.manOfTheMatch}
+                                alt="Player of the Match"
+                                className="w-full h-full object-cover"
+                              />
+                            </div>
+                            <p className="mt-2 text-sm sm:text-lg font-bold text-sky-700">
+                              {match.motm}
+                            </p>
+                          </div>
+
+                          {/* Home Scorers */}
+                          <div className="flex-1">
+                            <h4
+                              className="text-md sm:text-lg font-bold mb-2"
+                              style={{ color: teamColors[match.homeTeam] }}
+                            >
+                              <img
+                                src={teamLogos[match.homeTeam]}
+                                className="w-8 h-8 sm:w-10 sm:h-10 mx-auto"
+                                alt={`${match.homeTeam} Logo`}
+                              />
+                            </h4>
+                            {match.scorers.home.length > 0 ? (
+                              <ul className="list-disc pl-4 space-y-1">
+                                {match.scorers.home.map((scorer, index) => (
+                                  <li
+                                    key={index}
+                                    className="text-sm sm:text-base font-semibold text-gray-800"
+                                  >
+                                    {scorer}
+                                  </li>
+                                ))}
+                              </ul>
+                            ) : (
+                              <p className="text-sm sm:text-base text-gray-500">
+                                No goals scored.
+                              </p>
+                            )}
+                          </div>
+                        </>
+                      )}
                     </div>
                   </div>
 
