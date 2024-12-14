@@ -1,5 +1,5 @@
 import heroImage from "../assets/images/home.jpeg";
-import Tot from "../assets/images/lfc.webp";
+import Tot from "../assets/images/united.png";
 
 import City from "../assets/images/logo.svg";
 import { FaMapMarkerAlt, FaClock, FaTicketAlt } from "react-icons/fa";
@@ -14,11 +14,11 @@ const Home = () => {
   const matchDay = useMemo(
     () => [
       {
-        date: "2024-12-01",
-        opponent: "Liverpool",
+        date: "2024-12-15",
+        opponent: "Man United",
         team: "Man City",
-        time: "21:45", // Match time in local format
-        venue: "Anfield",
+        time: "22:15", // Match time in local format
+        venue: "Etihad Stadium",
         opponentLogo: Tot,
         competition: PremierLeagueLogo,
       },
@@ -130,12 +130,12 @@ const Home = () => {
                   </div>
 
                   <div className="mt-4 text-center space-y-2 sm:space-y-3">
-                    <p className="text-xl sm:text-xl text-sky-700 font-bold">
+                    <p className="text-xl sm:text-xl text-blue-500 font-bold">
                       {match.date}
                     </p>
                     <div className="flex justify-center items-center gap-1 text-gray-600">
                       <FaClock className="text-sky-500" />
-                      <span className="font-bold text-sky-500 text-xl">
+                      <span className="font-bold text-blue-500 text-xl">
                         {match.time}
                       </span>
                     </div>
@@ -146,7 +146,7 @@ const Home = () => {
                       </span>
                     </div>
                   </div>
-                  <h2 className="mt-4 font-bold text-xl">Kick off in:</h2>
+                  <h2 className="mt-4 font-bold text-xl">Match Starts in:</h2>
 
                   {countdowns[match.opponent] && (
                     <div className="flex items-center justify-center mt-4">
