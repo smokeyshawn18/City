@@ -79,35 +79,6 @@ const playersData = [
   //   nimg: England,
   //   image: PhilFoden,
   // },
-
-  {
-    name: "Kevin De Bruyne",
-    matches: {
-      premierLeague: 10,
-      championsLeague: 4,
-      other: 1,
-      Carabao: 0,
-      nationalStats: 2,
-    },
-    goals: {
-      premierLeague: 2,
-      championsLeague: 0,
-      other: 0,
-      Carabao: 0,
-      nationalStats: 2,
-    },
-    assists: {
-      premierLeague: 2,
-      championsLeague: 0,
-      other: 0,
-      Carabao: 0,
-      nationalStats: 0,
-    },
-    nimg: Belgium,
-    age: 33,
-    position: "AM",
-    image: player2Image,
-  },
   {
     name: "Josko Gvardiol",
     matches: {
@@ -136,6 +107,35 @@ const playersData = [
     nimg: England,
     image: PhilFoden,
   },
+  {
+    name: "Kevin De Bruyne",
+    matches: {
+      premierLeague: 10,
+      championsLeague: 4,
+      other: 1,
+      Carabao: 0,
+      nationalStats: 2,
+    },
+    goals: {
+      premierLeague: 2,
+      championsLeague: 0,
+      other: 0,
+      Carabao: 0,
+      nationalStats: 2,
+    },
+    assists: {
+      premierLeague: 2,
+      championsLeague: 0,
+      other: 0,
+      Carabao: 0,
+      nationalStats: 0,
+    },
+    nimg: Belgium,
+    age: 33,
+    position: "AM",
+    image: player2Image,
+  },
+
   // {
   //   name: "Matheus Nunes",
   //   matches: {

@@ -34,6 +34,7 @@ import Mad from "../assets/images/mad.webp";
 import Salah from "../assets/images/salah.webp";
 import Juventus from "../assets/images/juv.jpg";
 import Vla from "../assets/images/vla.jpg";
+import Amad from "../assets/images/amad.webp";
 
 const teamColors = {
   "Man City": "#6caddf",
@@ -321,6 +322,23 @@ const matches = [
 
     manOfTheMatch: Vla,
     motm: "Dusan Vlahovic",
+  },
+  {
+    id: 16,
+    homeTeam: "Man City",
+    awayTeam: "Man United",
+    scorers: {
+      home: ["Gvardiol 36'"],
+      away: ["Fernandes 88'(Pen)", "Amad 90'"],
+    },
+    timestamp: "2024-12-15T22:15:00",
+    time: "FT",
+
+    competition: "Premier League",
+    venue: "Etihad Stadium",
+    competitionLogo: PremierLeagueLogo,
+    manOfTheMatch: Amad,
+    motm: "Amad Diallo",
   },
 ];
 

@@ -268,7 +268,25 @@ const players = [
     },
     injured: false,
   },
-
+  {
+    name: "Josko Gvardiol",
+    number: 24,
+    position: "LB",
+    age: 22,
+    country: Croatia,
+    image: JoskoGvardiol,
+    careerStats: {
+      goals: 16,
+      assists: 9,
+      appearances: 214,
+    },
+    seasonStats: {
+      goals: 5,
+      assists: 0,
+      appearances: 30,
+    },
+    injured: false,
+  },
   {
     name: "Manuel Akanji",
     number: 25,
@@ -307,25 +325,7 @@ const players = [
     },
     injured: false,
   },
-  {
-    name: "Josko Gvardiol",
-    number: 24,
-    position: "LB",
-    age: 22,
-    country: Croatia,
-    image: JoskoGvardiol,
-    careerStats: {
-      goals: 16,
-      assists: 9,
-      appearances: 214,
-    },
-    seasonStats: {
-      goals: 5,
-      assists: 0,
-      appearances: 30,
-    },
-    injured: false,
-  },
+
   {
     name: "Savinho",
     number: 26,
@@ -342,25 +342,6 @@ const players = [
       goals: 0,
       assists: 5,
       appearances: 25,
-    },
-    injured: false,
-  },
-  {
-    name: "James McAtee",
-    position: "AM",
-    number: 87,
-    age: 21,
-    country: England,
-    image: James,
-    careerStats: {
-      goals: 14,
-      assists: 7,
-      appearances: 82,
-    },
-    seasonStats: {
-      goals: 1,
-      assists: 1,
-      appearances: 8,
     },
     injured: false,
   },
@@ -383,6 +364,26 @@ const players = [
     },
     injured: false,
   },
+  {
+    name: "James McAtee",
+    position: "AM",
+    number: 87,
+    age: 21,
+    country: England,
+    image: James,
+    careerStats: {
+      goals: 14,
+      assists: 7,
+      appearances: 82,
+    },
+    seasonStats: {
+      goals: 1,
+      assists: 1,
+      appearances: 8,
+    },
+    injured: false,
+  },
+
   {
     name: "Kyle Walker",
     position: "RB",
@@ -407,6 +408,26 @@ const players = [
       recoveryTime: "Mid November 2024",
     },
     injuryIcon: FaHospital,
+  },
+
+  {
+    name: "Rico Lewis",
+    number: 82,
+    position: "RB",
+    age: 20,
+    country: England,
+    image: Rico,
+    careerStats: {
+      goals: 3,
+      assists: 5,
+      appearances: 51,
+    },
+    seasonStats: {
+      goals: 1,
+      assists: 4,
+      appearances: 27,
+    },
+    injured: false,
   },
   {
     name: "Oscar Bobb",
@@ -433,26 +454,6 @@ const players = [
     },
     injuryIcon: FaHospital,
   },
-  {
-    name: "Rico Lewis",
-    number: 82,
-    position: "RB",
-    age: 20,
-    country: England,
-    image: Rico,
-    careerStats: {
-      goals: 3,
-      assists: 5,
-      appearances: 51,
-    },
-    seasonStats: {
-      goals: 1,
-      assists: 4,
-      appearances: 27,
-    },
-    injured: false,
-  },
-
   {
     name: "Ederson Moraes",
     number: 3,

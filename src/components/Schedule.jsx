@@ -1,38 +1,20 @@
 import PremierLeagueLogo from "../assets/images/prem.webp";
 import ChampionsLeagueLogo from "../assets/images/champions.png";
 import ParisSaintGerman from "../assets/images/psg.png";
-import Juventus from "../assets/images/juv.jpg";
+
 import ManCityLogo from "../assets/images/logo.svg";
 // import Tottenham from "../assets/images/tottenham.webp";
-// import Liverpool from "../assets/images/lfc.webp";
-import ManUtd from "../assets/images/united.png";
+import Liverpool from "../assets/images/lfc.webp";
+// import ManUtd from "../assets/images/united.png";
 import AstonVilla from "../assets/images/aston-villa.png";
 // import Carabao from "../assets/images/carabao.png";
 import WestHamLogo from "../assets/images/westham.png";
-
+import New from "../assets/images/newcastle.png";
 import ChelseaLogo from "../assets/images/Chelsea.webp";
 import ArsenalLogo from "../assets/images/arsenal.png";
 
 // Full list of matches including additional teams
 const matches = [
-  {
-    date: "2024-12-12",
-    opponent: "Juventus",
-    time: "01:45",
-    venue: "Etihad Stadium",
-    competition: "Premier League",
-    opponentLogo: Juventus,
-    competitionLogo: ChampionsLeagueLogo,
-  },
-  {
-    date: "2024-12-15",
-    opponent: "Man United",
-    time: "22:15",
-    venue: "Etihad Stadium",
-    competition: "Premier League",
-    opponentLogo: ManUtd,
-    competitionLogo: PremierLeagueLogo,
-  },
   {
     date: "2024-12-21",
     opponent: "Aston Villa",
@@ -76,6 +58,24 @@ const matches = [
     venue: "Emirates Stadium",
     competition: "Premier League",
     opponentLogo: ArsenalLogo,
+    competitionLogo: PremierLeagueLogo,
+  },
+  {
+    date: "2025-02-15",
+    opponent: "Newcastle",
+    time: "20:45",
+    venue: "Etihad Stadium",
+    competition: "Premier League",
+    opponentLogo: New,
+    competitionLogo: PremierLeagueLogo,
+  },
+  {
+    date: "2025-02-23",
+    opponent: "Liverpool",
+    time: "20:45",
+    venue: "Etihad Stadium",
+    competition: "Premier League",
+    opponentLogo: Liverpool,
     competitionLogo: PremierLeagueLogo,
   },
 ];
