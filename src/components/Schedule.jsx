@@ -1,18 +1,16 @@
 import PremierLeagueLogo from "../assets/images/prem.webp";
 import ChampionsLeagueLogo from "../assets/images/champions.png";
 import ParisSaintGerman from "../assets/images/psg.png";
-
 import ManCityLogo from "../assets/images/logo.svg";
-// import Tottenham from "../assets/images/tottenham.webp";
+import Tottenham from "../assets/images/tottenham.webp";
 import Liverpool from "../assets/images/lfc.webp";
-// import ManUtd from "../assets/images/united.png";
+import ManUtd from "../assets/images/united.png";
 import AstonVilla from "../assets/images/aston-villa.png";
 // import Carabao from "../assets/images/carabao.png";
 import WestHamLogo from "../assets/images/westham.png";
 import New from "../assets/images/newcastle.png";
 import ChelseaLogo from "../assets/images/Chelsea.webp";
 import ArsenalLogo from "../assets/images/arsenal.png";
-
 // Full list of matches including additional teams
 const matches = [
   {
@@ -76,6 +74,24 @@ const matches = [
     venue: "Etihad Stadium",
     competition: "Premier League",
     opponentLogo: Liverpool,
+    competitionLogo: PremierLeagueLogo,
+  },
+  {
+    date: "2025-02-26",
+    opponent: "Tottenham",
+    time: "01:30",
+    venue: "Tottenham Hotspur Stadium",
+    competition: "Premier League",
+    opponentLogo: Tottenham,
+    competitionLogo: PremierLeagueLogo,
+  },
+  {
+    date: "2025-04-05",
+    opponent: "Man United",
+    time: "19:45",
+    venue: "Old Trafford",
+    competition: "Premier League",
+    opponentLogo: ManUtd,
     competitionLogo: PremierLeagueLogo,
   },
 ];
