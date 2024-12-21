@@ -35,6 +35,7 @@ import Salah from "../assets/images/salah.webp";
 import Juventus from "../assets/images/juv.jpg";
 import Vla from "../assets/images/vla.jpg";
 import Amad from "../assets/images/amad.webp";
+import Rogers from "../assets/images/rogers.jpg";
 
 const teamColors = {
   "Man City": "#6caddf",
@@ -339,6 +340,23 @@ const matches = [
     competitionLogo: PremierLeagueLogo,
     manOfTheMatch: Amad,
     motm: "Amad Diallo",
+  },
+  {
+    id: 17,
+    homeTeam: "Man City",
+    awayTeam: "Aston Villa",
+    scorers: {
+      home: ["Foden 90+3'"],
+      away: ["Duran 16'", "Rogers 65'"],
+    },
+    timestamp: "2024-12-21T18:15:00",
+    time: "FT",
+
+    competition: "Premier League",
+    venue: "Villa Park",
+    competitionLogo: PremierLeagueLogo,
+    manOfTheMatch: Rogers,
+    motm: "Morgan Rogers",
   },
 ];
 
