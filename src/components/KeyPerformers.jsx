@@ -6,18 +6,20 @@ import {
 } from "react-icons/fa";
 import { GoGoal } from "react-icons/go";
 import England from "../assets/images/cro.png";
+
 import Norway from "../assets/images/norway.webp";
-import Belgium from "../assets/images/belgium.png";
-// import Portugal from "../assets/images/portugal.webp";
+// import Belgium from "../assets/images/belgium.png";
+import Portugal from "../assets/images/portugal.webp";
 import player1Image from "../assets/images/haaland.jpg";
-import player2Image from "../assets/images/kdb.jpg";
-// import player3Image from "../assets/images/silva.jpg";
+// import player2Image from "../assets/images/kdb.jpg";
+import player3Image from "../assets/images/silva.jpg";
 // import Nunes from "../assets/images/nunes.jpg";
 import premierLeagueLogo from "../assets/images/prem.webp";
 import championsLeagueLogo from "../assets/images/Champ.png";
 import Carabao from "../assets/images/carabao.png";
 import otherIcon from "../assets/images/sheld.png";
-import PhilFoden from "../assets/images/gv.jpg";
+import Josko from "../assets/images/gv.jpg";
+// import PhilFoden from "../assets/images/fode.jpg";
 // Placeholder for national team icon
 import { useState } from "react";
 
@@ -25,7 +27,7 @@ const playersData = [
   {
     name: "Erling Haaland",
     matches: {
-      premierLeague: 16,
+      premierLeague: 18,
       championsLeague: 6,
       other: 1,
       Carabao: 0,
@@ -51,38 +53,10 @@ const playersData = [
     nimg: Norway,
   },
 
-  // {
-  //   name: "Phil Foden",
-  //   matches: {
-  //     premierLeague: 11,
-  //     championsLeague: 5,
-  //     other: 0,
-  //     Carabao: 2,
-  //     nationalStats: 2,
-  //   },
-  //   goals: {
-  //     premierLeague: 0,
-  //     championsLeague: 3,
-  //     other: 0,
-  //     Carabao: 0,
-  //     nationalStats: 0,
-  //   },
-  //   assists: {
-  //     premierLeague: 1,
-  //     championsLeague: 1,
-  //     other: 0,
-  //     Carabao: 0,
-  //     nationalStats: 0,
-  //   },
-  //   age: 24,
-  //   position: "AM",
-  //   nimg: England,
-  //   image: PhilFoden,
-  // },
   {
     name: "Josko Gvardiol",
     matches: {
-      premierLeague: 15,
+      premierLeague: 17,
       championsLeague: 6,
       other: 1,
       Carabao: 2,
@@ -105,36 +79,94 @@ const playersData = [
     age: 24,
     position: "LB",
     nimg: England,
-    image: PhilFoden,
+    image: Josko,
   },
+
+  // {
+  //   name: "Phil Foden",
+  //   matches: {
+  //     premierLeague: 13,
+  //     championsLeague: 5,
+  //     other: 0,
+  //     Carabao: 2,
+  //     nationalStats: 2,
+  //   },
+  //   goals: {
+  //     premierLeague: 1,
+  //     championsLeague: 3,
+  //     other: 0,
+  //     Carabao: 0,
+  //     nationalStats: 0,
+  //   },
+  //   assists: {
+  //     premierLeague: 1,
+  //     championsLeague: 1,
+  //     other: 0,
+  //     Carabao: 0,
+  //     nationalStats: 0,
+  //   },
+  //   age: 24,
+  //   position: "AM",
+  //   nimg: England,
+  //   image: PhilFoden,
+  // },
+
   {
-    name: "Kevin De Bruyne",
+    name: "Bernardo Silva",
     matches: {
-      premierLeague: 10,
-      championsLeague: 4,
+      premierLeague: 18,
+      championsLeague: 5,
       other: 1,
-      Carabao: 0,
-      nationalStats: 2,
+      Carabao: 1,
+      nationalStats: 5,
     },
     goals: {
       premierLeague: 2,
       championsLeague: 0,
-      other: 0,
+      other: 1,
       Carabao: 0,
-      nationalStats: 2,
+      nationalStats: 1,
     },
     assists: {
-      premierLeague: 2,
+      premierLeague: 4,
       championsLeague: 0,
       other: 0,
       Carabao: 0,
       nationalStats: 0,
     },
-    nimg: Belgium,
-    age: 33,
+    age: 30,
     position: "AM",
-    image: player2Image,
+    nimg: Portugal,
+    image: player3Image,
   },
+  // {
+  //   name: "Kevin De Bruyne",
+  //   matches: {
+  //     premierLeague: 11,
+  //     championsLeague: 4,
+  //     other: 1,
+  //     Carabao: 0,
+  //     nationalStats: 2,
+  //   },
+  //   goals: {
+  //     premierLeague: 2,
+  //     championsLeague: 0,
+  //     other: 0,
+  //     Carabao: 0,
+  //     nationalStats: 2,
+  //   },
+  //   assists: {
+  //     premierLeague: 2,
+  //     championsLeague: 0,
+  //     other: 0,
+  //     Carabao: 0,
+  //     nationalStats: 0,
+  //   },
+  //   nimg: Belgium,
+  //   age: 33,
+  //   position: "AM",
+  //   image: player2Image,
+  // },
 
   // {
   //   name: "Matheus Nunes",
