@@ -48,9 +48,9 @@ const players = [
       appearances: 312,
     },
     seasonStats: {
-      goals: 25,
+      goals: 26,
       assists: 2,
-      appearances: 31,
+      appearances: 32,
     },
   },
 
@@ -69,7 +69,7 @@ const players = [
     seasonStats: {
       goals: 4,
       assists: 2,
-      appearances: 18,
+      appearances: 19,
     },
     injured: false,
     injuryDetails: {
@@ -95,7 +95,7 @@ const players = [
     seasonStats: {
       goals: 4,
       assists: 4,
-      appearances: 30,
+      appearances: 31,
     },
     injured: false,
   },
@@ -136,7 +136,7 @@ const players = [
     seasonStats: {
       goals: 4,
       assists: 2,
-      appearances: 22,
+      appearances: 23,
     },
     injured: false,
   },
@@ -180,7 +180,7 @@ const players = [
     seasonStats: {
       goals: 3,
       assists: 0,
-      appearances: 22,
+      appearances: 23,
     },
     injured: false,
   },
@@ -245,7 +245,7 @@ const players = [
     seasonStats: {
       goals: 0,
       assists: 0,
-      appearances: 12,
+      appearances: 13,
     },
     injured: false,
   },
@@ -283,7 +283,7 @@ const players = [
     seasonStats: {
       goals: 5,
       assists: 0,
-      appearances: 32,
+      appearances: 33,
     },
     injured: false,
   },
@@ -302,7 +302,7 @@ const players = [
     seasonStats: {
       goals: 0,
       assists: 1,
-      appearances: 24,
+      appearances: 25,
     },
     injured: false,
   },
@@ -339,9 +339,9 @@ const players = [
       appearances: 100,
     },
     seasonStats: {
-      goals: 0,
-      assists: 5,
-      appearances: 27,
+      goals: 1,
+      assists: 6,
+      appearances: 28,
     },
     injured: false,
   },
@@ -379,7 +379,7 @@ const players = [
     seasonStats: {
       goals: 1,
       assists: 1,
-      appearances: 8,
+      appearances: 9,
     },
     injured: false,
   },
@@ -399,7 +399,7 @@ const players = [
     seasonStats: {
       goals: 0,
       assists: 0,
-      appearances: 19,
+      appearances: 20,
     },
     injured: false,
     injuryDetails: {
@@ -425,7 +425,7 @@ const players = [
     seasonStats: {
       goals: 1,
       assists: 4,
-      appearances: 29,
+      appearances: 30,
     },
     injured: false,
   },
@@ -487,8 +487,8 @@ const players = [
     },
     seasonStats: {
       goalsConceded: 9,
-      cleanSheets: 3,
-      appearances: 9,
+      cleanSheets: 4,
+      appearances: 10,
     },
     injured: false,
   },
